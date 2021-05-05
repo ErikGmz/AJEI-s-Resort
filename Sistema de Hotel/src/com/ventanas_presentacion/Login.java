@@ -36,7 +36,7 @@ public class Login extends javax.swing.JFrame {
 
     //-Configuración adicional de ciertos componentes-//.
     private void extraInitProcess() {
-        //Centrar el jFrame.
+        //Centrar el JFrame.
         this.setLocationRelativeTo(this);
     }
     

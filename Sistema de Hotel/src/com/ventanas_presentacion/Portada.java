@@ -340,7 +340,7 @@ public class Portada extends javax.swing.JFrame {
         icono = new ImageIcon("src/img/portada/hotel.png"); 
         this.iconoHotel = icono.getImage();
         
-        //Cargar el logo del gallo UAA para el jFrame.
+        //Cargar el logo del gallo UAA para el JFrame.
         try {
             super.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/portada/gallouaa.png")));
         }

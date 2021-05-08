@@ -21,7 +21,7 @@ public class ConexionMySQL {
     private Connection conexion;
     
     //---Constructor predeterminado---//.
-    public ConexionMySQL() {
+    public ConexionMySQL() throws Exception {
         //-Especificar datos del servidor de la base de datos-//.
         this.controladora = "com.mysql.jdbc.Driver";
         this.urlServidor = "jdbc:mysql://localhost/baseajei";
@@ -33,7 +33,7 @@ public class ConexionMySQL {
     }
     
     //---Constructor con argumento---//.
-    public ConexionMySQL(String nombreBase) {
+    public ConexionMySQL(String nombreBase) throws Exception {
         //Especificar datos del servidor de la base de datos.
         this.controladora = "com.mysql.jdbc.Driver";
         this.urlServidor = new String("jdbc:mysql://localhost/" + nombreBase);
@@ -46,15 +46,9 @@ public class ConexionMySQL {
     
     //---Métodos---//.
     //-Iniciar la conexión con la base de datos previamente especificada-//.
-    private void iniciarConexion() {
-        try {
-            Class.forName(controladora).newInstance();
-            this.conexion = DriverManager.getConnection(this.urlServidor, this.nombreLogin, this.codigo);
-        }
-        catch(ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException ex) {
-            System.err.println("Error al tratar de abrir la base de datos especificada");
-            ex.printStackTrace();
-        }
+    private void iniciarConexion() throws Exception {
+        Class.forName(controladora).newInstance();
+        this.conexion = DriverManager.getConnection(this.urlServidor, this.nombreLogin, this.codigo);
     }
     
     //-Insertar en una tabla específica un conjunto de datos-//.
@@ -67,6 +61,7 @@ public class ConexionMySQL {
             declaracion.executeUpdate(comando);
         }
         catch(SQLException ex) {
+            ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "La inserción no pudo ser "
             + "realizada.\n" + "Verifique la conexión con la base de datos.\n"
             , "Error", JOptionPane.ERROR_MESSAGE);
@@ -74,23 +69,11 @@ public class ConexionMySQL {
     }
     
     //-Realizar una consulta de cierta información, a partir de una sola tabla-//.
-    public ResultSet consultaUnaTabla(String nombreTabla, String campo, String parametros) {
-        //Variable para almacenar los resultados de la consulta.
-        ResultSet resultados = null;
-        
+    public ResultSet consultarTabla(String nombreTabla, String campos, String parametros) throws SQLException {
         //Estructura de la consulta.
-        String consulta = "SELECT " + campo + " FROM " + nombreTabla + " " + parametros + ";";
-        
-        try {
-            Statement declaracion = this.conexion.createStatement();
-            resultados = declaracion.executeQuery(consulta);
-        }
-        catch(SQLException ex) {
-            JOptionPane.showMessageDialog(null, "La consulta no pudo ser "
-            + "realizada.\n" + "Verifique la conexión con la base de datos.\n"
-            , "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        
+        String consulta = "SELECT " + campos + " FROM " + nombreTabla + parametros + ";";
+        Statement declaracion = this.conexion.createStatement();
+        ResultSet resultados = declaracion.executeQuery(consulta); 
         return resultados;
     }
     
@@ -104,6 +87,7 @@ public class ConexionMySQL {
             declaracion.executeUpdate(comando);
         }
         catch(SQLException ex) {
+            ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "La actualización no pudo ser "
             + "realizada.\n" + "Verifique la conexión con la base de datos.\n"
             , "Error", JOptionPane.ERROR_MESSAGE);
@@ -120,6 +104,7 @@ public class ConexionMySQL {
             declaracion.executeUpdate(comando);
         }
         catch(SQLException ex) {
+            ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "La eliminación no pudo ser "
             + "realizada.\n" + "Verifique la conexión con la base de datos.\n"
             , "Error", JOptionPane.ERROR_MESSAGE);

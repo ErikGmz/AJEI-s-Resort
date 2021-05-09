@@ -140,7 +140,7 @@ public class Login extends javax.swing.JFrame {
         jLabelCorreo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login/user/logomail.png"))); // NOI18N
         jLabelCorreo.setText(" Correo electrónico");
 
-        jTextFieldCorreo.setFont(new java.awt.Font("Century Schoolbook", 0, 13)); // NOI18N
+        jTextFieldCorreo.setFont(new java.awt.Font("Century Schoolbook", 0, 14)); // NOI18N
         jTextFieldCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldCorreo.setToolTipText("");
         jTextFieldCorreo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -150,7 +150,7 @@ public class Login extends javax.swing.JFrame {
         jLabelClave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login/user/codigo.png"))); // NOI18N
         jLabelClave.setText(" Contraseña");
 
-        jPasswordFieldClave.setFont(new java.awt.Font("Century Schoolbook", 0, 13)); // NOI18N
+        jPasswordFieldClave.setFont(new java.awt.Font("Century Schoolbook", 0, 14)); // NOI18N
         jPasswordFieldClave.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPasswordFieldClave.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 

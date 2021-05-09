@@ -9,9 +9,9 @@ _**1.** Proyecto programado con Java SE (Standard Edition)._
 
 _**2.** IDE utilizado: Netbeans 8.x._
 
-_**3.** JDK empleado: 8.0._
+_**3.** JDK empleado: 8.0 update 291._
 
-_**4.** Inclusión de la librería JFreeChart (gráficas de barras, pastel, etcétera), hasta el momento._
+_**4.** Inclusión de las librerías JFreeChart (gráficas de barras, pastel, etcétera) y JCalendar (control JDateChooser), hasta el momento._
 
 ## Datos sobre la institución educativa
 **Universidad Autónoma de Aguascalientes**.
@@ -29,4 +29,4 @@ _**4.** Inclusión de la librería JFreeChart (gráficas de barras, pastel, etc�
 - José Emmanuel Rodríguez López.
 
 ## Notas importantes
-**_Es recomendable emplear el JDK 8.0; en caso contrario, el proyecto probablemente presentará errores de ejecución._**
+**_Es recomendable emplear el JDK 8.0 update 291; en caso contrario, el proyecto probablemente presentará errores de ejecución._**

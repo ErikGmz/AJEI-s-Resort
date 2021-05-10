@@ -339,23 +339,23 @@ public class Login extends javax.swing.JFrame {
 
                 //El email no fue hallado en la consulta.
                 JOptionPane.showMessageDialog(this, "Email inválido.\n"
-                    + "Reintroduzca sus datos.\n"
-                    , "Error", JOptionPane.ERROR_MESSAGE);
+                + "Reintroduzca sus datos.\n"
+                , "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             catch(SQLException ex) {
                 ex.printStackTrace();
                 JOptionPane.showMessageDialog(this, "La consulta no pudo ser "
-                    + "realizada.\n" + "Verifique la conexión con la base de datos.\n"
-                    , "Error", JOptionPane.ERROR_MESSAGE);
+                + "realizada.\n" + "Verifique la conexión con la base de datos.\n"
+                , "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
         catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                + "XAMPP o MySQL local se encuentra activado."
-                , "Error", JOptionPane.ERROR_MESSAGE);
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado."
+            , "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonIngresarActionPerformed
 

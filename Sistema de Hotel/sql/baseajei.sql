@@ -4,6 +4,9 @@
 -- ------------------------------------------------------
 -- Server version	5.7.34-log
 
+CREATE DATABASE baseajei;
+USE baseajei;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -15,8 +18,70 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE DATABASE baseajei;
-USE baseajei;
+--
+-- Table structure for table `huespedes`
+--
+
+DROP TABLE IF EXISTS `huespedes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `huespedes` (
+  `guest_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(80) NOT NULL,
+  `city` varchar(40) NOT NULL,
+  `check_in` date NOT NULL,
+  `check_out` date NOT NULL,
+  `room_id` tinyint(3) NOT NULL,
+  `room_type` enum('S','D','T') NOT NULL DEFAULT 'S',
+  `floor` tinyint(2) NOT NULL DEFAULT '1',
+  `guests` tinyint(5) NOT NULL DEFAULT '1',
+  `extras` tinyint(2) NOT NULL DEFAULT '0',
+  `active` tinyint(1) NOT NULL DEFAULT '0',
+  `expense` double(8,4) NOT NULL DEFAULT '0.0000',
+  PRIMARY KEY (`guest_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `huespedes`
+--
+
+LOCK TABLES `huespedes` WRITE;
+/*!40000 ALTER TABLE `huespedes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `huespedes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `servicios`
+--
+
+DROP TABLE IF EXISTS `servicios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `servicios` (
+  `guest_id` int(11) NOT NULL,
+  `room_service` tinyint(1) NOT NULL DEFAULT '0',
+  `bar_access` tinyint(1) NOT NULL DEFAULT '0',
+  `cleaner_service` tinyint(1) NOT NULL DEFAULT '0',
+  `SPA_service` tinyint(1) NOT NULL DEFAULT '0',
+  `baby_sister_service` tinyint(1) NOT NULL DEFAULT '0',
+  `gym_access` tinyint(1) NOT NULL DEFAULT '0',
+  `gaming_access` tinyint(1) NOT NULL DEFAULT '0',
+  `tennis_access` tinyint(1) NOT NULL DEFAULT '0',
+  `bow_shooting` tinyint(1) NOT NULL DEFAULT '0',
+  `golf_access` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`guest_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `servicios`
+--
+
+LOCK TABLES `servicios` WRITE;
+/*!40000 ALTER TABLE `servicios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `servicios` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `usuarios`
@@ -54,4 +119,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-06 21:33:02
+-- Dump completed on 2021-05-10  3:23:03

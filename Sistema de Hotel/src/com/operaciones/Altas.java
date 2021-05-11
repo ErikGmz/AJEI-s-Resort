@@ -10,6 +10,7 @@ public class Altas extends javax.swing.JFrame {
     //---Constructor---//.
     public Altas() {
         initComponents();
+        this.setLocationRelativeTo(this);
         
         //Cargar el JInternalFrame.
         Altas1 altas = new Altas1();

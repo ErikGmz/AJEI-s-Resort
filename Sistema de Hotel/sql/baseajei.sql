@@ -31,7 +31,8 @@ CREATE TABLE `huespedes` (
   `city` varchar(40) NOT NULL,
   `check_in` date NOT NULL,
   `check_out` date NOT NULL,
-  `room_id` tinyint(3) NOT NULL,
+  `days` tinyint(4) NOT NULL DEFAULT '1',
+  `room_id` varchar(3) NOT NULL,
   `room_type` enum('S','D','T') NOT NULL DEFAULT 'S',
   `floor` tinyint(2) NOT NULL DEFAULT '1',
   `guests` tinyint(5) NOT NULL DEFAULT '1',
@@ -39,7 +40,7 @@ CREATE TABLE `huespedes` (
   `active` tinyint(1) NOT NULL DEFAULT '0',
   `expense` double(8,4) NOT NULL DEFAULT '0.0000',
   PRIMARY KEY (`guest_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,6 +49,7 @@ CREATE TABLE `huespedes` (
 
 LOCK TABLES `huespedes` WRITE;
 /*!40000 ALTER TABLE `huespedes` DISABLE KEYS */;
+INSERT INTO `huespedes` VALUES (1,'Erik Alejandro','Aguascalientes','2021-05-29','2021-06-08',10,'207','T',2,3,2,1,0.0000),(2,'María Pérez','CDMX','2021-12-31','2022-01-03',3,'108','D',1,2,1,1,0.0000);
 /*!40000 ALTER TABLE `huespedes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,6 +82,7 @@ CREATE TABLE `servicios` (
 
 LOCK TABLES `servicios` WRITE;
 /*!40000 ALTER TABLE `servicios` DISABLE KEYS */;
+INSERT INTO `servicios` VALUES (1,1,1,1,0,0,1,1,0,0,0),(2,1,0,1,1,1,0,1,0,0,1);
 /*!40000 ALTER TABLE `servicios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,4 +122,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-10  3:23:03
+-- Dump completed on 2021-05-10 20:37:19

@@ -1166,21 +1166,19 @@ public class Altas1 extends javax.swing.JInternalFrame {
             break;
         }
         
+        ConexionMySQL conexion = null;
         try {
             //Conexión a la base de datos.
-            ConexionMySQL conexion = new ConexionMySQL();
+            conexion = new ConexionMySQL();
             
             try {
                 //Consultar en la base de datos todas las habitaciones reservadas.
                 ResultSet consulta = conexion.consultarTabla("huespedes",
-                "room_id, floor, active", " WHERE room_type = '" + this.tipoHabitacion + "'");
+                "room_id", " WHERE room_type = '" + this.tipoHabitacion + "' AND active = 1 AND floor =" + this.numeroPiso);
                 
                 while(consulta.next()) {
-                    //Se verifica si la habitación consultada está ocupada.
-                    if(consulta.getBoolean("active") && this.numeroPiso == consulta.getInt("floor")) {
-                       HabitacionesReservadas++;
-                       this.listaHabitacionesOcupadas.add(consulta.getString("room_id"));
-                    }
+                    HabitacionesReservadas++;
+                    this.listaHabitacionesOcupadas.add(consulta.getString("room_id"));
                 }
                 
                 //Se verifica si la cantidad de habitaciones ocupadas equivale o no al total.
@@ -1208,9 +1206,9 @@ public class Altas1 extends javax.swing.JInternalFrame {
             }
             catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(this, "La consulta no pudo ser "
-                + "realizada.\n" + "Verifique la conexión con la base de datos.\n"
-                , "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "SQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }       
         } 
         catch (Exception ex) {
@@ -1219,6 +1217,9 @@ public class Altas1 extends javax.swing.JInternalFrame {
             + "conexión con la base de datos.\n" + "Verifique si el servidor "
             + "XAMPP o MySQL local se encuentra activado."
             , "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        finally {
+            conexion.cerrarConexion();
         }
     }
     
@@ -1521,9 +1522,10 @@ public class Altas1 extends javax.swing.JInternalFrame {
     }
     
     private void agregarInformacion() {
+        ConexionMySQL conexion = null;
         try {
             //Conexión a la base de datos.
-            ConexionMySQL conexion = new ConexionMySQL();
+            conexion = new ConexionMySQL();
             
             try {
                 //Almacenar fechas en variables SQL.
@@ -1548,59 +1550,40 @@ public class Altas1 extends javax.swing.JInternalFrame {
                 comando.setInt(11, 1);
                 comando.executeUpdate();
                 
-                try {
-                    //Consultar el identificador de huésped.
-                    ResultSet consulta = conexion.consultarTabla("huespedes",
-                    "guest_id", " ORDER BY guest_id DESC LIMIT 1");
+                //Consultar el identificador de huésped.
+                ResultSet consulta = conexion.consultarTabla("huespedes",
+                "guest_id", " ORDER BY guest_id DESC LIMIT 1");
                     
+                //Agregar datos a la tabla de servicios.
+                if(consulta.next()) {
                     //Agregar datos a la tabla de servicios.
-                    try {
-                        if(consulta.next()) {
-                            //Agregar datos a la tabla de servicios.
-                            conexion.insertarDatos("servicios", "(guest_id, room_service," +
-                            " bar_access, cleaner_service, SPA_service, baby_sister_service," +
-                            "gym_access, gaming_access, tennis_access, bow_shooting, golf_access)",
-                            "(" + consulta.getInt("guest_id") + ", "
-                            + this.aEntero(this.jCheckBoxCuarto.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxBar.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxTintoreria.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxSPA.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxCuidado.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxGimnasio.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxJuegos.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxTennis.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxArco.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxGolf.isSelected()) + ")");
+                    conexion.insertarDatos("servicios", "(guest_id, room_service," +
+                    " bar_access, cleaner_service, SPA_service, baby_sister_service," +
+                    "gym_access, gaming_access, tennis_access, bow_shooting, golf_access)",
+                    "(" + consulta.getInt("guest_id") + ", "
+                    + this.aEntero(this.jCheckBoxCuarto.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxBar.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxTintoreria.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxSPA.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxCuidado.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxGimnasio.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxJuegos.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxTennis.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxArco.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxGolf.isSelected()) + ")");
                             
-                            JOptionPane.showMessageDialog(this, "El registro fue exitosamente "
-                            + "realizado.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-                        }
-                        else {
-                            throw new SQLException();
-                        }        
-                    }
-                    catch(SQLException ex) {
-                        //Borrar datos inválidos de la base de datos.
-                        if(consulta.next()) conexion.borrarDatos("huespedes", " WHERE guest_id = " + consulta.getInt("guest_id"));
-                        
-                        ex.printStackTrace();
-                        JOptionPane.showMessageDialog(this, "Errores ocurridos durante "
-                        + "la inserción.\n" + "Verifique la conexión con la base de datos.\n"
-                        , "Error", JOptionPane.ERROR_MESSAGE);
-                    }
+                    JOptionPane.showMessageDialog(this, "El registro fue exitosamente "
+                    + "realizado.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
                 }
-                catch(SQLException ex) {
-                    ex.printStackTrace();
-                    JOptionPane.showMessageDialog(this, "Errores ocurridos durante "
-                    + "la inserción.\n" + "Verifique la conexión con la base de datos.\n"
-                    , "Error", JOptionPane.ERROR_MESSAGE);
-                }  
+                else {
+                    throw new SQLException();        
+                }
             }
             catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(this, "La inserción no pudo ser "
-                + "realizada.\n" + "Verifique la conexión con la base de datos.\n"
-                , "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "SQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }       
         } 
         catch (Exception ex) {
@@ -1609,6 +1592,9 @@ public class Altas1 extends javax.swing.JInternalFrame {
             + "conexión con la base de datos.\n" + "Verifique si el servidor "
             + "XAMPP o MySQL local se encuentra activado."
             , "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        finally {
+            conexion.cerrarConexion();
         }
     }
     

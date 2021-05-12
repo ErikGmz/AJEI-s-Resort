@@ -302,52 +302,48 @@ public class Login extends javax.swing.JFrame {
 
     //-Botón para realizar el proceso de login, realizando una consulta a la base de datos.-//.
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
+        ConexionMySQL conexion = null;
         try {
             //Conexión a la base de datos.
-            ConexionMySQL conexion = new ConexionMySQL();
+            conexion = new ConexionMySQL();
 
             try {
-                //Consultar email's y contraseñas de los usuarios registrados.
-                ResultSet consulta = conexion.consultarTabla("usuarios",
-                    "email, AES_DECRYPT(password, 'key') AS passwd, user_name", "");
-
                 String email = this.jTextFieldCorreo.getText().trim();
                 String clave = String.valueOf(this.jPasswordFieldClave.getPassword());
+                
+                //Consultar email's y contraseñas de los usuarios registrados.
+                ResultSet consulta = conexion.consultarTabla("usuarios",
+                "AES_DECRYPT(password, 'key') AS passwd, user_name", " WHERE email = '" + email + "' LIMIT 1");
 
-                //Comparar el email introducido y los registrados.
-                while(consulta.next()) {
-                    String campo_e = consulta.getString(1);
-                    String campo_c = consulta.getString(2);
-                    String campo_u = consulta.getString(3);
+                //Verificar si el email fue encontrado.
+                if(consulta.next()) {
+                    String campo_c = consulta.getString(1);
+                    String campo_u = consulta.getString(2);
 
-                    if(email.equals(campo_e)) {
-                        //Se verifica si la contraseña introducida es correcta.
-                        if(clave.equals(campo_c)) {
-                            JOptionPane.showMessageDialog(this, "Login exitoso.\n"
-                                + "Bienvenido al sistema, " + campo_u + ".\n"
-                                , "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-                            return;
-                        }
-                        else {
-                            JOptionPane.showMessageDialog(this, "Contraseña incorrecta.\n"
-                                + "Reintroduzca sus datos.\n"
-                                , "Error", JOptionPane.ERROR_MESSAGE);
-                            return;
-                        }
+                    //Se verifica si la contraseña introducida es correcta.
+                    if(clave.equals(campo_c)) {
+                        JOptionPane.showMessageDialog(this, "Login exitoso.\n"
+                        + "Bienvenido al sistema, " + campo_u + ".\n"
+                        , "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(this, "Contraseña incorrecta.\n"
+                        + "Reintroduzca sus datos.\n"
+                        , "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 }
-
-                //El email no fue hallado en la consulta.
-                JOptionPane.showMessageDialog(this, "Email inválido.\n"
-                + "Reintroduzca sus datos.\n"
-                , "Error", JOptionPane.ERROR_MESSAGE);
-                return;
+                else {
+                    //El email no fue hallado en la consulta.
+                    JOptionPane.showMessageDialog(this, "Email inválido.\n"
+                    + "Reintroduzca sus datos.\n"
+                    , "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
             catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(this, "La consulta no pudo ser "
-                + "realizada.\n" + "Verifique la conexión con la base de datos.\n"
-                , "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "SQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
         catch(Exception ex) {
@@ -356,6 +352,9 @@ public class Login extends javax.swing.JFrame {
             + "conexión con la base de datos.\n" + "Verifique si el servidor "
             + "XAMPP o MySQL local se encuentra activado."
             , "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        finally {
+            conexion.cerrarConexion();
         }
     }//GEN-LAST:event_jButtonIngresarActionPerformed
 

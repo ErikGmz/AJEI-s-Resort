@@ -69,24 +69,15 @@ public class ConexionMySQL {
     }
     
     //-Actualizar datos de una tabla-//.
-    public void actualizarDatos(String nombreTabla, String campos, String parametros) { 
+    public void actualizarDatos(String nombreTabla, String campos, String parametros) throws SQLException { 
         //Estructura del comando.
         String comando = "UPDATE " + nombreTabla + " SET " + campos + " " + parametros + ";";
-        
-        try {
-            Statement declaracion = this.conexion.createStatement();
-            declaracion.executeUpdate(comando);
-        }
-        catch(SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "La actualización no pudo ser "
-            + "realizada.\n" + "Verifique la conexión con la base de datos.\n"
-            , "Error", JOptionPane.ERROR_MESSAGE);
-        }
+        Statement declaracion = this.conexion.createStatement();
+        declaracion.executeUpdate(comando);
     }
     
     //-Borrar datos de una tabla-//.
-    public void borrarDatos(String nombreTabla, String parametros) { 
+    public void borrarDatos(String nombreTabla, String parametros) throws SQLException { 
         //Estructura de la consulta.
         String comando = "DELETE FROM " + nombreTabla + parametros + ";";
         
@@ -96,9 +87,23 @@ public class ConexionMySQL {
         }
         catch(SQLException ex) {
             ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "La eliminación no pudo ser "
-            + "realizada.\n" + "Verifique la conexión con la base de datos.\n"
-            , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "SQLException: " + ex.getMessage()
+            + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+            "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    //-Cerrar la conexión con la base de datos-//.
+    public void cerrarConexion() {
+        try {
+            if(this.conexion != null) {
+                this.conexion.close();
+            }
+        }
+        catch(SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "SQLException: " + ex.getMessage()
+            + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".");
         }
     }
     

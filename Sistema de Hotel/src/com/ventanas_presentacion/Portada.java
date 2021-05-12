@@ -313,6 +313,7 @@ public class Portada extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //-Botón para trasladarse al login del sistema-//.
     private void jButtonIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarActionPerformed
         this.dispose();
         Login inicio = new Login();

@@ -136,6 +136,7 @@ public class OcupacionPorTipo extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //-Regresar al menú principal-//.
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         this.dispose();
         this.setVisible(false);

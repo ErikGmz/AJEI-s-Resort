@@ -99,6 +99,7 @@ public class OcupacionTotal extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //-Regresar al menú principal-//.
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         this.dispose();
         this.setVisible(false);
@@ -110,7 +111,7 @@ public class OcupacionTotal extends javax.swing.JInternalFrame {
         this.jPanelGrafica.setSize(806, 439);
     }
     
-    //-A partir de la información de la base de datos, se calculan los porcentajes de ocupación-//.
+    //-A partir de la información de la base de datos, se calculará la ocupación total del hotel-//.
     private void rellenarInformacion() {
         ConexionMySQL conexion = null;
         int habitacionesOcupadas;

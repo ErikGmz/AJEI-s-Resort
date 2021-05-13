@@ -46,11 +46,11 @@ public class TotalDeHabitaciones extends javax.swing.JInternalFrame {
         jPanelGraficaHabitaciones.setLayout(jPanelGraficaHabitacionesLayout);
         jPanelGraficaHabitacionesLayout.setHorizontalGroup(
             jPanelGraficaHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 786, Short.MAX_VALUE)
+            .addGap(0, 817, Short.MAX_VALUE)
         );
         jPanelGraficaHabitacionesLayout.setVerticalGroup(
             jPanelGraficaHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
+            .addGap(0, 444, Short.MAX_VALUE)
         );
 
         jButtonRegresar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -67,23 +67,22 @@ public class TotalDeHabitaciones extends javax.swing.JInternalFrame {
         jPanelBaseLayout.setHorizontalGroup(
             jPanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelBaseLayout.createSequentialGroup()
-                .addGroup(jPanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelBaseLayout.createSequentialGroup()
-                        .addGap(245, 245, 245)
-                        .addComponent(jButtonRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelBaseLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jPanelGraficaHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addComponent(jPanelGraficaHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBaseLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(228, 228, 228))
         );
         jPanelBaseLayout.setVerticalGroup(
             jPanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelBaseLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(27, 27, 27)
                 .addComponent(jPanelGraficaHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jButtonRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -100,6 +99,7 @@ public class TotalDeHabitaciones extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //-Regresar al menú principal-//.
     private void jButtonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarActionPerformed
         this.dispose();
         this.setVisible(false);
@@ -122,7 +122,7 @@ public class TotalDeHabitaciones extends javax.swing.JInternalFrame {
             
             try {
                 //Consultar en la base de datos la cantidad total de habitaciones.
-                ResultSet consulta = conexion.consultarTabla("room_types",
+                ResultSet consulta = conexion.consultarTabla("habitaciones",
                 "rooms_count", "");
                 
                 while(consulta.next()){

@@ -2,29 +2,25 @@
 package com.operaciones.consultas;
 
 //---Sentencias import---//.
-import com.operaciones.*;
 import java.beans.PropertyVetoException;
+import javax.swing.JInternalFrame;
 
 //---Clase pública---//.
-public class Ingresos1 extends javax.swing.JFrame {
+public class Consultas extends javax.swing.JFrame {
 
     //---Constructor---//.
-    public Ingresos1() {
+    public Consultas() {
         initComponents();
         this.setLocationRelativeTo(this);
         
         //Cargar el JInternalFrame.
-        Ingresos ingresos = new Ingresos();
-        this.jDesktopPaneAltas.add(ingresos);
-        ingresos.setVisible(true);
-        
-        //Ajustar el tamaño del JInternalFrame.
-        try {
-            ingresos.setMaximum(true);
-        } catch (PropertyVetoException ex) {
-            System.out.println("Error al ajustar el JInternalFrame.");
-            ex.printStackTrace();
-        }
+        //this.cargarVentana(new Ingresos());
+        //this.cargarVentana(new OcupacionPorTipo());
+        //this.cargarVentana(new OcupacionTotal());
+        //this.cargarVentana(new TotalDeHabitaciones());
+        //this.cargarVentana(new Precios());
+        this.cargarVentana(new ConsultarHuesped());
+        //this.cargarVentana(new ConsultarHabitacion());
     }
     
     //---Métodos---//.
@@ -43,11 +39,11 @@ public class Ingresos1 extends javax.swing.JFrame {
         jDesktopPaneAltas.setLayout(jDesktopPaneAltasLayout);
         jDesktopPaneAltasLayout.setHorizontalGroup(
             jDesktopPaneAltasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 904, Short.MAX_VALUE)
+            .addGap(0, 900, Short.MAX_VALUE)
         );
         jDesktopPaneAltasLayout.setVerticalGroup(
             jDesktopPaneAltasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -68,11 +64,25 @@ public class Ingresos1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //-Método para cargar un JInternalFrame-//.
+    private void cargarVentana(JInternalFrame ventana) {
+        this.jDesktopPaneAltas.add(ventana);
+        ventana.setVisible(true);
+        
+        //Ajustar el tamaño del JInternalFrame.
+        try {
+            ventana.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            System.out.println("Error al ajustar el JInternalFrame.");
+            ex.printStackTrace();
+        }
+    }
+    
     //-Método principal-//.
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Ingresos1().setVisible(true);
+                new Consultas().setVisible(true);
             }
         });
     }

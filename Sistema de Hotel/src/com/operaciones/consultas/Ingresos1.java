@@ -1,25 +1,26 @@
 //---Paquete---//.
-package com.operaciones;
+package com.operaciones.consultas;
 
 //---Sentencias import---//.
+import com.operaciones.*;
 import java.beans.PropertyVetoException;
 
 //---Clase pública---//.
-public class Altas extends javax.swing.JFrame {
+public class Ingresos1 extends javax.swing.JFrame {
 
     //---Constructor---//.
-    public Altas() {
+    public Ingresos1() {
         initComponents();
         this.setLocationRelativeTo(this);
         
         //Cargar el JInternalFrame.
-        Altas1 altas = new Altas1();
-        this.jDesktopPaneAltas.add(altas);
-        altas.setVisible(true);
+        Ingresos ingresos = new Ingresos();
+        this.jDesktopPaneAltas.add(ingresos);
+        ingresos.setVisible(true);
         
         //Ajustar el tamaño del JInternalFrame.
         try {
-            altas.setMaximum(true);
+            ingresos.setMaximum(true);
         } catch (PropertyVetoException ex) {
             System.out.println("Error al ajustar el JInternalFrame.");
             ex.printStackTrace();
@@ -71,7 +72,7 @@ public class Altas extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Altas().setVisible(true);
+                new Ingresos1().setVisible(true);
             }
         });
     }

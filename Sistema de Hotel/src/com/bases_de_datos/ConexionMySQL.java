@@ -2,7 +2,6 @@
 package com.bases_de_datos;
 
 //---Sentencias import---//.
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

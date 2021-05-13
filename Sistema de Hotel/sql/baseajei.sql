@@ -4,9 +4,6 @@
 -- ------------------------------------------------------
 -- Server version	5.7.34-log
 
-CREATE DATABASE baseajei;
-USE baseajei;
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -51,6 +48,31 @@ LOCK TABLES `huespedes` WRITE;
 /*!40000 ALTER TABLE `huespedes` DISABLE KEYS */;
 INSERT INTO `huespedes` VALUES (1,'Erik Alejandro','Aguascalientes','2021-05-29','2021-06-08',10,'207','T',2,3,2,1,0.0000),(2,'María Pérez','CDMX','2021-12-31','2022-01-03',3,'108','D',1,2,1,1,0.0000);
 /*!40000 ALTER TABLE `huespedes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `room_types`
+--
+
+DROP TABLE IF EXISTS `room_types`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `room_types` (
+  `room_type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `room_type` enum('S','D','T') NOT NULL,
+  `rooms_count` tinyint(2) NOT NULL,
+  PRIMARY KEY (`room_type_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `room_types`
+--
+
+LOCK TABLES `room_types` WRITE;
+/*!40000 ALTER TABLE `room_types` DISABLE KEYS */;
+INSERT INTO `room_types` VALUES (1,'S',9),(2,'D',9),(3,'T',12);
+/*!40000 ALTER TABLE `room_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -122,4 +144,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-10 20:37:19
+-- Dump completed on 2021-05-12 23:40:24

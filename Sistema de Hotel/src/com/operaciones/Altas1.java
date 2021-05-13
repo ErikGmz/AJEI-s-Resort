@@ -1206,7 +1206,8 @@ public class Altas1 extends javax.swing.JInternalFrame {
             }
             catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "SQLException: " + ex.getMessage()
+                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
+                + " realización de la consulta.\nSQLException: " + ex.getMessage()
                 + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
                 "Error", JOptionPane.ERROR_MESSAGE);
             }       
@@ -1219,7 +1220,7 @@ public class Altas1 extends javax.swing.JInternalFrame {
             , "Error", JOptionPane.ERROR_MESSAGE);
         }
         finally {
-            conexion.cerrarConexion();
+            if(conexion != null) conexion.cerrarConexion();
         }
     }
     
@@ -1581,7 +1582,8 @@ public class Altas1 extends javax.swing.JInternalFrame {
             }
             catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "SQLException: " + ex.getMessage()
+                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
                 + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
                 "Error", JOptionPane.ERROR_MESSAGE);
             }       
@@ -1594,7 +1596,7 @@ public class Altas1 extends javax.swing.JInternalFrame {
             , "Error", JOptionPane.ERROR_MESSAGE);
         }
         finally {
-            conexion.cerrarConexion();
+            if(conexion != null) conexion.cerrarConexion();
         }
     }
     

@@ -26,7 +26,6 @@ public class Login extends javax.swing.JFrame {
     private Image palmeraIzquierda;
     private Image palmeraDerecha;
     private Clip musicaFondo;
-    private long tiempoMusica;
     private boolean musicaIniciada;
     
     //---Constructor---//.
@@ -341,7 +340,8 @@ public class Login extends javax.swing.JFrame {
             }
             catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "SQLException: " + ex.getMessage()
+                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
                 + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
                 "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -354,7 +354,7 @@ public class Login extends javax.swing.JFrame {
             , "Error", JOptionPane.ERROR_MESSAGE);
         }
         finally {
-            conexion.cerrarConexion();
+            if(conexion != null) conexion.cerrarConexion();
         }
     }//GEN-LAST:event_jButtonIngresarActionPerformed
 

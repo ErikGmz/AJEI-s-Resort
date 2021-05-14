@@ -52,20 +52,11 @@ public class ConexionMySQL {
     }
     
     //-Insertar en una tabla específica un conjunto de datos-//.
-    public void insertarDatos(String nombreTabla, String parametros, String valores) {
+    public void insertarDatos(String nombreTabla, String parametros, String valores) throws SQLException {
         //Estructura del comando.
         String comando = "INSERT INTO " + nombreTabla + parametros + " VALUES " + valores + ";";
-        
-        try {
-            Statement declaracion = this.conexion.createStatement();
-            declaracion.executeUpdate(comando);
-        }
-        catch(SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "La inserción no pudo ser "
-            + "realizada.\n" + "Verifique la conexión con la base de datos.\n"
-            , "Error", JOptionPane.ERROR_MESSAGE);
-        }
+        Statement declaracion = this.conexion.createStatement();
+        declaracion.executeUpdate(comando);
     }
     
     //-Realizar una consulta de cierta información, a partir de una sola tabla-//.
@@ -97,7 +88,7 @@ public class ConexionMySQL {
     //-Borrar datos de una tabla-//.
     public void borrarDatos(String nombreTabla, String parametros) { 
         //Estructura de la consulta.
-        String comando = "DELETE FROM " + nombreTabla + " " + parametros + ";";
+        String comando = "DELETE FROM " + nombreTabla + parametros + ";";
         
         try {
             Statement declaracion = this.conexion.createStatement();
@@ -111,4 +102,18 @@ public class ConexionMySQL {
         }
     }
     
+    //---Getters---//.
+    public String getControladora() {return controladora;}
+    public String getUrlServidor() {return urlServidor;}
+    public String getNombreLogin() {return nombreLogin;}
+    public String getCodigo() {return codigo;}
+    public Connection getConexion() {return conexion;}
+    
+    //---Setters---//
+    public void setControladora(String controladora) {this.controladora = controladora;}
+    public void setUrlServidor(String urlServidor) {this.urlServidor = urlServidor;}
+    public void setNombreLogin(String nombreLogin) {this.nombreLogin = nombreLogin;}
+    public void setCodigo(String codigo) {this.codigo = codigo;}
+    public void setConexion(Connection conexion) {this.conexion = conexion;}
+      
 }

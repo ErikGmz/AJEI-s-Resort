@@ -4,6 +4,7 @@ package com.operaciones;
 //---Sentencias import---//.
 import com.bases_de_datos.ConexionMySQL;
 import com.clases_auxiliares.Habitacion;
+import com.toedter.calendar.JTextFieldDateEditor;
 import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
@@ -63,7 +65,6 @@ public class Altas1 extends javax.swing.JInternalFrame {
         jLabelPisoPersonasExtra = new javax.swing.JLabel();
         jComboBoxExtra = new javax.swing.JComboBox();
         jLabelIngreso = new javax.swing.JLabel();
-        jDateChooserIngreso = new com.toedter.calendar.JCalendar();
         jLabelDias = new javax.swing.JLabel();
         jSpinnerDias = new javax.swing.JSpinner();
         jTextFieldNombre = new javax.swing.JTextField();
@@ -87,6 +88,7 @@ public class Altas1 extends javax.swing.JInternalFrame {
         jRadioButtonPiso2 = new javax.swing.JRadioButton();
         jLabelApellido = new javax.swing.JLabel();
         jTextFieldApellido = new javax.swing.JTextField();
+        jDateChooserIngreso = new com.toedter.calendar.JDateChooser();
         jPanelHabitacion = new javax.swing.JPanel();
         jButtonRegresar = new javax.swing.JButton();
         jButtonSiguiente2 = new javax.swing.JButton();
@@ -185,9 +187,6 @@ public class Altas1 extends javax.swing.JInternalFrame {
 
         jLabelIngreso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelIngreso.setText("Fecha de ingreso:");
-
-        jDateChooserIngreso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jDateChooserIngreso.setFocusable(false);
 
         jLabelDias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelDias.setText("Días de hospedaje:");
@@ -289,6 +288,10 @@ public class Altas1 extends javax.swing.JInternalFrame {
             }
         });
 
+        jDateChooserIngreso.setBackground(new java.awt.Color(255, 255, 255));
+        jDateChooserIngreso.setDateFormatString("dd/MM/yyyy");
+        jDateChooserIngreso.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+
         javax.swing.GroupLayout jPanelDatosLayout = new javax.swing.GroupLayout(jPanelDatos);
         jPanelDatos.setLayout(jPanelDatosLayout);
         jPanelDatosLayout.setHorizontalGroup(
@@ -333,9 +336,9 @@ public class Altas1 extends javax.swing.JInternalFrame {
                                             .addComponent(jRadioButtonTres, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jRadioButtonDos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                                .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jDateChooserIngreso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelIngreso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelIngreso, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                    .addComponent(jDateChooserIngreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(11, 11, 11)))
                         .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelDatosLayout.createSequentialGroup()
@@ -385,7 +388,7 @@ public class Altas1 extends javax.swing.JInternalFrame {
                 .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelDatosLayout.createSequentialGroup()
                         .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                            .addComponent(jLabelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                             .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabelPisoPersonasExtra, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -425,12 +428,12 @@ public class Altas1 extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRadioButtonTres))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDatosLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                         .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelDatosLayout.createSequentialGroup()
                                 .addComponent(jLabelIngreso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jDateChooserIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jDateChooserIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelDatosLayout.createSequentialGroup()
                                 .addComponent(jLabelServicios)
                                 .addGap(10, 10, 10)
@@ -941,10 +944,21 @@ public class Altas1 extends javax.swing.JInternalFrame {
 
     //-Verificar disponibilidad de habitaciones de cierto tipo y validar entradas-//.
     private void jButtonSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalidaActionPerformed
-        //Borrar el contenido previo del JTextArea.
+        //Crear un salto de línea al inicio del JTextField.
         this.jTextAreaAdicional.setText("\n");
         
+        //Se verifica si el nombre completo y ciudad fueron introducidos.
         if(this.nombresYCiudadValidos()) {
+            
+            //Se verifica la validez de la fecha de ingreso.
+            if(this.jDateChooserIngreso.getDate() != null) {
+                
+            }
+            else {
+                this.jButtonSiguiente.setEnabled(false);
+                this.jButtonSalida.setEnabled(true);
+            }
+            
             this.verificarDisponibilidad(this.jComboBoxHabitacion.getSelectedIndex());
         }
         else {
@@ -1120,6 +1134,7 @@ public class Altas1 extends javax.swing.JInternalFrame {
         this.jTextFieldNombre.setText("");
         this.jTextFieldApellido.setText("");
         this.jTextFieldCiudad.setText("");
+        this.jDateChooserIngreso.setDate(new Date());
         this.jComboBoxHabitacion.setSelectedIndex(0);
         this.jRadioButtonUna.setSelected(true);
         this.jRadioButtonPiso1.setSelected(true);
@@ -1177,6 +1192,11 @@ public class Altas1 extends javax.swing.JInternalFrame {
         if(this.jTextFieldNombre.getText().length() > 9) {
             evt.consume();
         }
+        else {
+            if(this.jTextAreaAdicional.getText().length() > 0) this.jTextAreaAdicional.setText("");
+            if(!this.jButtonSalida.isEnabled()) this.jButtonSalida.setEnabled(true);
+            if(this.jButtonSiguiente.isEnabled()) this.jButtonSiguiente.setEnabled(false);
+        }
     }//GEN-LAST:event_jTextFieldNombreKeyTyped
 
     //-Evento para verificar que el nombre de la ciudad no exceda los 20 caracteres-//.
@@ -1184,12 +1204,22 @@ public class Altas1 extends javax.swing.JInternalFrame {
         if(this.jTextFieldCiudad.getText().length() > 19) {
             evt.consume();
         }
+        else {
+            if(this.jTextAreaAdicional.getText().length() > 0) this.jTextAreaAdicional.setText("");
+            if(!this.jButtonSalida.isEnabled()) this.jButtonSalida.setEnabled(true);
+            if(this.jButtonSiguiente.isEnabled()) this.jButtonSiguiente.setEnabled(false);
+        }
     }//GEN-LAST:event_jTextFieldCiudadKeyTyped
 
     //-Evento para verificar que el apellido no exceda los 10 caracteres-//.
     private void jTextFieldApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldApellidoKeyTyped
         if(this.jTextFieldApellido.getText().length() > 9) {
             evt.consume();
+        }
+        else {
+            if(this.jTextAreaAdicional.getText().length() > 0) this.jTextAreaAdicional.setText("");
+            if(!this.jButtonSalida.isEnabled()) this.jButtonSalida.setEnabled(true);
+            if(this.jButtonSiguiente.isEnabled()) this.jButtonSiguiente.setEnabled(false);
         }
     }//GEN-LAST:event_jTextFieldApellidoKeyTyped
 
@@ -1202,6 +1232,15 @@ public class Altas1 extends javax.swing.JInternalFrame {
         this.jTabbedPaneMenus.setEnabledAt(1, false);
         this.jTabbedPaneMenus.setEnabledAt(2, false);
         this.jTabbedPaneMenus.setEnabledAt(3, false);
+        
+        //Deshabilitar modificaciones manuales en el JDateChooser y cambiar el color.
+        JTextFieldDateEditor editor = (JTextFieldDateEditor) this.jDateChooserIngreso.getDateEditor();
+        editor.setEditable(false);
+        editor.setBackground(new Color(255, 255, 255));
+        editor.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, false));
+        
+        //Seleccionar la fecha actual.
+        this.jDateChooserIngreso.setDate(new Date());
     }
     
     //-Se verifica si el nombre completo y ciudad son válidos-//.
@@ -1735,7 +1774,7 @@ public class Altas1 extends javax.swing.JInternalFrame {
     private javax.swing.JCheckBox jCheckBoxTintoreria;
     private javax.swing.JComboBox jComboBoxExtra;
     private javax.swing.JComboBox jComboBoxHabitacion;
-    private com.toedter.calendar.JCalendar jDateChooserIngreso;
+    private com.toedter.calendar.JDateChooser jDateChooserIngreso;
     private javax.swing.JLabel jLabelAdicional;
     private javax.swing.JLabel jLabelApellido;
     private javax.swing.JLabel jLabelCiudad;

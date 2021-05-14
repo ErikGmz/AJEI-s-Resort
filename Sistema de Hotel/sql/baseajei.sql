@@ -4,6 +4,9 @@
 -- ------------------------------------------------------
 -- Server version	5.7.34-log
 
+CREATE DATABASE baseajei;
+USE baseajei;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -14,6 +17,31 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `habitaciones`
+--
+
+DROP TABLE IF EXISTS `habitaciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `habitaciones` (
+  `room_type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `room_type` enum('S','D','T') NOT NULL,
+  `rooms_count` tinyint(2) NOT NULL,
+  PRIMARY KEY (`room_type_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `habitaciones`
+--
+
+LOCK TABLES `habitaciones` WRITE;
+/*!40000 ALTER TABLE `habitaciones` DISABLE KEYS */;
+INSERT INTO `habitaciones` VALUES (1,'S',9),(2,'D',9),(3,'T',12);
+/*!40000 ALTER TABLE `habitaciones` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `huespedes`
@@ -35,9 +63,9 @@ CREATE TABLE `huespedes` (
   `guests` tinyint(5) NOT NULL DEFAULT '1',
   `extras` tinyint(2) NOT NULL DEFAULT '0',
   `active` tinyint(1) NOT NULL DEFAULT '0',
-  `expense` double(8,4) NOT NULL DEFAULT '0.0000',
+  `expense` double(9,2) NOT NULL DEFAULT '0.00',
   PRIMARY KEY (`guest_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,33 +74,33 @@ CREATE TABLE `huespedes` (
 
 LOCK TABLES `huespedes` WRITE;
 /*!40000 ALTER TABLE `huespedes` DISABLE KEYS */;
-INSERT INTO `huespedes` VALUES (1,'Erik Alejandro','Aguascalientes','2021-05-29','2021-06-08',10,'207','T',2,3,2,1,0.0000),(2,'María Pérez','CDMX','2021-12-31','2022-01-03',3,'108','D',1,2,1,1,0.0000);
+INSERT INTO `huespedes` VALUES (1,'Erik Alejandro ','Guadalajara','2021-05-29','2021-06-12',14,'209','D',2,2,1,1,0.00),(2,'Stephannie González','Ciudad de México','2021-05-31','2021-06-17',17,'212','D',2,2,0,1,0.00),(3,'Evelyn Olivia','Aguascalientes','2021-05-13','2021-05-14',1,'206','D',2,2,0,1,0.00),(4,'Erik Alejandro','Aguascalientes','2019-08-16','2019-08-27',11,'205','D',2,2,0,1,0.00),(5,'Luis González','Aguascalientes','2021-05-14','2021-06-13',30,'114','D',1,2,0,1,0.00),(6,'Santiago Pérez','Ciudad de México','2021-05-03','2021-05-12',9,'213','S',2,1,0,1,0.00);
 /*!40000 ALTER TABLE `huespedes` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `room_types`
+-- Table structure for table `precios`
 --
 
-DROP TABLE IF EXISTS `room_types`;
+DROP TABLE IF EXISTS `precios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `room_types` (
-  `room_type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE `precios` (
+  `price_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `room_type` enum('S','D','T') NOT NULL,
-  `rooms_count` tinyint(2) NOT NULL,
-  PRIMARY KEY (`room_type_id`)
+  `price` double(6,2) NOT NULL,
+  PRIMARY KEY (`price_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `room_types`
+-- Dumping data for table `precios`
 --
 
-LOCK TABLES `room_types` WRITE;
-/*!40000 ALTER TABLE `room_types` DISABLE KEYS */;
-INSERT INTO `room_types` VALUES (1,'S',9),(2,'D',9),(3,'T',12);
-/*!40000 ALTER TABLE `room_types` ENABLE KEYS */;
+LOCK TABLES `precios` WRITE;
+/*!40000 ALTER TABLE `precios` DISABLE KEYS */;
+INSERT INTO `precios` VALUES (1,'S',4321.54),(2,'D',5340.91),(3,'T',6912.13);
+/*!40000 ALTER TABLE `precios` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -104,7 +132,7 @@ CREATE TABLE `servicios` (
 
 LOCK TABLES `servicios` WRITE;
 /*!40000 ALTER TABLE `servicios` DISABLE KEYS */;
-INSERT INTO `servicios` VALUES (1,1,1,1,0,0,1,1,0,0,0),(2,1,0,1,1,1,0,1,0,0,1);
+INSERT INTO `servicios` VALUES (1,1,1,1,0,1,1,1,0,1,0),(2,0,0,0,0,0,0,0,0,0,0),(3,0,0,0,0,0,0,0,0,0,0),(4,0,1,0,1,0,1,0,0,1,1),(5,0,1,0,1,0,1,1,0,1,0),(6,0,1,0,0,1,1,0,1,1,0);
 /*!40000 ALTER TABLE `servicios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,4 +172,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-12 23:40:24
+-- Dump completed on 2021-05-14 13:07:08

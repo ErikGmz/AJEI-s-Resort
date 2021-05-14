@@ -33,7 +33,6 @@ public class Estadisticas extends javax.swing.JInternalFrame {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
-        setNormalBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setPreferredSize(new java.awt.Dimension(880, 580));
 
         jPanel1.setBackground(new java.awt.Color(255, 232, 205));

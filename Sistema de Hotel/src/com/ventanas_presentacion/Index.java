@@ -5,7 +5,9 @@
  */
 package com.ventanas_presentacion;
 
+import com.operaciones.Altas1;
 import java.awt.Color;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 
@@ -22,7 +24,7 @@ public class Index extends javax.swing.JFrame {
      */
     public Index() {
         initComponents();
-        this.setLocationRelativeTo(this);
+        this.extraInitProcess();
         this.musicaIniciada = true;
     }
 
@@ -45,21 +47,22 @@ public class Index extends javax.swing.JFrame {
         jLabelConfiguracion = new javax.swing.JLabel();
         jLabelMusica = new javax.swing.JLabel();
         jLabelMenu = new javax.swing.JLabel();
+        jButtonCerrarSesion = new javax.swing.JButton();
+        jLabelBtn4 = new javax.swing.JLabel();
+        jLabelLogo = new javax.swing.JLabel();
         jPanelContenedor = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio");
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(1100, 580));
-        setResizable(false);
 
         jPanelMenu.setBackground(new java.awt.Color(255, 186, 106));
         jPanelMenu.setPreferredSize(new java.awt.Dimension(220, 580));
-        jPanelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonEstadisticas.setBackground(new java.awt.Color(255, 186, 106));
         jButtonEstadisticas.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jButtonEstadisticas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/bar-chart.png"))); // NOI18N
+        jButtonEstadisticas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/chart-line.png"))); // NOI18N
         jButtonEstadisticas.setText("Estadísticas");
         jButtonEstadisticas.setAutoscrolls(true);
         jButtonEstadisticas.setBorder(null);
@@ -83,11 +86,10 @@ public class Index extends javax.swing.JFrame {
                 jButtonEstadisticasActionPerformed(evt);
             }
         });
-        jPanelMenu.add(jButtonEstadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 159, 210, 50));
 
         jButtonCheckIn.setBackground(new java.awt.Color(255, 186, 106));
         jButtonCheckIn.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jButtonCheckIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/edit.png"))); // NOI18N
+        jButtonCheckIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/sign-in.png"))); // NOI18N
         jButtonCheckIn.setText("Check In");
         jButtonCheckIn.setAutoscrolls(true);
         jButtonCheckIn.setBorder(null);
@@ -111,11 +113,10 @@ public class Index extends javax.swing.JFrame {
                 jButtonCheckInActionPerformed(evt);
             }
         });
-        jPanelMenu.add(jButtonCheckIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 219, 210, 50));
 
         jButtonCheckOut.setBackground(new java.awt.Color(255, 186, 106));
         jButtonCheckOut.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jButtonCheckOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/exit-symbol.png"))); // NOI18N
+        jButtonCheckOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/sign-out.png"))); // NOI18N
         jButtonCheckOut.setText("Check Out");
         jButtonCheckOut.setAutoscrolls(true);
         jButtonCheckOut.setBorder(null);
@@ -139,22 +140,18 @@ public class Index extends javax.swing.JFrame {
                 jButtonCheckOutActionPerformed(evt);
             }
         });
-        jPanelMenu.add(jButtonCheckOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 279, 210, 50));
 
         jLabelBtn1.setBackground(new java.awt.Color(175, 87, 0));
         jLabelBtn1.setToolTipText("");
         jLabelBtn1.setOpaque(true);
-        jPanelMenu.add(jLabelBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 159, 10, 50));
 
         jLabelBtn2.setBackground(new java.awt.Color(175, 87, 0));
         jLabelBtn2.setToolTipText("");
         jLabelBtn2.setOpaque(true);
-        jPanelMenu.add(jLabelBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 219, 10, 50));
 
         jLabelBtn3.setBackground(new java.awt.Color(175, 87, 0));
         jLabelBtn3.setToolTipText("");
         jLabelBtn3.setOpaque(true);
-        jPanelMenu.add(jLabelBtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 279, 10, 50));
 
         jLabelConfiguracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/cogwheel.png"))); // NOI18N
         jLabelConfiguracion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -163,7 +160,6 @@ public class Index extends javax.swing.JFrame {
                 jLabelConfiguracionMouseClicked(evt);
             }
         });
-        jPanelMenu.add(jLabelConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, -1, -1));
 
         jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/musicOn.png"))); // NOI18N
         jLabelMusica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -172,7 +168,6 @@ public class Index extends javax.swing.JFrame {
                 jLabelMusicaMouseClicked(evt);
             }
         });
-        jPanelMenu.add(jLabelMusica, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 472, -1, -1));
 
         jLabelMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/bar-menu.png"))); // NOI18N
         jLabelMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -181,16 +176,111 @@ public class Index extends javax.swing.JFrame {
                 jLabelMenuMouseClicked(evt);
             }
         });
-        jPanelMenu.add(jLabelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, -1, -1));
+
+        jButtonCerrarSesion.setBackground(new java.awt.Color(255, 186, 106));
+        jButtonCerrarSesion.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jButtonCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/exit-symbol.png"))); // NOI18N
+        jButtonCerrarSesion.setText("Cerrar Sesión");
+        jButtonCerrarSesion.setAutoscrolls(true);
+        jButtonCerrarSesion.setBorder(null);
+        jButtonCerrarSesion.setBorderPainted(false);
+        jButtonCerrarSesion.setContentAreaFilled(false);
+        jButtonCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCerrarSesion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonCerrarSesion.setIconTextGap(10);
+        jButtonCerrarSesion.setInheritsPopupMenu(true);
+        jButtonCerrarSesion.setOpaque(true);
+        jButtonCerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonCerrarSesionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButtonCerrarSesionMouseExited(evt);
+            }
+        });
+        jButtonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCerrarSesionActionPerformed(evt);
+            }
+        });
+
+        jLabelBtn4.setBackground(new java.awt.Color(175, 87, 0));
+        jLabelBtn4.setToolTipText("");
+        jLabelBtn4.setOpaque(true);
+
+        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/logo.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanelMenuLayout = new javax.swing.GroupLayout(jPanelMenu);
+        jPanelMenu.setLayout(jPanelMenuLayout);
+        jPanelMenuLayout.setHorizontalGroup(
+            jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonCheckIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonCheckOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonEstadisticas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addComponent(jLabelBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jButtonCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelMenuLayout.createSequentialGroup()
+                        .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelConfiguracion)
+                            .addComponent(jLabelMusica))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabelMenu)))
+                .addContainerGap())
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addComponent(jLabelLogo)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanelMenuLayout.setVerticalGroup(
+            jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelMenu)
+                .addGap(1, 1, 1)
+                .addComponent(jLabelLogo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonEstadisticas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addComponent(jLabelMusica)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelConfiguracion)
+                .addContainerGap())
+        );
 
         jPanelContenedor.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelContenedor.setPreferredSize(new java.awt.Dimension(870, 580));
 
         javax.swing.GroupLayout jPanelContenedorLayout = new javax.swing.GroupLayout(jPanelContenedor);
         jPanelContenedor.setLayout(jPanelContenedorLayout);
         jPanelContenedorLayout.setHorizontalGroup(
             jPanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 878, Short.MAX_VALUE)
+            .addGap(0, 880, Short.MAX_VALUE)
         );
         jPanelContenedorLayout.setVerticalGroup(
             jPanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,10 +292,9 @@ public class Index extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(2, 2, 2)
-                .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 878, Short.MAX_VALUE))
+                .addComponent(jPanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,30 +336,30 @@ public class Index extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCheckOutMouseExited
 
     private void jLabelMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMenuMouseClicked
-        if (this.jLabelMenu.getX() > 10) {
-            this.jPanelContenedor.setSize(1040, this.jPanelContenedor.getHeight());
-            this.jPanelContenedor.setLocation(60, this.jPanelContenedor.getY());
-            if (this.jPanelContenedor.getComponentCount() > 0) {
-                this.jPanelContenedor.getComponent(0).setSize(this.jPanelContenedor.getSize());
-            }
-            this.jPanelMenu.setSize(60, this.jPanelMenu.getHeight());
-            Animacion.Animacion.mover_izquierda(50, 5, 0, 2, this.jLabelMenu);
-        } else {
-            this.jPanelContenedor.setSize(880, this.jPanelContenedor.getHeight());
-            this.jPanelContenedor.setLocation(220, this.jPanelContenedor.getY());
-            if (this.jPanelContenedor.getComponentCount() > 0) {
-                this.jPanelContenedor.getComponent(0).setSize(this.jPanelContenedor.getSize());
-            }
+        if (this.jPanelMenu.getWidth() == 60) {
             this.jPanelMenu.setSize(220, this.jPanelMenu.getHeight());
-            Animacion.Animacion.mover_derecha(5, 165, 0, 2, this.jLabelMenu);
+            this.jPanelContenedor.setSize(this.jPanelContenedor.getWidth() - 160, this.jPanelContenedor.getHeight());
+            this.jPanelContenedor.setLocation(this.jPanelContenedor.getX() + 160, this.jPanelContenedor.getY());
+            if (this.jPanelContenedor.getComponentCount() > 0) {
+                this.jPanelContenedor.getComponent(0).setSize(this.jPanelContenedor.getSize());
+            }
+            this.jLabelMenu.setLocation(165, this.jLabelMenu.getY());
+        } else if (this.jPanelMenu.getWidth() == 220) {
+            this.jPanelMenu.setSize(60, this.jPanelMenu.getHeight());
+            this.jPanelContenedor.setSize(this.jPanelContenedor.getWidth() + 160, this.jPanelContenedor.getHeight());
+            this.jPanelContenedor.setLocation(this.jPanelContenedor.getX() - 160, this.jPanelContenedor.getY());
+            if (this.jPanelContenedor.getComponentCount() > 0) {
+                this.jPanelContenedor.getComponent(0).setSize(this.jPanelContenedor.getSize());
+            }
+            this.jLabelMenu.setLocation(5, this.jLabelMenu.getY());
         }
     }//GEN-LAST:event_jLabelMenuMouseClicked
 
     private void jLabelConfiguracionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelConfiguracionMouseClicked
-        if (this.jLabelMusica.getX() == 10) {
-            Animacion.Animacion.mover_izquierda(10, -50, 2, 2, this.jLabelMusica);
+        if (this.jLabelMusica.getX() >= 5) {
+            Animacion.Animacion.mover_izquierda(this.jLabelMusica.getX(), -50, 2, 2, this.jLabelMusica);
         } else {
-            Animacion.Animacion.mover_derecha(-50, 10, 2, 2, this.jLabelMusica);
+            Animacion.Animacion.mover_derecha(this.jLabelMusica.getX(), 10, 2, 2, this.jLabelMusica);
         }
     }//GEN-LAST:event_jLabelConfiguracionMouseClicked
 
@@ -293,9 +382,22 @@ public class Index extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCheckOutActionPerformed
 
     private void jButtonCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCheckInActionPerformed
-        // TODO add your handling code here:
-
+        this.abrirJFrameEnPanelContenedor(new Altas1());
     }//GEN-LAST:event_jButtonCheckInActionPerformed
+
+    private void jButtonCerrarSesionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionMouseEntered
+        Color color = new Color(Integer.parseInt("AF5700", 16));
+        this.jButtonCerrarSesion.setBackground(color);
+    }//GEN-LAST:event_jButtonCerrarSesionMouseEntered
+
+    private void jButtonCerrarSesionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionMouseExited
+        Color color = new Color(Integer.parseInt("FFBA6A", 16));
+        this.jButtonCerrarSesion.setBackground(color);
+    }//GEN-LAST:event_jButtonCerrarSesionMouseExited
+
+    private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
 
     private void abrirJFrameEnPanelContenedor(Object jF) {
         // si existe algún componente en la
@@ -307,10 +409,22 @@ public class Index extends javax.swing.JFrame {
         JInternalFrame jFHijo = (JInternalFrame) jF;
 
         ((javax.swing.plaf.basic.BasicInternalFrameUI) jFHijo.getUI()).setNorthPane(null);
-        //jFHijo.setSize(this.jPanelContenedor.getSize());
+        jFHijo.setSize(this.jPanelContenedor.getSize());
 
         this.jPanelContenedor.add(jFHijo);
         jFHijo.setVisible(true);
+    }
+
+    private void extraInitProcess() {
+        // Configuraciones básicas del JFrame.
+        this.setLocationRelativeTo(this);
+        try {
+            super.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/index/house.png")));
+        } catch (Exception ex) {
+            System.err.println("Error al abrir el ícono.");
+            ex.printStackTrace();
+        }
+        // Configuraciones básicas de otros controles.
     }
 
     /**
@@ -349,13 +463,16 @@ public class Index extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCerrarSesion;
     private javax.swing.JButton jButtonCheckIn;
     private javax.swing.JButton jButtonCheckOut;
     private javax.swing.JButton jButtonEstadisticas;
     private javax.swing.JLabel jLabelBtn1;
     private javax.swing.JLabel jLabelBtn2;
     private javax.swing.JLabel jLabelBtn3;
+    private javax.swing.JLabel jLabelBtn4;
     private javax.swing.JLabel jLabelConfiguracion;
+    private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMenu;
     private javax.swing.JLabel jLabelMusica;
     private javax.swing.JPanel jPanelContenedor;

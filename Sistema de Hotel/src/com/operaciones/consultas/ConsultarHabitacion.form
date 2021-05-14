@@ -79,7 +79,7 @@
                   <Component id="jButtonBusqueda" min="-2" pref="32" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
                   <Component id="jButtonRegresar" min="-2" pref="32" max="-2" attributes="0"/>
-                  <EmptySpace pref="48" max="32767" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

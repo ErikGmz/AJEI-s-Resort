@@ -19,8 +19,10 @@ public class Consultas extends javax.swing.JFrame {
         //this.cargarVentana(new OcupacionTotal());
         //this.cargarVentana(new TotalDeHabitaciones());
         //this.cargarVentana(new Precios());
-        this.cargarVentana(new ConsultarHuesped());
+        //this.cargarVentana(new ConsultarHuesped());
         //this.cargarVentana(new ConsultarHabitacion());
+        //this.cargarVentana(new HabitacionesDisponibles());
+        this.cargarVentana(new HuespedesActuales());
     }
     
     //---Métodos---//.

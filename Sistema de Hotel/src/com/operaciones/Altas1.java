@@ -191,10 +191,10 @@ public class Altas1 extends javax.swing.JInternalFrame {
         jCheckBoxBar.setText("Acceso al bar");
         jCheckBoxBar.setFocusPainted(false);
 
-        jCheckBoxTintoreria.setText("Acceso a tintorería");
+        jCheckBoxTintoreria.setText("Servicio de tintorería");
         jCheckBoxTintoreria.setFocusPainted(false);
 
-        jCheckBoxSPA.setText("Acceso al SPA");
+        jCheckBoxSPA.setText("Servicio de SPA");
         jCheckBoxSPA.setFocusPainted(false);
 
         jCheckBoxCuidado.setText("Contratación de niñera");
@@ -206,13 +206,13 @@ public class Altas1 extends javax.swing.JInternalFrame {
         jCheckBoxJuegos.setText("Acceso a zona de juegos");
         jCheckBoxJuegos.setFocusPainted(false);
 
-        jCheckBoxTennis.setText("Canchas de tennis");
+        jCheckBoxTennis.setText("Acceso a canchas de tennis");
         jCheckBoxTennis.setFocusPainted(false);
 
-        jCheckBoxArco.setText("Campo de tiro con arco");
+        jCheckBoxArco.setText("Acceso a campo de tiro con arco");
         jCheckBoxArco.setFocusPainted(false);
 
-        jCheckBoxGolf.setText("Campo de golf");
+        jCheckBoxGolf.setText("Acceso a campo de golf");
         jCheckBoxGolf.setFocusPainted(false);
 
         jLabelAdicional.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -269,6 +269,15 @@ public class Altas1 extends javax.swing.JInternalFrame {
                 .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelDatosLayout.createSequentialGroup()
                         .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
+                            .addComponent(jLabelAdicional, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonSalida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonSiguiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanelDatosLayout.createSequentialGroup()
+                        .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanelDatosLayout.createSequentialGroup()
                                 .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabelNombre)
@@ -314,7 +323,7 @@ public class Altas1 extends javax.swing.JInternalFrame {
                                 .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jDateChooserIngreso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabelIngreso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                         .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jCheckBoxBar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -326,18 +335,9 @@ public class Altas1 extends javax.swing.JInternalFrame {
                                 .addComponent(jLabelServicios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jCheckBoxTennis)
                                 .addComponent(jCheckBoxArco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jCheckBoxCuarto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jCheckBoxCuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jCheckBoxGolf))
-                        .addGap(71, 71, 71))
-                    .addGroup(jPanelDatosLayout.createSequentialGroup()
-                        .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
-                            .addComponent(jLabelAdicional, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButtonSalida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonSiguiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(51, 51, 51))))
         );
         jPanelDatosLayout.setVerticalGroup(
             jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,7 +411,7 @@ public class Altas1 extends javax.swing.JInternalFrame {
                         .addComponent(jButtonSalida)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonSiguiente)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         jTabbedPaneMenus.addTab("Datos de ingreso", jPanelDatos);

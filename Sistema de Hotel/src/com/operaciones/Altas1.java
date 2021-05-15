@@ -1661,7 +1661,7 @@ public class Altas1 extends javax.swing.JInternalFrame {
 
         SimpleDateFormat formato1 = new SimpleDateFormat("dd 'de'");
         SimpleDateFormat formato2 = new SimpleDateFormat("yyyy");
-        campo.append("Fecha de " + tipoFecha + ": " + formato1.format(fecha) + mes + formato2.format(fecha) + ".\n");
+        campo.append("Fecha de " + tipoFecha + ": " + formato1.format(fecha) + mes + "de " + formato2.format(fecha) + ".\n");
     }
     
     private void agregarInformacion() {

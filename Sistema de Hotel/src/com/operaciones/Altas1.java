@@ -1156,7 +1156,7 @@ public class Altas1 extends javax.swing.JInternalFrame {
         this.jDateChooserIngreso.setDate(new Date());
     }//GEN-LAST:event_jButtonNuevoActionPerformed
 
-    //-Verificar si en una habitación doble habrá dos personas o no.
+    //-Verificar si en una habitación doble habrá dos personas o no-//.
     private void jRadioButtonDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonDosActionPerformed
         if(this.jComboBoxHabitacion.getSelectedIndex() == 1) {
             this.jComboBoxExtra.setEnabled(true);
@@ -1167,7 +1167,7 @@ public class Altas1 extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jRadioButtonDosActionPerformed
 
-    //-Verificar si en una habitación triple habrá tres personas o no.
+    //-Verificar si en una habitación triple habrá tres personas o no-//.
     private void jRadioButtonTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonTresActionPerformed
         if(this.jComboBoxHabitacion.getSelectedIndex() == 2) {
             this.jComboBoxExtra.setEnabled(true);
@@ -1664,6 +1664,7 @@ public class Altas1 extends javax.swing.JInternalFrame {
         campo.append("Fecha de " + tipoFecha + ": " + formato1.format(fecha) + mes + "de " + formato2.format(fecha) + ".\n");
     }
     
+    //-Todos los datos del nuevo huésped se almacenan en la base de datos-//.
     private void agregarInformacion() {
         ConexionMySQL conexion = null;
         try {

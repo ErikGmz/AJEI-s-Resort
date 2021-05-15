@@ -14,7 +14,7 @@ public class Consultas extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);
         
         //Cargar el JInternalFrame.
-        //this.cargarVentana(new Ingresos());
+        this.cargarVentana(new Ingresos());
         //this.cargarVentana(new OcupacionPorTipo());
         //this.cargarVentana(new OcupacionTotal());
         //this.cargarVentana(new TotalDeHabitaciones());
@@ -22,7 +22,7 @@ public class Consultas extends javax.swing.JFrame {
         //this.cargarVentana(new ConsultarHuesped());
         //this.cargarVentana(new ConsultarHabitacion());
         //this.cargarVentana(new HabitacionesDisponibles());
-        this.cargarVentana(new HuespedesActuales());
+        //this.cargarVentana(new HuespedesActuales());
     }
     
     //---Métodos---//.

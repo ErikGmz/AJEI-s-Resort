@@ -137,19 +137,20 @@ public class Ingresos extends javax.swing.JInternalFrame {
                 ResultSet consulta = conexion.consultarTabla("huespedes",
                 "name, expense", " WHERE active = 0");
                 
-                DecimalFormat formato = new DecimalFormat("0,000,000.00");
+                DecimalFormat formato1 = new DecimalFormat("###,###.00");
+                DecimalFormat formato2 = new DecimalFormat("###,###,###,###,##0.00");
                 
                 //Se imprimen los gastos de cada huésped previamente alojado.
                 while(consulta.next()) {
                     double ingresosHuesped = consulta.getDouble("expense");
                     ingresosTotales += ingresosHuesped;
                     this.jTextAreaNombres.append(consulta.getString("name"));
-                    this.jTextAreaPagos.append("$" + formato.format(ingresosHuesped));
+                    this.jTextAreaPagos.append("$" + formato1.format(ingresosHuesped));
                 }
                 if(ingresosTotales == 0){
                     this.jTextAreaNombres.append("No hay ningún registro.");
                 }
-                this.jTextFieldIngresosTotales.setText("$" + formato.format(ingresosTotales));
+                this.jTextFieldIngresosTotales.setText("$" + formato2.format(ingresosTotales));
             }
             catch(SQLException ex) {
                 ex.printStackTrace();

@@ -14,7 +14,8 @@ public class Consultas extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);
         
         //Cargar el JInternalFrame.
-        this.cargarVentana(new Ingresos());
+        this.cargarVentana(new Galeria());
+        //this.cargarVentana(new Ingresos());
         //this.cargarVentana(new OcupacionPorTipo());
         //this.cargarVentana(new OcupacionTotal());
         //this.cargarVentana(new TotalDeHabitaciones());
@@ -30,7 +31,6 @@ public class Consultas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroupPersonas = new javax.swing.ButtonGroup();
         jDesktopPaneAltas = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,11 +41,11 @@ public class Consultas extends javax.swing.JFrame {
         jDesktopPaneAltas.setLayout(jDesktopPaneAltasLayout);
         jDesktopPaneAltasLayout.setHorizontalGroup(
             jDesktopPaneAltasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
+            .addGap(0, 890, Short.MAX_VALUE)
         );
         jDesktopPaneAltasLayout.setVerticalGroup(
             jDesktopPaneAltasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 590, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -90,7 +90,6 @@ public class Consultas extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroupPersonas;
     private javax.swing.JDesktopPane jDesktopPaneAltas;
     // End of variables declaration//GEN-END:variables
 }

@@ -144,8 +144,8 @@ public class Ingresos extends javax.swing.JInternalFrame {
                 while(consulta.next()) {
                     double ingresosHuesped = consulta.getDouble("expense");
                     ingresosTotales += ingresosHuesped;
-                    this.jTextAreaNombres.append(consulta.getString("name"));
-                    this.jTextAreaPagos.append("$" + formato1.format(ingresosHuesped));
+                    this.jTextAreaNombres.append(consulta.getString("name") + ".\n");
+                    this.jTextAreaPagos.append("$" + formato1.format(ingresosHuesped) + "\n");
                 }
                 if(ingresosTotales == 0){
                     this.jTextAreaNombres.append("No hay ningún registro.");

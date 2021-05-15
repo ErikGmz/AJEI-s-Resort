@@ -41,32 +41,20 @@ public class Login extends javax.swing.JFrame {
     public void paint(Graphics g) {
         super.paint(g);
 
-//        if (this.isMaximumSizeSet()) {
-//            //Dibujar el logo del hotel.
-//            g.drawImage(this.logoHotel, 60, 60, this);
-//            //Dibujar la pirámide.
-//            g.drawImage(this.piramide, this.jPanelLogin.getWidth() - 1038, this.jPanelLogin.getHeight() - 300, this);
-//            //Dibujar la palmera izquierda.
-//            g.drawImage(this.palmeraIzquierda, -8, this.jPanelLogin.getHeight() - 215, this);
-//            //Dibujar la palmera derecha.
-//            g.drawImage(this.palmeraDerecha, 232, this.jPanelLogin.getHeight() - 215, this);
-//        } else {
-            //Dibujar los logos del hotel.
-            g.drawImage(this.logoHotel, this.jPanelEntradas.getX() - 290, this.jPanelEntradas.getY() + 50, this);
-            g.drawImage(this.logoHotel, this.jPanelEntradas.getX() + 430, this.jPanelEntradas.getY() + 50, this);
-            // Dibujar los slogans del hotel.
-            g.drawImage(this.sloganHotel, this.jPanelEntradas.getX() - 380, this.jPanelEntradas.getY() + 300, this);
-            g.drawImage(this.sloganHotel, this.jPanelEntradas.getX() + 340, this.jPanelEntradas.getY() + 300, this);
-            //Dibujar las pirámides.
-            g.drawImage(this.piramide, this.jPanelEntradas.getX() - 315, this.jPanelEntradas.getY() + 100, this);
-            g.drawImage(this.piramide, this.jPanelEntradas.getWidth() + this.jPanelEntradas.getX() + 60, this.jPanelEntradas.getY() + 100, this);
-            //Dibujar las palmeras izquierdas.
-            g.drawImage(this.palmeraIzquierda, this.jPanelEntradas.getX() - 380, this.jPanelEntradas.getY() + 185, this);
-            g.drawImage(this.palmeraIzquierda, this.jPanelEntradas.getWidth() + this.jPanelEntradas.getX() - 5, this.jPanelEntradas.getY() + 185, this);
-            //Dibujar las palmeras derechas.
-            g.drawImage(this.palmeraDerecha, this.jPanelEntradas.getX() - 150, this.jPanelEntradas.getY() + 185, this);
-            g.drawImage(this.palmeraDerecha, this.jPanelEntradas.getX() + 575, this.jPanelEntradas.getY() + 185, this);
-//        }
+        g.drawImage(this.logoHotel, this.jPanelEntradas.getX() - 290, this.jPanelEntradas.getY() + 50, this);
+        g.drawImage(this.logoHotel, this.jPanelEntradas.getX() + 430, this.jPanelEntradas.getY() + 50, this);
+        // Dibujar los slogans del hotel.
+        g.drawImage(this.sloganHotel, this.jPanelEntradas.getX() - 380, this.jPanelEntradas.getY() + 300, this);
+        g.drawImage(this.sloganHotel, this.jPanelEntradas.getX() + 340, this.jPanelEntradas.getY() + 300, this);
+        //Dibujar las pirámides.
+        g.drawImage(this.piramide, this.jPanelEntradas.getX() - 315, this.jPanelEntradas.getY() + 100, this);
+        g.drawImage(this.piramide, this.jPanelEntradas.getWidth() + this.jPanelEntradas.getX() + 60, this.jPanelEntradas.getY() + 100, this);
+        //Dibujar las palmeras izquierdas.
+        g.drawImage(this.palmeraIzquierda, this.jPanelEntradas.getX() - 380, this.jPanelEntradas.getY() + 185, this);
+        g.drawImage(this.palmeraIzquierda, this.jPanelEntradas.getWidth() + this.jPanelEntradas.getX() - 5, this.jPanelEntradas.getY() + 185, this);
+        //Dibujar las palmeras derechas.
+        g.drawImage(this.palmeraDerecha, this.jPanelEntradas.getX() - 150, this.jPanelEntradas.getY() + 185, this);
+        g.drawImage(this.palmeraDerecha, this.jPanelEntradas.getX() + 575, this.jPanelEntradas.getY() + 185, this);
 
     }
 
@@ -90,7 +78,6 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio de sesión");
-        setPreferredSize(new java.awt.Dimension(1100, 580));
 
         jPanelLogin.setBackground(new java.awt.Color(255, 232, 205));
 
@@ -99,7 +86,7 @@ public class Login extends javax.swing.JFrame {
         jPanelEntradas.setForeground(new java.awt.Color(153, 153, 153));
 
         jLabelLogin.setBackground(new java.awt.Color(175, 87, 0));
-        jLabelLogin.setFont(new java.awt.Font("Times New Roman", 1, 28)); // NOI18N
+        jLabelLogin.setFont(new java.awt.Font("Century Schoolbook", 1, 28)); // NOI18N
         jLabelLogin.setForeground(new java.awt.Color(255, 255, 255));
         jLabelLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelLogin.setText("Inicio de sesión");
@@ -300,6 +287,8 @@ public class Login extends javax.swing.JFrame {
                         if (clave.equals(campo_c)) {
                             JOptionPane.showMessageDialog(this, "Login exitoso.\n"
                                     + "Bienvenido al sistema, " + campo_u + ".\n", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                            this.musicaFondo.stop();
+                            this.musicaFondo.close();
                             this.dispose();
                             new Index().setVisible(true);
                             return;
@@ -368,13 +357,13 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonIngresarMouseExited
 
     //-Método principal-//.
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Login().setVisible(true);
+//            }
+//        });
+//    }
 
     //-Configuración adicional de ciertos componentes-//.
     private void extraInitProcess() {

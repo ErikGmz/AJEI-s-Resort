@@ -8,8 +8,13 @@ package com.ventanas_presentacion;
 import com.operaciones.Altas1;
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,6 +22,7 @@ import javax.swing.JInternalFrame;
  */
 public class Index extends javax.swing.JFrame {
 
+    private Clip musicaFondo;
     private boolean musicaIniciada;
 
     /**
@@ -364,12 +370,23 @@ public class Index extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelConfiguracionMouseClicked
 
     private void jLabelMusicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMusicaMouseClicked
-        if (this.musicaIniciada) {
-            this.musicaIniciada = false;
-            this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/index/musicOff.png")));
-        } else {
-            this.musicaIniciada = true;
-            this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/index/musicOn.png")));
+        if (this.musicaFondo != null) {
+            if (this.musicaIniciada) {
+                //Detener la música.
+                this.musicaFondo.stop();
+                this.musicaIniciada = false;
+
+                //Cambiar el ícono para indicar que la música está pausada.
+                this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOff.png")));
+            } else {
+                //Iniciar la música a partir del punto exacto de la reproducción previa.
+                this.musicaFondo.start();
+                this.musicaFondo.loop(Clip.LOOP_CONTINUOUSLY);
+                this.musicaIniciada = true;
+
+                //Cambiar el ícono para indicar que la música está inicializada.
+                this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOn.png")));
+            }
         }
     }//GEN-LAST:event_jLabelMusicaMouseClicked
 
@@ -396,7 +413,13 @@ public class Index extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCerrarSesionMouseExited
 
     private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
-        // TODO add your handling code here:
+        if (JOptionPane.showConfirmDialog(this, "¿Esta seguro de que desea\nabandonar"
+                + " la sesión?", "Cerrar Sesión", JOptionPane.OK_CANCEL_OPTION) == 0) {
+            this.musicaFondo.stop();
+            this.musicaFondo.close();
+            this.dispose();
+            new Login().setVisible(true);
+        }
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
 
     private void abrirJFrameEnPanelContenedor(Object jF) {
@@ -424,7 +447,20 @@ public class Index extends javax.swing.JFrame {
             System.err.println("Error al abrir el ícono.");
             ex.printStackTrace();
         }
-        // Configuraciones básicas de otros controles.
+
+        //Reproducir la música de fondo.
+        try {
+            AudioInputStream flujo = AudioSystem.getAudioInputStream(new File("src/sounds/hotel.wav"));
+            this.musicaFondo = AudioSystem.getClip();
+            this.musicaFondo.open(flujo);
+            this.musicaFondo.start();
+            this.musicaIniciada = true;
+        } catch (Exception ex) {
+            System.err.println("No se pudo reproducir el archivo de sonido.");
+            System.err.println("Verifique si el fichero \"hotel.wav\" se encuentra en la carpeta /sounds.");
+            ex.printStackTrace();
+            this.musicaFondo = null;
+        }
     }
 
     /**

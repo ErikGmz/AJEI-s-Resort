@@ -74,7 +74,7 @@ public class ConexionMySQL {
         Statement declaracion = this.conexion.createStatement();
         declaracion.executeUpdate(comando);
     }
-    
+        
     //-Borrar datos de una tabla-//.
     public void borrarDatos(String nombreTabla, String parametros) throws SQLException { 
         //Estructura de la consulta.

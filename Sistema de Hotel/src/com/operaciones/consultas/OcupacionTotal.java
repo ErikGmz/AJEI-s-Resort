@@ -129,8 +129,8 @@ public class OcupacionTotal extends javax.swing.JInternalFrame {
                 if(consulta.next()){
                     habitacionesOcupadas = consulta.getInt("c_room");
                     
-                    //Hay un total de 15 habitaciones en el hotel.
-                    habitacionesLibres = 15 - habitacionesOcupadas;
+                    //Hay un total de 30 habitaciones en el hotel.
+                    habitacionesLibres = 30 - habitacionesOcupadas;
                 }
                 else {
                     throw new SQLException();

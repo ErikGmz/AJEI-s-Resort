@@ -387,8 +387,8 @@ public class Cambios1 extends javax.swing.JInternalFrame {
                         
                     //Consultar en la base de datos la información del huésped alojado en la habitación.
                     ResultSet consulta = conexion.consultarTabla("huespedes",
-                    "a.guest_id, a.name, a.city, a.days, a.extras, a.check_in"
-                    + ", b.room_service, b.bar_access, b.cleaner_service, "
+                    "a.guest_id, a.name, a.city, a.days, a.extras, a.check_in, a.room_type"
+                    + ", a.guests, b.room_service, b.bar_access, b.cleaner_service, "
                     + "b.SPA_service, b.baby_sister_service, b.gym_access, "
                     + "b.gaming_access, b.tennis_access, b.bow_shooting, "
                     + "b.golf_access", " AS a JOIN servicios AS b ON a.guest_id "
@@ -428,8 +428,30 @@ public class Cambios1 extends javax.swing.JInternalFrame {
                         }
                         else {
                             this.numeros.add(0);
+                        }
+                        
+                        int maxPersonas = 0;
+                        switch(consulta.getString("a.room_type")) {
+                            case "S":
+                                maxPersonas = 1;
+                            break;
+                                
+                            case "D":
+                                maxPersonas = 2;
+                            break;
+                                
+                            case "T":
+                                maxPersonas = 3;
+                            break;
+                        }
+                        
+                        if(maxPersonas > consulta.getInt("a.guests")) {
                             this.jLabelPersonasExtra.setEnabled(false);
                             this.jComboBoxExtra.setEnabled(false);
+                        }
+                        else {
+                            this.jLabelPersonasExtra.setEnabled(true);
+                            this.jComboBoxExtra.setEnabled(true);
                         }
                         
                         if(consulta.getInt("b.room_service") == 1) {

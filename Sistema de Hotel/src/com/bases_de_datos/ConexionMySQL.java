@@ -70,11 +70,11 @@ public class ConexionMySQL {
     //-Actualizar datos de una tabla-//.
     public void actualizarDatos(String nombreTabla, String campos, String parametros) throws SQLException { 
         //Estructura del comando.
-        String comando = "UPDATE " + nombreTabla + " SET " + campos + " " + parametros + ";";
+        String comando = "UPDATE " + nombreTabla + " SET " + campos + parametros + ";";
         Statement declaracion = this.conexion.createStatement();
         declaracion.executeUpdate(comando);
     }
-        
+    
     //-Borrar datos de una tabla-//.
     public void borrarDatos(String nombreTabla, String parametros) throws SQLException { 
         //Estructura de la consulta.

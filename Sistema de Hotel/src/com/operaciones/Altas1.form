@@ -55,8 +55,25 @@
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jScrollPane1" pref="562" max="32767" attributes="0"/>
+                                  <Component id="jLabelAdicional" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jButtonSalida" max="32767" attributes="0"/>
+                                  <Component id="jButtonSiguiente" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jLabelNombre" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelCiudad" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jLabelNombre" max="32767" attributes="0"/>
                                           <Component id="jLabelCiudad" alignment="1" pref="96" max="32767" attributes="0"/>
@@ -163,6 +180,22 @@
                                   <Component id="jButtonSiguiente" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jCheckBoxBar" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+                                      <Component id="jCheckBoxTintoreria" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jCheckBoxSPA" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jCheckBoxCuidado" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jCheckBoxGimnasio" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jCheckBoxJuegos" max="32767" attributes="0"/>
+                                      <Component id="jLabelServicios" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jCheckBoxTennis" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jCheckBoxArco" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jCheckBoxCuarto" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jCheckBoxGolf" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -433,13 +466,13 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="jCheckBoxTintoreria">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Acceso a tintorer&#xed;a"/>
+                <Property name="text" type="java.lang.String" value="Servicio de tintorer&#xed;a"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="jCheckBoxSPA">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Acceso al SPA"/>
+                <Property name="text" type="java.lang.String" value="Servicio de SPA"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
             </Component>
@@ -463,19 +496,19 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="jCheckBoxTennis">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Canchas de tennis"/>
+                <Property name="text" type="java.lang.String" value="Acceso a canchas de tennis"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="jCheckBoxArco">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Campo de tiro con arco"/>
+                <Property name="text" type="java.lang.String" value="Acceso a campo de tiro con arco"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="jCheckBoxGolf">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Campo de golf"/>
+                <Property name="text" type="java.lang.String" value="Acceso a campo de golf"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
             </Component>

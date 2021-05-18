@@ -5,7 +5,7 @@
  */
 package com.ventanas_presentacion;
 
-import com.operaciones.Altas1;
+import com.operaciones.Altas;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.io.File;
@@ -399,7 +399,7 @@ public class Index extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCheckOutActionPerformed
 
     private void jButtonCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCheckInActionPerformed
-        this.abrirJFrameEnPanelContenedor(new Altas1());
+        this.abrirJFrameEnPanelContenedor(new Altas());
     }//GEN-LAST:event_jButtonCheckInActionPerformed
 
     private void jButtonCerrarSesionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionMouseEntered

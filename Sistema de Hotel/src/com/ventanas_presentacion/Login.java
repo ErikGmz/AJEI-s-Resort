@@ -78,6 +78,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio de sesión");
+        setResizable(false);
 
         jPanelLogin.setBackground(new java.awt.Color(255, 232, 205));
 
@@ -111,8 +112,10 @@ public class Login extends javax.swing.JFrame {
         jButtonIngresar.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
         jButtonIngresar.setText("Ingresar a AJEI's Business");
         jButtonIngresar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButtonIngresar.setContentAreaFilled(false);
         jButtonIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonIngresar.setFocusPainted(false);
+        jButtonIngresar.setOpaque(true);
         jButtonIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jButtonIngresarMouseEntered(evt);

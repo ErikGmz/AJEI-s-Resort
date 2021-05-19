@@ -274,50 +274,49 @@ public class Login extends javax.swing.JFrame {
             try {
                 String email = this.jTextFieldCorreo.getText().trim();
                 String clave = String.valueOf(this.jPasswordFieldClave.getPassword());
-                
+
                 //Consultar email's y contraseñas de los usuarios registrados.
                 ResultSet consulta = conexion.consultarTabla("usuarios",
-                "AES_DECRYPT(password, 'key') AS passwd, user_name", " WHERE email = '" + email + "' LIMIT 1");
+                        "AES_DECRYPT(password, 'key') AS passwd, user_name", " WHERE email = '" + email + "' LIMIT 1");
 
                 //Verificar si el email fue encontrado.
-                if(consulta.next()) {
+                if (consulta.next()) {
                     String campo_c = consulta.getString(1);
                     String campo_u = consulta.getString(2);
 
                     //Se verifica si la contraseña introducida es correcta.
-                    if(clave.equals(campo_c)) {
+                    if (clave.equals(campo_c)) {
                         JOptionPane.showMessageDialog(this, "Login exitoso.\n"
-                        + "Bienvenido al sistema, " + campo_u + ".\n"
-                        , "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-                    }
-                    else {
+                                + "Bienvenido al sistema, " + campo_u + ".\n", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                        this.musicaFondo.stop();
+                        this.musicaFondo.close();
+                        this.dispose();
+                        new Index().setVisible(true);
+                    } else {
                         JOptionPane.showMessageDialog(this, "Contraseña incorrecta.\n"
-                        + "Reintroduzca sus datos.\n"
-                        , "Error", JOptionPane.ERROR_MESSAGE);
+                                + "Reintroduzca sus datos.\n", "Error", JOptionPane.ERROR_MESSAGE);
                     }
-                }
-                else {
+                } else {
                     //El email no fue hallado en la consulta.
                     JOptionPane.showMessageDialog(this, "Email inválido.\n"
-                    + "Reintroduzca sus datos.\n"
-                    , "Error", JOptionPane.ERROR_MESSAGE);
+                            + "Reintroduzca sus datos.\n", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-            }
-            catch(SQLException ex) {
+            } catch (SQLException ex) {
                 ex.printStackTrace();
                 JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                "Error", JOptionPane.ERROR_MESSAGE);
+                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                        "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
                     + "conexión con la base de datos.\n" + "Verifique si el servidor "
                     + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        finally {
-            if(conexion != null) conexion.cerrarConexion();
+        } finally {
+            if (conexion != null) {
+                conexion.cerrarConexion();
+            }
         }
     }//GEN-LAST:event_jButtonIngresarActionPerformed
 

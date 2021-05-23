@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ventanas_presentacion;
+package com.operaciones;
 
 /**
  *
@@ -27,7 +27,7 @@ public class Estadisticas extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanelBase = new javax.swing.JPanel();
         jLabelTitulo = new javax.swing.JLabel();
         jLabelCerrar = new javax.swing.JLabel();
 
@@ -35,12 +35,13 @@ public class Estadisticas extends javax.swing.JInternalFrame {
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
         setPreferredSize(new java.awt.Dimension(880, 580));
 
-        jPanel1.setBackground(new java.awt.Color(255, 232, 205));
+        jPanelBase.setBackground(new java.awt.Color(255, 232, 205));
 
-        jLabelTitulo.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabelTitulo.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(72, 72, 72));
         jLabelTitulo.setText("Estadísticas");
 
-        jLabelCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pantallas/close.png"))); // NOI18N
+        jLabelCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/close.png"))); // NOI18N
         jLabelCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -48,22 +49,22 @@ public class Estadisticas extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelBaseLayout = new javax.swing.GroupLayout(jPanelBase);
+        jPanelBase.setLayout(jPanelBaseLayout);
+        jPanelBaseLayout.setHorizontalGroup(
+            jPanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelBaseLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelCerrar)
                 .addGap(318, 318, 318)
                 .addComponent(jLabelTitulo)
-                .addContainerGap(391, Short.MAX_VALUE))
+                .addContainerGap(381, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanelBaseLayout.setVerticalGroup(
+            jPanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelBaseLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelCerrar)
                     .addComponent(jLabelTitulo))
                 .addContainerGap(510, Short.MAX_VALUE))
@@ -73,11 +74,11 @@ public class Estadisticas extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -91,6 +92,6 @@ public class Estadisticas extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelCerrar;
     private javax.swing.JLabel jLabelTitulo;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelBase;
     // End of variables declaration//GEN-END:variables
 }

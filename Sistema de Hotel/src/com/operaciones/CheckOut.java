@@ -3,6 +3,7 @@ package com.operaciones;
 
 //---Sentencias import---//.
 import com.bases_de_datos.ConexionMySQL;
+import java.awt.Color;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,7 +22,7 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 //---Clase pública---//.
-public class Bajas1 extends javax.swing.JInternalFrame {
+public class CheckOut extends javax.swing.JInternalFrame {
 
     //---Atributos adicionales---//.
     private PDRectangle contorno;
@@ -41,7 +42,7 @@ public class Bajas1 extends javax.swing.JInternalFrame {
     private ArrayList<String> cargosExtra = new ArrayList<>();
     
     //---Constructor---//.
-    public Bajas1() {
+    public CheckOut() {
         initComponents();
         extraInitProcess();
     }
@@ -51,6 +52,9 @@ public class Bajas1 extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelCheckOut = new javax.swing.JPanel();
+        jLabelCerrar = new javax.swing.JLabel();
+        jLabelTitulo = new javax.swing.JLabel();
         jTextFieldHabitacion = new javax.swing.JTextField();
         jLabelHabitación = new javax.swing.JLabel();
         jButtonCuenta = new javax.swing.JButton();
@@ -58,25 +62,73 @@ public class Bajas1 extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaCuenta = new javax.swing.JTextArea();
 
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
+
+        jPanelCheckOut.setBackground(new java.awt.Color(255, 232, 205));
+
+        jLabelCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/close.png"))); // NOI18N
+        jLabelCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelCerrarMouseClicked(evt);
+            }
+        });
+
+        jLabelTitulo.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(72, 72, 72));
+        jLabelTitulo.setText("Check Out");
+
+        jTextFieldHabitacion.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextFieldHabitacion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldHabitacionKeyTyped(evt);
             }
         });
 
-        jLabelHabitación.setText("Numero de habitacion:");
+        jLabelHabitación.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabelHabitación.setText("Número de habitación:");
 
+        jButtonCuenta.setBackground(new java.awt.Color(228, 130, 0));
+        jButtonCuenta.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jButtonCuenta.setText("Generar cuenta");
+        jButtonCuenta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
+        jButtonCuenta.setBorderPainted(false);
+        jButtonCuenta.setContentAreaFilled(false);
+        jButtonCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCuenta.setFocusPainted(false);
+        jButtonCuenta.setOpaque(true);
+        jButtonCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonCuentaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButtonCuentaMouseExited(evt);
+            }
+        });
         jButtonCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCuentaActionPerformed(evt);
             }
         });
 
-        jButtonRecibo.setText("Crear Recibo");
+        jButtonRecibo.setBackground(new java.awt.Color(228, 130, 0));
+        jButtonRecibo.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jButtonRecibo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/text-file.png"))); // NOI18N
+        jButtonRecibo.setText("Generar Recibo");
+        jButtonRecibo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
+        jButtonRecibo.setBorderPainted(false);
+        jButtonRecibo.setContentAreaFilled(false);
         jButtonRecibo.setEnabled(false);
         jButtonRecibo.setFocusPainted(false);
+        jButtonRecibo.setOpaque(true);
+        jButtonRecibo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonReciboMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButtonReciboMouseExited(evt);
+            }
+        });
         jButtonRecibo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonReciboActionPerformed(evt);
@@ -85,40 +137,65 @@ public class Bajas1 extends javax.swing.JInternalFrame {
 
         jTextAreaCuenta.setEditable(false);
         jTextAreaCuenta.setColumns(20);
-        jTextAreaCuenta.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextAreaCuenta.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextAreaCuenta.setRows(5);
         jScrollPane1.setViewportView(jTextAreaCuenta);
+
+        javax.swing.GroupLayout jPanelCheckOutLayout = new javax.swing.GroupLayout(jPanelCheckOut);
+        jPanelCheckOut.setLayout(jPanelCheckOutLayout);
+        jPanelCheckOutLayout.setHorizontalGroup(
+            jPanelCheckOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCheckOutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelCheckOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelCheckOutLayout.createSequentialGroup()
+                        .addComponent(jLabelCerrar)
+                        .addGap(341, 341, 341)
+                        .addComponent(jLabelTitulo)
+                        .addGap(0, 378, Short.MAX_VALUE))
+                    .addGroup(jPanelCheckOutLayout.createSequentialGroup()
+                        .addGroup(jPanelCheckOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(jPanelCheckOutLayout.createSequentialGroup()
+                                .addComponent(jLabelHabitación)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonCuenta)))
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCheckOutLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonRecibo)
+                .addContainerGap())
+        );
+        jPanelCheckOutLayout.setVerticalGroup(
+            jPanelCheckOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCheckOutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelCheckOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelTitulo)
+                    .addComponent(jLabelCerrar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelCheckOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelHabitación)
+                    .addComponent(jTextFieldHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCuenta))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonRecibo)
+                .addGap(23, 23, 23))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelHabitación)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonCuenta)
-                        .addGap(43, 43, 43)
-                        .addComponent(jButtonRecibo))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(62, Short.MAX_VALUE))
+            .addComponent(jPanelCheckOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelHabitación)
-                    .addComponent(jTextFieldHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonCuenta)
-                    .addComponent(jButtonRecibo))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+            .addComponent(jPanelCheckOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -509,6 +586,30 @@ public class Bajas1 extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButtonCuentaActionPerformed
 
+    private void jLabelCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCerrarMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabelCerrarMouseClicked
+
+    private void jButtonCuentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCuentaMouseEntered
+        Color color = new Color(Integer.parseInt("AF5700", 16));
+        this.jButtonCuenta.setBackground(color);
+    }//GEN-LAST:event_jButtonCuentaMouseEntered
+
+    private void jButtonCuentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCuentaMouseExited
+        Color color = new Color(Integer.parseInt("E48200", 16));
+        this.jButtonCuenta.setBackground(color);
+    }//GEN-LAST:event_jButtonCuentaMouseExited
+
+    private void jButtonReciboMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonReciboMouseEntered
+        Color color = new Color(Integer.parseInt("AF5700", 16));
+        this.jButtonRecibo.setBackground(color);
+    }//GEN-LAST:event_jButtonReciboMouseEntered
+
+    private void jButtonReciboMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonReciboMouseExited
+        Color color = new Color(Integer.parseInt("E48200", 16));
+        this.jButtonRecibo.setBackground(color);
+    }//GEN-LAST:event_jButtonReciboMouseExited
+
     //-Se predefine la impresión de los servicios adicionales-//.
     private void extraInitProcess() {
         this.cargosExtra.clear();
@@ -588,7 +689,10 @@ public class Bajas1 extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCuenta;
     private javax.swing.JButton jButtonRecibo;
+    private javax.swing.JLabel jLabelCerrar;
     private javax.swing.JLabel jLabelHabitación;
+    private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JPanel jPanelCheckOut;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaCuenta;
     private javax.swing.JTextField jTextFieldHabitacion;

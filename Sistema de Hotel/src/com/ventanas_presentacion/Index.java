@@ -2,7 +2,8 @@
 package com.ventanas_presentacion;
 
 //---Sentencias import---//.
-import com.operaciones.CheckIn;
+import com.operaciones.Estadisticas;
+import com.operaciones.*;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.io.File;
@@ -45,6 +46,8 @@ public class Index extends javax.swing.JFrame {
         jButtonCerrarSesion = new javax.swing.JButton();
         jLabelBtn4 = new javax.swing.JLabel();
         jLabelLogo = new javax.swing.JLabel();
+        jButtonModificaciones = new javax.swing.JButton();
+        jLabelBtn5 = new javax.swing.JLabel();
         jPanelContenedor = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -210,6 +213,38 @@ public class Index extends javax.swing.JFrame {
 
         jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/logo.png"))); // NOI18N
 
+        jButtonModificaciones.setBackground(new java.awt.Color(255, 186, 106));
+        jButtonModificaciones.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jButtonModificaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/edit.png"))); // NOI18N
+        jButtonModificaciones.setText("Modificaciones");
+        jButtonModificaciones.setAutoscrolls(true);
+        jButtonModificaciones.setBorder(null);
+        jButtonModificaciones.setBorderPainted(false);
+        jButtonModificaciones.setContentAreaFilled(false);
+        jButtonModificaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonModificaciones.setFocusPainted(false);
+        jButtonModificaciones.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonModificaciones.setIconTextGap(10);
+        jButtonModificaciones.setInheritsPopupMenu(true);
+        jButtonModificaciones.setOpaque(true);
+        jButtonModificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonModificacionesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButtonModificacionesMouseExited(evt);
+            }
+        });
+        jButtonModificaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModificacionesActionPerformed(evt);
+            }
+        });
+
+        jLabelBtn5.setBackground(new java.awt.Color(175, 87, 0));
+        jLabelBtn5.setToolTipText("");
+        jLabelBtn5.setOpaque(true);
+
         javax.swing.GroupLayout jPanelMenuLayout = new javax.swing.GroupLayout(jPanelMenu);
         jPanelMenu.setLayout(jPanelMenuLayout);
         jPanelMenuLayout.setHorizontalGroup(
@@ -229,20 +264,22 @@ public class Index extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jButtonCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanelMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelMenuLayout.createSequentialGroup()
-                        .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelConfiguracion)
-                            .addComponent(jLabelMusica))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabelMenu)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelMenu)
                 .addContainerGap())
             .addGroup(jPanelMenuLayout.createSequentialGroup()
                 .addComponent(jLabelLogo)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addComponent(jLabelBtn5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jButtonModificaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelConfiguracion)
+                    .addComponent(jLabelMusica))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelMenuLayout.setVerticalGroup(
             jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,15 +300,19 @@ public class Index extends javax.swing.JFrame {
                 .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelBtn5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonModificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
                 .addComponent(jLabelMusica)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelConfiguracion)
-                .addContainerGap())
+                .addGap(28, 28, 28))
         );
 
         jPanelContenedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -298,7 +339,7 @@ public class Index extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 580, Short.MAX_VALUE)
             .addComponent(jPanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -386,11 +427,11 @@ public class Index extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelMusicaMouseClicked
 
     private void jButtonEstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEstadisticasActionPerformed
-        //this.abrirJFrameEnPanelContenedor(new Estadisticas());
+        this.abrirJFrameEnPanelContenedor(new Estadisticas());
     }//GEN-LAST:event_jButtonEstadisticasActionPerformed
 
     private void jButtonCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCheckOutActionPerformed
-        //this.abrirJFrameEnPanelContenedor(new CheckOut());
+        this.abrirJFrameEnPanelContenedor(new CheckOut());
     }//GEN-LAST:event_jButtonCheckOutActionPerformed
 
     private void jButtonCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCheckInActionPerformed
@@ -416,6 +457,20 @@ public class Index extends javax.swing.JFrame {
             new Login().setVisible(true);
         }
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
+
+    private void jButtonModificacionesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonModificacionesMouseEntered
+        Color color = new Color(Integer.parseInt("AF5700", 16));
+        this.jButtonModificaciones.setBackground(color);
+    }//GEN-LAST:event_jButtonModificacionesMouseEntered
+
+    private void jButtonModificacionesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonModificacionesMouseExited
+        Color color = new Color(Integer.parseInt("FFBA6A", 16));
+        this.jButtonModificaciones.setBackground(color);
+    }//GEN-LAST:event_jButtonModificacionesMouseExited
+
+    private void jButtonModificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificacionesActionPerformed
+        this.abrirJFrameEnPanelContenedor(new Modificaciones());
+    }//GEN-LAST:event_jButtonModificacionesActionPerformed
 
     //---Abrir IntrenalJFrames dentro del panel contenedor----//.
     private void abrirJFrameEnPanelContenedor(Object jF) {
@@ -500,10 +555,12 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCheckIn;
     private javax.swing.JButton jButtonCheckOut;
     private javax.swing.JButton jButtonEstadisticas;
+    private javax.swing.JButton jButtonModificaciones;
     private javax.swing.JLabel jLabelBtn1;
     private javax.swing.JLabel jLabelBtn2;
     private javax.swing.JLabel jLabelBtn3;
     private javax.swing.JLabel jLabelBtn4;
+    private javax.swing.JLabel jLabelBtn5;
     private javax.swing.JLabel jLabelConfiguracion;
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMenu;

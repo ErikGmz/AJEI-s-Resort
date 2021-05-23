@@ -80,7 +80,7 @@
         <Component class="javax.swing.JLabel" name="jLabelCerrar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/img/pantallas/close.png"/>
+              <Image iconType="3" name="/img/operaciones/close.png"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Cursor de Mano"/>
@@ -94,6 +94,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="SansSerif" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="48" green="48" red="48" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Check In"/>
           </Properties>
@@ -317,8 +320,8 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jTextFieldNombre" pref="200" max="32767" attributes="0"/>
-                                          <Component id="jTextFieldApellido" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldApellido" pref="200" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldNombre" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -1260,7 +1263,7 @@
                       <Font name="SansSerif" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/pantallas/left-arrows.png"/>
+                      <Image iconType="3" name="/img/operaciones/left-arrows.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
@@ -1287,7 +1290,7 @@
                       <Font name="SansSerif" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/pantallas/right-arrows.png"/>
+                      <Image iconType="3" name="/img/operaciones/right-arrows.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
@@ -1787,7 +1790,7 @@
                       <Font name="SansSerif" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/pantallas/edit.png"/>
+                      <Image iconType="3" name="/img/operaciones/edit48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Modificar Datos De Reservaci&#xf3;n"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1817,7 +1820,7 @@
                       <Font name="SansSerif" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/pantallas/text-file.png"/>
+                      <Image iconType="3" name="/img/operaciones/text-file.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Generar recibo"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

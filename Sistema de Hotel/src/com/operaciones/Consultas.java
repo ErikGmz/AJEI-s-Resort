@@ -292,6 +292,7 @@ public class Consultas extends javax.swing.JInternalFrame {
         jButtonConsultaDisponibilidad.setBackground(new java.awt.Color(228, 130, 0));
         jButtonConsultaDisponibilidad.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jButtonConsultaDisponibilidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/search.png"))); // NOI18N
+        jButtonConsultaDisponibilidad.setText("Consultar");
         jButtonConsultaDisponibilidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
         jButtonConsultaDisponibilidad.setBorderPainted(false);
         jButtonConsultaDisponibilidad.setContentAreaFilled(false);
@@ -348,8 +349,8 @@ public class Consultas extends javax.swing.JInternalFrame {
                                         .addGap(0, 0, Short.MAX_VALUE)))))
                         .addGap(62, 62, 62))
                     .addGroup(jPanelConsultaDisponibilidadLayout.createSequentialGroup()
-                        .addComponent(jButtonConsultaDisponibilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(jButtonConsultaDisponibilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanelConsultaDisponibilidadLayout.setVerticalGroup(
             jPanelConsultaDisponibilidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,6 +375,7 @@ public class Consultas extends javax.swing.JInternalFrame {
         jButtonConsultaHuespedes.setBackground(new java.awt.Color(228, 130, 0));
         jButtonConsultaHuespedes.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jButtonConsultaHuespedes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/search.png"))); // NOI18N
+        jButtonConsultaHuespedes.setText("Consultar");
         jButtonConsultaHuespedes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
         jButtonConsultaHuespedes.setBorderPainted(false);
         jButtonConsultaHuespedes.setContentAreaFilled(false);
@@ -414,8 +416,8 @@ public class Consultas extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                     .addGroup(jPanelConsultaHuespedesLayout.createSequentialGroup()
                         .addGroup(jPanelConsultaHuespedesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonConsultaHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelEstadoConsultaHuespedes))
+                            .addComponent(jLabelEstadoConsultaHuespedes)
+                            .addComponent(jButtonConsultaHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );

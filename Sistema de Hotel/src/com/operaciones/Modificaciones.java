@@ -104,8 +104,14 @@ public class Modificaciones extends javax.swing.JInternalFrame {
         jLabelHabitacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelHabitacion.setText("Número de habitación:");
 
+        jTextFieldHabitacion.setBackground(new java.awt.Color(255, 232, 205));
         jTextFieldHabitacion.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextFieldHabitacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldHabitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldHabitacionActionPerformed(evt);
+            }
+        });
         jTextFieldHabitacion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldHabitacionKeyTyped(evt);
@@ -169,7 +175,7 @@ public class Modificaciones extends javax.swing.JInternalFrame {
         jLabelResultado.setText("Resultado de la búsqueda:");
 
         jTextFieldResultado.setEditable(false);
-        jTextFieldResultado.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldResultado.setBackground(new java.awt.Color(255, 232, 205));
         jTextFieldResultado.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextFieldResultado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -214,6 +220,7 @@ public class Modificaciones extends javax.swing.JInternalFrame {
         jLabelCiudad.setText("Ciudad de origen: ");
         jLabelCiudad.setEnabled(false);
 
+        jTextFieldNombre.setBackground(new java.awt.Color(255, 232, 205));
         jTextFieldNombre.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextFieldNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldNombre.setEnabled(false);
@@ -223,6 +230,7 @@ public class Modificaciones extends javax.swing.JInternalFrame {
             }
         });
 
+        jTextFieldApellido.setBackground(new java.awt.Color(255, 232, 205));
         jTextFieldApellido.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextFieldApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldApellido.setEnabled(false);
@@ -232,6 +240,7 @@ public class Modificaciones extends javax.swing.JInternalFrame {
             }
         });
 
+        jTextFieldCiudad.setBackground(new java.awt.Color(255, 232, 205));
         jTextFieldCiudad.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextFieldCiudad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldCiudad.setEnabled(false);
@@ -246,6 +255,7 @@ public class Modificaciones extends javax.swing.JInternalFrame {
         jLabelPersonasExtra.setText("Huéspedes extra:");
         jLabelPersonasExtra.setEnabled(false);
 
+        jComboBoxExtra.setBackground(new java.awt.Color(255, 232, 205));
         jComboBoxExtra.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jComboBoxExtra.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ninguno", "Una persona", "Dos personas" }));
         jComboBoxExtra.setEnabled(false);
@@ -336,6 +346,14 @@ public class Modificaciones extends javax.swing.JInternalFrame {
         jButtonCambios.setEnabled(false);
         jButtonCambios.setFocusPainted(false);
         jButtonCambios.setOpaque(true);
+        jButtonCambios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonCambiosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButtonCambiosMouseExited(evt);
+            }
+        });
         jButtonCambios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCambiosActionPerformed(evt);
@@ -912,6 +930,20 @@ public class Modificaciones extends javax.swing.JInternalFrame {
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonBusqueda.setBackground(color);
     }//GEN-LAST:event_jButtonBusquedaMouseExited
+
+    private void jButtonCambiosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCambiosMouseEntered
+        Color color = new Color(Integer.parseInt("AF5700", 16));
+        this.jButtonCambios.setBackground(color);
+    }//GEN-LAST:event_jButtonCambiosMouseEntered
+
+    private void jButtonCambiosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCambiosMouseExited
+        Color color = new Color(Integer.parseInt("E48200", 16));
+        this.jButtonCambios.setBackground(color);
+    }//GEN-LAST:event_jButtonCambiosMouseExited
+
+    private void jTextFieldHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHabitacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldHabitacionActionPerformed
 
     //-Configuración adicional de ciertos componentes-//.
     private void extraInitProcess() {

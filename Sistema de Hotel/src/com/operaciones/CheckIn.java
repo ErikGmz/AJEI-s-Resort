@@ -222,6 +222,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jPanelDatosPersonales.setBackground(new java.awt.Color(255, 163, 51));
         jPanelDatosPersonales.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0), "Datos Personales", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
 
+        jTextFieldCiudad.setBackground(new java.awt.Color(255, 232, 205));
         jTextFieldCiudad.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextFieldCiudad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldCiudad.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -234,6 +235,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jLabelApellido.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelApellido.setText("Apellido:");
 
+        jTextFieldNombre.setBackground(new java.awt.Color(255, 232, 205));
         jTextFieldNombre.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextFieldNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldNombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -242,6 +244,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
             }
         });
 
+        jTextFieldApellido.setBackground(new java.awt.Color(255, 232, 205));
         jTextFieldApellido.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextFieldApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldApellido.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -466,7 +469,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jLabelIngreso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelIngreso.setText("Fecha de ingreso:");
 
-        jDateChooserIngreso.setBackground(new java.awt.Color(255, 255, 255));
+        jDateChooserIngreso.setBackground(new java.awt.Color(255, 232, 205));
         jDateChooserIngreso.setDateFormatString("dd/MM/yyyy");
         jDateChooserIngreso.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
 
@@ -1144,6 +1147,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jPanelInformacionReservacion.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0), "Información De La Reservación", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14))); // NOI18N
 
         jTextAreaDatos.setEditable(false);
+        jTextAreaDatos.setBackground(new java.awt.Color(255, 232, 205));
         jTextAreaDatos.setColumns(20);
         jTextAreaDatos.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextAreaDatos.setRows(5);

@@ -355,6 +355,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JTextField" name="jTextFieldCiudad">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cd" green="e8" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="SansSerif" size="14" style="0"/>
                         </Property>
@@ -375,6 +378,9 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextFieldNombre">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cd" green="e8" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="SansSerif" size="14" style="0"/>
                         </Property>
@@ -386,6 +392,9 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextFieldApellido">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cd" green="e8" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="SansSerif" size="14" style="0"/>
                         </Property>
@@ -765,7 +774,7 @@
                     <Component class="com.toedter.calendar.JDateChooser" name="jDateChooserIngreso">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                          <Color blue="cd" green="e8" red="ff" type="rgb"/>
                         </Property>
                         <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1889,6 +1898,9 @@
                         <Component class="javax.swing.JTextArea" name="jTextAreaDatos">
                           <Properties>
                             <Property name="editable" type="boolean" value="false"/>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cd" green="e8" red="ff" type="rgb"/>
+                            </Property>
                             <Property name="columns" type="int" value="20"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="SansSerif" size="14" style="0"/>

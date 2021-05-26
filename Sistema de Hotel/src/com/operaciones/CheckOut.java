@@ -90,6 +90,7 @@ public class CheckOut extends javax.swing.JInternalFrame {
 
         jButtonCuenta.setBackground(new java.awt.Color(228, 130, 0));
         jButtonCuenta.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jButtonCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/invoice.png"))); // NOI18N
         jButtonCuenta.setText("Generar cuenta");
         jButtonCuenta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
         jButtonCuenta.setBorderPainted(false);
@@ -181,7 +182,7 @@ public class CheckOut extends javax.swing.JInternalFrame {
                     .addComponent(jTextFieldHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonCuenta))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonRecibo)
                 .addGap(23, 23, 23))

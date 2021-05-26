@@ -2,7 +2,8 @@
 package com.ventanas_presentacion;
 
 //---Sentencias import---//.
-import com.operaciones.CheckIn;
+import com.operaciones.Estadisticas;
+import com.operaciones.*;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.io.File;
@@ -37,14 +38,18 @@ public class Index extends javax.swing.JFrame {
         jButtonCheckIn = new javax.swing.JButton();
         jButtonCheckOut = new javax.swing.JButton();
         jLabelBtn1 = new javax.swing.JLabel();
-        jLabelBtn2 = new javax.swing.JLabel();
         jLabelBtn3 = new javax.swing.JLabel();
+        jLabelBtn4 = new javax.swing.JLabel();
         jLabelConfiguracion = new javax.swing.JLabel();
         jLabelMusica = new javax.swing.JLabel();
         jLabelMenu = new javax.swing.JLabel();
         jButtonCerrarSesion = new javax.swing.JButton();
-        jLabelBtn4 = new javax.swing.JLabel();
+        jLabelBtn6 = new javax.swing.JLabel();
         jLabelLogo = new javax.swing.JLabel();
+        jButtonModificaciones = new javax.swing.JButton();
+        jLabelBtn5 = new javax.swing.JLabel();
+        jLabelBtn2 = new javax.swing.JLabel();
+        jButtonConsultas = new javax.swing.JButton();
         jPanelContenedor = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -144,13 +149,13 @@ public class Index extends javax.swing.JFrame {
         jLabelBtn1.setToolTipText("");
         jLabelBtn1.setOpaque(true);
 
-        jLabelBtn2.setBackground(new java.awt.Color(175, 87, 0));
-        jLabelBtn2.setToolTipText("");
-        jLabelBtn2.setOpaque(true);
-
         jLabelBtn3.setBackground(new java.awt.Color(175, 87, 0));
         jLabelBtn3.setToolTipText("");
         jLabelBtn3.setOpaque(true);
+
+        jLabelBtn4.setBackground(new java.awt.Color(175, 87, 0));
+        jLabelBtn4.setToolTipText("");
+        jLabelBtn4.setOpaque(true);
 
         jLabelConfiguracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/cogwheel.png"))); // NOI18N
         jLabelConfiguracion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -204,45 +209,117 @@ public class Index extends javax.swing.JFrame {
             }
         });
 
-        jLabelBtn4.setBackground(new java.awt.Color(175, 87, 0));
-        jLabelBtn4.setToolTipText("");
-        jLabelBtn4.setOpaque(true);
+        jLabelBtn6.setBackground(new java.awt.Color(175, 87, 0));
+        jLabelBtn6.setToolTipText("");
+        jLabelBtn6.setOpaque(true);
 
         jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/logo.png"))); // NOI18N
+
+        jButtonModificaciones.setBackground(new java.awt.Color(255, 186, 106));
+        jButtonModificaciones.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jButtonModificaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/edit.png"))); // NOI18N
+        jButtonModificaciones.setText("Modificaciones");
+        jButtonModificaciones.setAutoscrolls(true);
+        jButtonModificaciones.setBorder(null);
+        jButtonModificaciones.setBorderPainted(false);
+        jButtonModificaciones.setContentAreaFilled(false);
+        jButtonModificaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonModificaciones.setFocusPainted(false);
+        jButtonModificaciones.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonModificaciones.setIconTextGap(10);
+        jButtonModificaciones.setInheritsPopupMenu(true);
+        jButtonModificaciones.setOpaque(true);
+        jButtonModificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonModificacionesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButtonModificacionesMouseExited(evt);
+            }
+        });
+        jButtonModificaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModificacionesActionPerformed(evt);
+            }
+        });
+
+        jLabelBtn5.setBackground(new java.awt.Color(175, 87, 0));
+        jLabelBtn5.setToolTipText("");
+        jLabelBtn5.setOpaque(true);
+
+        jLabelBtn2.setBackground(new java.awt.Color(175, 87, 0));
+        jLabelBtn2.setToolTipText("");
+        jLabelBtn2.setOpaque(true);
+
+        jButtonConsultas.setBackground(new java.awt.Color(255, 186, 106));
+        jButtonConsultas.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jButtonConsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/search.png"))); // NOI18N
+        jButtonConsultas.setText("Consultas");
+        jButtonConsultas.setAutoscrolls(true);
+        jButtonConsultas.setBorder(null);
+        jButtonConsultas.setBorderPainted(false);
+        jButtonConsultas.setContentAreaFilled(false);
+        jButtonConsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonConsultas.setFocusPainted(false);
+        jButtonConsultas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButtonConsultas.setIconTextGap(10);
+        jButtonConsultas.setInheritsPopupMenu(true);
+        jButtonConsultas.setOpaque(true);
+        jButtonConsultas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonConsultasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButtonConsultasMouseExited(evt);
+            }
+        });
+        jButtonConsultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelMenuLayout = new javax.swing.GroupLayout(jPanelMenu);
         jPanelMenu.setLayout(jPanelMenuLayout);
         jPanelMenuLayout.setHorizontalGroup(
             jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuLayout.createSequentialGroup()
-                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabelBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonCheckIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonCheckOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonEstadisticas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jButtonEstadisticas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanelMenuLayout.createSequentialGroup()
-                .addComponent(jLabelBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jButtonCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanelMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelMenuLayout.createSequentialGroup()
-                        .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelConfiguracion)
-                            .addComponent(jLabelMusica))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabelMenu)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelMenu)
                 .addContainerGap())
             .addGroup(jPanelMenuLayout.createSequentialGroup()
                 .addComponent(jLabelLogo)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonCheckIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonCheckOut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addComponent(jLabelBtn6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jButtonCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addComponent(jLabelBtn5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jButtonModificaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelConfiguracion)
+                    .addComponent(jLabelMusica))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelMenuLayout.createSequentialGroup()
+                .addComponent(jLabelBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jButtonConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelMenuLayout.setVerticalGroup(
             jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,23 +328,31 @@ public class Index extends javax.swing.JFrame {
                 .addComponent(jLabelMenu)
                 .addGap(1, 1, 1)
                 .addComponent(jLabelLogo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonEstadisticas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                .addGap(0, 0, 0)
                 .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                    .addComponent(jButtonConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
                 .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                    .addComponent(jButtonCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
                 .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelBtn5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonModificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelBtn6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jLabelMusica)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelConfiguracion)
@@ -386,11 +471,14 @@ public class Index extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelMusicaMouseClicked
 
     private void jButtonEstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEstadisticasActionPerformed
-        //this.abrirJFrameEnPanelContenedor(new Estadisticas());
+        Estadisticas obj = new Estadisticas();
+        Thread t = new Thread(obj);
+        t.start();
+        this.abrirJFrameEnPanelContenedor(obj);
     }//GEN-LAST:event_jButtonEstadisticasActionPerformed
 
     private void jButtonCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCheckOutActionPerformed
-        //this.abrirJFrameEnPanelContenedor(new CheckOut());
+        this.abrirJFrameEnPanelContenedor(new CheckOut());
     }//GEN-LAST:event_jButtonCheckOutActionPerformed
 
     private void jButtonCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCheckInActionPerformed
@@ -417,6 +505,34 @@ public class Index extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
 
+    private void jButtonModificacionesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonModificacionesMouseEntered
+        Color color = new Color(Integer.parseInt("AF5700", 16));
+        this.jButtonModificaciones.setBackground(color);
+    }//GEN-LAST:event_jButtonModificacionesMouseEntered
+
+    private void jButtonModificacionesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonModificacionesMouseExited
+        Color color = new Color(Integer.parseInt("FFBA6A", 16));
+        this.jButtonModificaciones.setBackground(color);
+    }//GEN-LAST:event_jButtonModificacionesMouseExited
+
+    private void jButtonModificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificacionesActionPerformed
+        this.abrirJFrameEnPanelContenedor(new Modificaciones());
+    }//GEN-LAST:event_jButtonModificacionesActionPerformed
+
+    private void jButtonConsultasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConsultasMouseEntered
+        Color color = new Color(Integer.parseInt("AF5700", 16));
+        this.jButtonConsultas.setBackground(color);
+    }//GEN-LAST:event_jButtonConsultasMouseEntered
+
+    private void jButtonConsultasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConsultasMouseExited
+        Color color = new Color(Integer.parseInt("FFBA6A", 16));
+        this.jButtonConsultas.setBackground(color);
+    }//GEN-LAST:event_jButtonConsultasMouseExited
+
+    private void jButtonConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultasActionPerformed
+        this.abrirJFrameEnPanelContenedor(new Consultas());
+    }//GEN-LAST:event_jButtonConsultasActionPerformed
+
     //---Abrir IntrenalJFrames dentro del panel contenedor----//.
     private void abrirJFrameEnPanelContenedor(Object jF) {
         // si existe algún componente en la
@@ -432,6 +548,7 @@ public class Index extends javax.swing.JFrame {
 
         this.jPanelContenedor.add(jFHijo);
         jFHijo.setVisible(true);
+        //jFHijo.repaint();
     }
 
     //---Procesos iniciales extras---//.
@@ -460,9 +577,9 @@ public class Index extends javax.swing.JFrame {
         }
     }
 
-//    /**
-//     * @param args the command line arguments
-//     */
+    /**
+     * @param args the command line arguments
+     */
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -499,11 +616,15 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCerrarSesion;
     private javax.swing.JButton jButtonCheckIn;
     private javax.swing.JButton jButtonCheckOut;
+    private javax.swing.JButton jButtonConsultas;
     private javax.swing.JButton jButtonEstadisticas;
+    private javax.swing.JButton jButtonModificaciones;
     private javax.swing.JLabel jLabelBtn1;
     private javax.swing.JLabel jLabelBtn2;
     private javax.swing.JLabel jLabelBtn3;
     private javax.swing.JLabel jLabelBtn4;
+    private javax.swing.JLabel jLabelBtn5;
+    private javax.swing.JLabel jLabelBtn6;
     private javax.swing.JLabel jLabelConfiguracion;
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMenu;

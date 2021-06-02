@@ -4,6 +4,7 @@ package com.operaciones;
 //---Sentencias import---//.
 import com.bases_de_datos.ConexionMySQL;
 import com.clases_auxiliares.Habitacion;
+import com.clases_auxiliares.Imagen;
 import com.toedter.calendar.JTextFieldDateEditor;
 import java.awt.Color;
 import java.sql.PreparedStatement;
@@ -13,7 +14,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
@@ -33,6 +36,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
     private JLabel habitacionSeleccionada;
     private Calendar fechaInicial;
     private Calendar fechaFinal;
+    private HashMap<String, Imagen> imagenes = new HashMap<>();
 
     //---Constructor---//.
     public CheckIn() {
@@ -128,7 +132,9 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jLabelHabitacion15 = new javax.swing.JLabel();
         jLabelTipoHabitacion = new javax.swing.JLabel();
         jTextFieldTipoHabitacion = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelImagenes = new javax.swing.JPanel();
+        jLabelImagenHabitacion = new javax.swing.JLabel();
+        jLabelDescripcionImagenHabitacion = new javax.swing.JLabel();
         jPanelConfirmacion = new javax.swing.JPanel();
         jButtonModificar = new javax.swing.JButton();
         jButtonGenerarRecibo = new javax.swing.JButton();
@@ -970,15 +976,32 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jTextFieldTipoHabitacion.setText(" Chaac Suite (habitación simple)");
         jTextFieldTipoHabitacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanelImagenes.setBackground(new java.awt.Color(255, 163, 51));
+
+        jLabelDescripcionImagenHabitacion.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabelDescripcionImagenHabitacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout jPanelImagenesLayout = new javax.swing.GroupLayout(jPanelImagenes);
+        jPanelImagenes.setLayout(jPanelImagenesLayout);
+        jPanelImagenesLayout.setHorizontalGroup(
+            jPanelImagenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelImagenesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelImagenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelImagenesLayout.createSequentialGroup()
+                        .addComponent(jLabelImagenHabitacion)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabelDescripcionImagenHabitacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanelImagenesLayout.setVerticalGroup(
+            jPanelImagenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelImagenesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelDescripcionImagenHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelImagenHabitacion)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelHabitacionLayout = new javax.swing.GroupLayout(jPanelHabitacion);
@@ -1021,7 +1044,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
                             .addComponent(jLabelHabitacion5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                             .addComponent(jLabelHabitacion10, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanelImagenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanelHabitacionLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButtonSiguiente2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1064,7 +1087,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
                                 .addComponent(jLabelHabitacion6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
                                 .addComponent(jLabelHabitacion11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jPanelImagenes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonSiguiente2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1697,6 +1720,42 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
         //Seleccionar la fecha actual.
         this.jDateChooserIngreso.setDate(new Date());
+
+        //En un HashMap se almacenan todas las imágenes de habitaciones de la base de datos.
+        ConexionMySQL conexion = null;
+        try {
+            //Conexión a la base de datos.
+            conexion = new ConexionMySQL();
+
+            try {
+                //Consultar en la base de datos las imágenes de la galería.
+                ResultSet resultados = conexion.consultarTabla("galeria",
+                        "description, image_path", " WHERE image_id >= '1' AND image_id <= '9' ");
+                
+                //Almacenar las imágenes.
+                while (resultados.next()) {
+                    ImageIcon imagen = new ImageIcon(resultados.getString("image_path"));
+                    this.imagenes.put(resultados.getString("description"), new Imagen(resultados.getString("description"),
+                            new ImageIcon(imagen.getImage().getScaledInstance(224, 220, 0))));
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
+                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "No fue posible realizar la "
+                    + "conexión con la base de datos.\n" + "Verifique si el servidor "
+                    + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            if (conexion != null) {
+                conexion.cerrarConexion();
+            }
+        }
+
     }
 
     //-Se verifica si el nombre completo y ciudad son válidos-//.
@@ -1862,37 +1921,37 @@ public class CheckIn extends javax.swing.JInternalFrame {
     private void definirHabitaciones() {
         this.listaTotalHabitaciones.clear();
         if (this.numeroPiso == 1) {
-            this.listaTotalHabitaciones.add(new Habitacion("101", "S"));
-            this.listaTotalHabitaciones.add(new Habitacion("102", "D"));
-            this.listaTotalHabitaciones.add(new Habitacion("103", "T"));
-            this.listaTotalHabitaciones.add(new Habitacion("104", "S"));
-            this.listaTotalHabitaciones.add(new Habitacion("105", "D"));
-            this.listaTotalHabitaciones.add(new Habitacion("106", "T"));
-            this.listaTotalHabitaciones.add(new Habitacion("107", "S"));
-            this.listaTotalHabitaciones.add(new Habitacion("108", "D"));
-            this.listaTotalHabitaciones.add(new Habitacion("109", "T"));
-            this.listaTotalHabitaciones.add(new Habitacion("110", "S"));
-            this.listaTotalHabitaciones.add(new Habitacion("111", "D"));
-            this.listaTotalHabitaciones.add(new Habitacion("112", "T"));
-            this.listaTotalHabitaciones.add(new Habitacion("113", "S"));
-            this.listaTotalHabitaciones.add(new Habitacion("114", "D"));
-            this.listaTotalHabitaciones.add(new Habitacion("115", "T"));
+            this.listaTotalHabitaciones.add(new Habitacion("101", "S", this.imagenes.get("Habitación Chaac Suite (T1)")));
+            this.listaTotalHabitaciones.add(new Habitacion("102", "D", this.imagenes.get("Habitación Itzamná Suite (T1)")));
+            this.listaTotalHabitaciones.add(new Habitacion("103", "T", this.imagenes.get("Habitación Kauil Suite (T1)")));
+            this.listaTotalHabitaciones.add(new Habitacion("104", "S", this.imagenes.get("Habitación Chaac Suite (T2)")));
+            this.listaTotalHabitaciones.add(new Habitacion("105", "D", this.imagenes.get("Habitación Itzamná Suite (T2)")));
+            this.listaTotalHabitaciones.add(new Habitacion("106", "T", this.imagenes.get("Habitación Kauil Suite (T2)")));
+            this.listaTotalHabitaciones.add(new Habitacion("107", "S", this.imagenes.get("Habitación Chaac Suite (T3)")));
+            this.listaTotalHabitaciones.add(new Habitacion("108", "D", this.imagenes.get("Habitación Itzamná Suite (T3)")));
+            this.listaTotalHabitaciones.add(new Habitacion("109", "T", this.imagenes.get("Habitación Kauil Suite (T3)")));
+            this.listaTotalHabitaciones.add(new Habitacion("110", "S", this.imagenes.get("Habitación Chaac Suite (T1)")));
+            this.listaTotalHabitaciones.add(new Habitacion("111", "D", this.imagenes.get("Habitación Itzamná Suite (T1)")));
+            this.listaTotalHabitaciones.add(new Habitacion("112", "T", this.imagenes.get("Habitación Kauil Suite (T1)")));
+            this.listaTotalHabitaciones.add(new Habitacion("113", "S", this.imagenes.get("Habitación Chaac Suite (T2)")));
+            this.listaTotalHabitaciones.add(new Habitacion("114", "D", this.imagenes.get("Habitación Itzamná Suite (T2)")));
+            this.listaTotalHabitaciones.add(new Habitacion("115", "T", this.imagenes.get("Habitación Kauil Suite (T2)")));
         } else {
-            this.listaTotalHabitaciones.add(new Habitacion("201", "T"));
-            this.listaTotalHabitaciones.add(new Habitacion("202", "S"));
-            this.listaTotalHabitaciones.add(new Habitacion("203", "T"));
-            this.listaTotalHabitaciones.add(new Habitacion("204", "T"));
-            this.listaTotalHabitaciones.add(new Habitacion("205", "D"));
-            this.listaTotalHabitaciones.add(new Habitacion("206", "D"));
-            this.listaTotalHabitaciones.add(new Habitacion("207", "T"));
-            this.listaTotalHabitaciones.add(new Habitacion("208", "S"));
-            this.listaTotalHabitaciones.add(new Habitacion("209", "D"));
-            this.listaTotalHabitaciones.add(new Habitacion("210", "T"));
-            this.listaTotalHabitaciones.add(new Habitacion("211", "S"));
-            this.listaTotalHabitaciones.add(new Habitacion("212", "D"));
-            this.listaTotalHabitaciones.add(new Habitacion("213", "S"));
-            this.listaTotalHabitaciones.add(new Habitacion("214", "T"));
-            this.listaTotalHabitaciones.add(new Habitacion("215", "T"));
+            this.listaTotalHabitaciones.add(new Habitacion("201", "T", this.imagenes.get("Habitación Kauil Suite (T1)")));
+            this.listaTotalHabitaciones.add(new Habitacion("202", "S", this.imagenes.get("Habitación Chaac Suite (T1)")));
+            this.listaTotalHabitaciones.add(new Habitacion("203", "T", this.imagenes.get("Habitación Kauil Suite (T2)")));
+            this.listaTotalHabitaciones.add(new Habitacion("204", "T", this.imagenes.get("Habitación Kauil Suite (T3)")));
+            this.listaTotalHabitaciones.add(new Habitacion("205", "D", this.imagenes.get("Habitación Itzamná Suite (T1)")));
+            this.listaTotalHabitaciones.add(new Habitacion("206", "D", this.imagenes.get("Habitación Itzamná Suite (T2)")));
+            this.listaTotalHabitaciones.add(new Habitacion("207", "T", this.imagenes.get("Habitación Kauil Suite (T1)")));
+            this.listaTotalHabitaciones.add(new Habitacion("208", "S", this.imagenes.get("Habitación Chaac Suite (T2)")));
+            this.listaTotalHabitaciones.add(new Habitacion("209", "D", this.imagenes.get("Habitación Itzamná Suite (T3)")));
+            this.listaTotalHabitaciones.add(new Habitacion("210", "T", this.imagenes.get("Habitación Kauil Suite (T2)")));
+            this.listaTotalHabitaciones.add(new Habitacion("211", "S", this.imagenes.get("Habitación Chaac Suite (T3)")));
+            this.listaTotalHabitaciones.add(new Habitacion("212", "D", this.imagenes.get("Habitación Itzamná Suite (T1)")));
+            this.listaTotalHabitaciones.add(new Habitacion("213", "S", this.imagenes.get("Habitación Chaac Suite (T1)")));
+            this.listaTotalHabitaciones.add(new Habitacion("214", "T", this.imagenes.get("Habitación Kauil Suite (T3)")));
+            this.listaTotalHabitaciones.add(new Habitacion("215", "T", this.imagenes.get("Habitación Kauil Suite (T1)")));
         }
     }
 
@@ -2008,6 +2067,12 @@ public class CheckIn extends javax.swing.JInternalFrame {
             if (!estado.equals(new Color(255, 215, 215)) && !estado.equals(new Color(255, 255, 209))) {
                 habitacion.setBackground(new Color(236, 118, 125));
                 this.habitacionSeleccionada = habitacion;
+                for (Habitacion hab : this.listaTotalHabitaciones) {
+                    if (hab.getIdHabitacion().equals(this.habitacionSeleccionada.getText())) {
+                        this.jLabelImagenHabitacion.setIcon(hab.getImagenHabitacion().getImagen());
+                        this.jLabelDescripcionImagenHabitacion.setText(hab.getImagenHabitacion().getDescripcion());
+                    }
+                }
                 this.jButtonSiguiente2.setEnabled(true);
             }
         } else if (this.habitacionSeleccionada != habitacion) {
@@ -2018,6 +2083,12 @@ public class CheckIn extends javax.swing.JInternalFrame {
                 this.habitacionSeleccionada.setBackground(new Color(219, 255, 209));
                 habitacion.setBackground(new Color(236, 118, 125));
                 this.habitacionSeleccionada = habitacion;
+                for (Habitacion hab : this.listaTotalHabitaciones) {
+                    if (hab.getIdHabitacion().equals(this.habitacionSeleccionada.getText())) {
+                        this.jLabelImagenHabitacion.setIcon(hab.getImagenHabitacion().getImagen());
+                        this.jLabelDescripcionImagenHabitacion.setText(hab.getImagenHabitacion().getDescripcion());
+                    }
+                }
             }
         }
     }
@@ -2299,6 +2370,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelBar;
     private javax.swing.JLabel jLabelCerrar;
     private javax.swing.JLabel jLabelCiudad;
+    private javax.swing.JLabel jLabelDescripcionImagenHabitacion;
     private javax.swing.JLabel jLabelDias;
     private javax.swing.JLabel jLabelGimnasio;
     private javax.swing.JLabel jLabelGolf;
@@ -2318,6 +2390,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelHabitacion7;
     private javax.swing.JLabel jLabelHabitacion8;
     private javax.swing.JLabel jLabelHabitacion9;
+    private javax.swing.JLabel jLabelImagenHabitacion;
     private javax.swing.JLabel jLabelIngreso;
     private javax.swing.JLabel jLabelNiñera;
     private javax.swing.JLabel jLabelNombre;
@@ -2333,7 +2406,6 @@ public class CheckIn extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelTiroConArco;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JLabel jLabelZonaJuegos;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelBase;
     private javax.swing.JPanel jPanelConfirmacion;
     private javax.swing.JPanel jPanelDatos;
@@ -2341,6 +2413,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanelDatosHuespedes;
     private javax.swing.JPanel jPanelDatosPersonales;
     private javax.swing.JPanel jPanelHabitacion;
+    private javax.swing.JPanel jPanelImagenes;
     private javax.swing.JPanel jPanelInformacionReservacion;
     private javax.swing.JPanel jPanelRecibo;
     private javax.swing.JPanel jPanelServiciosExtra;

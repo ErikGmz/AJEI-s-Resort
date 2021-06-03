@@ -11,7 +11,7 @@ _**2.** IDE utilizado: Netbeans 8.x._
 
 _**3.** JDK empleado: 8.0 update 291._
 
-_**4.** Inclusión de las librerías JFreeChart (gráficas de barras, pastel, etcétera) y JCalendar (control JDateChooser), hasta el momento._
+_**4.** Inclusión de las librerías JFreeChart (gráficas de barras, pastel, etcétera), JCalendar (control JDateChooser), NefAnimación (animaciones para el contenedor JFrame), MySQL Connector (conexión con base de datos) y PDFBox (manejo de archivos .pdf)._
 
 ## Datos sobre la institución educativa
 **Universidad Autónoma de Aguascalientes**.
@@ -29,4 +29,6 @@ _**4.** Inclusión de las librerías JFreeChart (gráficas de barras, pastel, et
 - José Emmanuel Rodríguez López.
 
 ## Notas importantes
-**_Es recomendable emplear el JDK 8.0 update 291; en caso contrario, el proyecto probablemente presentará errores de ejecución._**
+- **_Es recomendable emplear el JDK 8.0 update 291; en caso contrario, el proyecto probablemente presentará errores de ejecución._**
+
+- **_Si ocurre algún error de ejecución, es recomendable seleccionar la opción «Clean and Build» desde la carpeta del proyecto._**

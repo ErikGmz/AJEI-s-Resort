@@ -26,10 +26,19 @@ public class Login extends javax.swing.JFrame {
     private Image palmeraIzquierda;
     private Image palmeraDerecha;
     private Clip musicaFondo;
+    private Clip sonidoError;
     private boolean musicaIniciada;
 
     //---Constructor---//.
     public Login() {
+        initComponents();
+        extraInitProcess();
+    }
+    
+    //---Constructor con argumentos---//.
+    public Login(Clip musicaFondo, boolean musicaIniciada) {
+        this.musicaFondo = musicaFondo;
+        this.musicaIniciada = musicaIniciada;
         initComponents();
         extraInitProcess();
     }
@@ -40,21 +49,25 @@ public class Login extends javax.swing.JFrame {
     public void paint(Graphics g) {
         super.paint(g);
 
-        g.drawImage(this.logoHotel, this.jPanelEntradas.getX() - 290, this.jPanelEntradas.getY() + 50, this);
-        g.drawImage(this.logoHotel, this.jPanelEntradas.getX() + 430, this.jPanelEntradas.getY() + 50, this);
-        // Dibujar los slogans del hotel.
-        g.drawImage(this.sloganHotel, this.jPanelEntradas.getX() - 380, this.jPanelEntradas.getY() + 300, this);
-        g.drawImage(this.sloganHotel, this.jPanelEntradas.getX() + 340, this.jPanelEntradas.getY() + 300, this);
+        //Dibujar el logo del hotel.
+        g.drawImage(this.logoHotel, this.jPanelEntradas.getX() - 300, this.jPanelEntradas.getY() + 50, this);
+        g.drawImage(this.logoHotel, this.jPanelEntradas.getX() + 446, this.jPanelEntradas.getY() + 50, this);
+        
+        //Dibujar los slogans del hotel.
+        g.drawImage(this.sloganHotel, this.jPanelEntradas.getX() - 395, this.jPanelEntradas.getY() + 300, this);
+        g.drawImage(this.sloganHotel, this.jPanelEntradas.getX() + 346, this.jPanelEntradas.getY() + 300, this);
+        
         //Dibujar las pirámides.
-        g.drawImage(this.piramide, this.jPanelEntradas.getX() - 315, this.jPanelEntradas.getY() + 100, this);
-        g.drawImage(this.piramide, this.jPanelEntradas.getWidth() + this.jPanelEntradas.getX() + 60, this.jPanelEntradas.getY() + 100, this);
+        g.drawImage(this.piramide, this.jPanelEntradas.getX() - 325, this.jPanelEntradas.getY() + 100, this);
+        g.drawImage(this.piramide, this.jPanelEntradas.getWidth() + this.jPanelEntradas.getX() + 76, this.jPanelEntradas.getY() + 100, this);
+        
         //Dibujar las palmeras izquierdas.
-        g.drawImage(this.palmeraIzquierda, this.jPanelEntradas.getX() - 380, this.jPanelEntradas.getY() + 185, this);
-        g.drawImage(this.palmeraIzquierda, this.jPanelEntradas.getWidth() + this.jPanelEntradas.getX() - 5, this.jPanelEntradas.getY() + 185, this);
+        g.drawImage(this.palmeraIzquierda, this.jPanelEntradas.getX() - 390, this.jPanelEntradas.getY() + 185, this);
+        g.drawImage(this.palmeraIzquierda, this.jPanelEntradas.getX() + 351, this.jPanelEntradas.getY() + 185, this);
+        
         //Dibujar las palmeras derechas.
-        g.drawImage(this.palmeraDerecha, this.jPanelEntradas.getX() - 150, this.jPanelEntradas.getY() + 185, this);
-        g.drawImage(this.palmeraDerecha, this.jPanelEntradas.getX() + 575, this.jPanelEntradas.getY() + 185, this);
-
+        g.drawImage(this.palmeraDerecha, this.jPanelEntradas.getX() - 160, this.jPanelEntradas.getY() + 185, this);
+        g.drawImage(this.palmeraDerecha, this.jPanelEntradas.getX() + 581, this.jPanelEntradas.getY() + 185, this);
     }
 
     //---Métodos---//.
@@ -182,6 +195,8 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
+        jPanelCamposLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jPasswordFieldClave, jTextFieldCorreo});
+
         javax.swing.GroupLayout jPanelEntradasLayout = new javax.swing.GroupLayout(jPanelEntradas);
         jPanelEntradas.setLayout(jPanelEntradasLayout);
         jPanelEntradasLayout.setHorizontalGroup(
@@ -215,7 +230,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login/musicOn.png"))); // NOI18N
+        jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login/musicOff.png"))); // NOI18N
         jLabelMusica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelMusica.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -227,23 +242,24 @@ public class Login extends javax.swing.JFrame {
         jPanelLogin.setLayout(jPanelLoginLayout);
         jPanelLoginLayout.setHorizontalGroup(
             jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLoginLayout.createSequentialGroup()
-                .addContainerGap(381, Short.MAX_VALUE)
-                .addComponent(jPanelEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(379, Short.MAX_VALUE))
             .addGroup(jPanelLoginLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelConfiguracion)
-                    .addComponent(jLabelMusica))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanelLoginLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelConfiguracion)
+                            .addComponent(jLabelMusica)))
+                    .addGroup(jPanelLoginLayout.createSequentialGroup()
+                        .addGap(395, 395, 395)
+                        .addComponent(jPanelEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(395, Short.MAX_VALUE))
         );
         jPanelLoginLayout.setVerticalGroup(
             jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLoginLayout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addContainerGap(37, Short.MAX_VALUE)
                 .addComponent(jPanelEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelMusica)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelConfiguracion)
@@ -264,7 +280,7 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //-Botón para realizar el proceso de login, realizando una consulta a la base de datos.-//.
+    //-Botón para realizar el proceso de login, realizando una consulta a la base de datos-//.
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
         ConexionMySQL conexion = null;
         try {
@@ -277,67 +293,81 @@ public class Login extends javax.swing.JFrame {
 
                 //Consultar email's y contraseñas de los usuarios registrados.
                 ResultSet consulta = conexion.consultarTabla("usuarios",
-                        "AES_DECRYPT(password, 'key') AS passwd, user_name", " WHERE email = '" + email + "' LIMIT 1");
+                "AES_DECRYPT(password, 'key') AS passwd, user_name", " WHERE email = '" + email + "' LIMIT 1");
 
                 //Verificar si el email fue encontrado.
-                if (consulta.next()) {
+                if(consulta.next()) {
                     String campo_c = consulta.getString(1);
                     String campo_u = consulta.getString(2);
 
                     //Se verifica si la contraseña introducida es correcta.
-                    if (clave.equals(campo_c)) {
+                    if(clave.equals(campo_c)) {
                         JOptionPane.showMessageDialog(this, "Login exitoso.\n"
-                                + "Bienvenido al sistema, " + campo_u + ".\n", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-                        this.musicaFondo.stop();
-                        this.musicaFondo.close();
+                        + "Bienvenido al sistema, " + campo_u + ".\n", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                        
                         this.dispose();
-                        new Index().setVisible(true);
-                    } else {
+                        new Index(this.musicaFondo, this.musicaIniciada).setVisible(true);
+                    } 
+                    else {
+                        this.sonidoError.setMicrosecondPosition(0);
+                        this.sonidoError.start();
                         JOptionPane.showMessageDialog(this, "Contraseña incorrecta.\n"
-                                + "Reintroduzca sus datos.\n", "Error", JOptionPane.ERROR_MESSAGE);
+                        + "Reintroduzca sus datos.\n", "Error", JOptionPane.ERROR_MESSAGE);
                     }
-                } else {
+                } 
+                else {
                     //El email no fue hallado en la consulta.
+                    this.sonidoError.setMicrosecondPosition(0);
+                    this.sonidoError.start();
                     JOptionPane.showMessageDialog(this, "Email inválido.\n"
-                            + "Reintroduzca sus datos.\n", "Error", JOptionPane.ERROR_MESSAGE);
+                    + "Reintroduzca sus datos.\n", "Error", JOptionPane.ERROR_MESSAGE);
+                    this.sonidoError.stop();
                 }
-            } catch (SQLException ex) {
+            } 
+            catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                        "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception ex) {
+        } 
+        catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                    + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                    + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        finally {
             if (conexion != null) {
                 conexion.cerrarConexion();
             }
         }
     }//GEN-LAST:event_jButtonIngresarActionPerformed
 
+    //-Se despliega u oculta el ícono de la música-//.
     private void jLabelConfiguracionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelConfiguracionMouseClicked
-        if (this.jLabelMusica.getX() >= 5) {
+        //Se verificar si el ícono del sonido está visible o no.
+        if(this.jLabelMusica.getX() >= 5) {
             Animacion.Animacion.mover_izquierda(this.jLabelMusica.getX(), -50, 2, 2, this.jLabelMusica);
-        } else {
+        } 
+        else {
             Animacion.Animacion.mover_derecha(this.jLabelMusica.getX(), 10, 2, 2, this.jLabelMusica);
         }
     }//GEN-LAST:event_jLabelConfiguracionMouseClicked
 
+    //-Se gestiona la reproducción de la música-//.
     private void jLabelMusicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMusicaMouseClicked
-        if (this.musicaFondo != null) {
-            if (this.musicaIniciada) {
+        if(this.musicaFondo != null) {
+            if(this.musicaIniciada) {
                 //Detener la música.
                 this.musicaFondo.stop();
                 this.musicaIniciada = false;
 
                 //Cambiar el ícono para indicar que la música está pausada.
                 this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOff.png")));
-            } else {
+            } 
+            else {
                 //Iniciar la música a partir del punto exacto de la reproducción previa.
                 this.musicaFondo.start();
                 this.musicaFondo.loop(Clip.LOOP_CONTINUOUSLY);
@@ -349,11 +379,13 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jLabelMusicaMouseClicked
 
+    //-Indicar que el cursor se ha posicionado en el menú para iniciar sesión-//.
     private void jButtonIngresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonIngresarMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonIngresar.setBackground(color);
     }//GEN-LAST:event_jButtonIngresarMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el menú para iniciar sesión-//.
     private void jButtonIngresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonIngresarMouseExited
         Color color = new Color(Integer.parseInt("FFBA6A", 16));
         this.jButtonIngresar.setBackground(color);
@@ -369,8 +401,11 @@ public class Login extends javax.swing.JFrame {
         //Abrir el archivo que contiene el logotipo del hotel.
         icono = new ImageIcon("src/img/login/screen/logoHotel.png");
         this.logoHotel = icono.getImage();
+        
+        //Abrir el archivo que contiene la imagen del slogan del hotel.
         icono = new ImageIcon("src/img/login/screen/sloganHotel.png");
         this.sloganHotel = icono.getImage();
+        
         //Abrir el archivo que contiene la imagen de una pirámide.
         icono = new ImageIcon("src/img/login/screen/piramide.png");
         this.piramide = icono.getImage();
@@ -386,26 +421,51 @@ public class Login extends javax.swing.JFrame {
         //Cargar el logo del login para el JFrame.
         try {
             super.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/login/user.png")));
-        } catch (Exception ex) {
+        } 
+        catch (Exception ex) {
             System.err.println("Error al abrir el ícono.");
             ex.printStackTrace();
         }
 
-        //Reproducir la música de fondo.
+        //Cargar la música de fondo.
+        if(this.musicaFondo == null) {
+            try {
+                AudioInputStream flujo = AudioSystem.getAudioInputStream(new File("src/sounds/hotel.wav"));
+                this.musicaFondo = AudioSystem.getClip();
+                this.musicaFondo.open(flujo);
+                this.musicaIniciada = false;
+            } 
+            catch (Exception ex) {
+                System.err.println("No se pudo cargar la música de fondo.");
+                System.err.println("Verifique si el fichero \"hotel.wav\" se encuentra en la carpeta /sounds.");
+                ex.printStackTrace();
+                this.musicaFondo = null;
+            }
+        }
+        
+        //Cambiar el tipo de ícono de la música, según sea el caso.
+        if(this.musicaFondo != null) {
+            if(this.musicaIniciada) {
+                this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOn.png")));
+            }
+            else {
+                this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOff.png")));
+            }
+        }
+        
+        //Cargar el sonido para notificar un error durante el login.
         try {
-            AudioInputStream flujo = AudioSystem.getAudioInputStream(new File("src/sounds/hotel.wav"));
-            this.musicaFondo = AudioSystem.getClip();
-            this.musicaFondo.open(flujo);
-            this.musicaFondo.start();
-            this.musicaIniciada = true;
-        } catch (Exception ex) {
-            System.err.println("No se pudo reproducir el archivo de sonido.");
-            System.err.println("Verifique si el fichero \"hotel.wav\" se encuentra en la carpeta /sounds.");
+            AudioInputStream flujo = AudioSystem.getAudioInputStream(new File("src/sounds/error.wav"));
+            this.sonidoError = AudioSystem.getClip();
+            this.sonidoError.open(flujo);
+        } 
+        catch(Exception ex) {
+            System.err.println("No se pudo cargar el sonido para notificar errores.");
+            System.err.println("Verifique si el fichero \"error.wav\" se encuentra en la carpeta /sounds.");
             ex.printStackTrace();
-            this.musicaFondo = null;
         }
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonIngresar;
     private javax.swing.JLabel jLabelClave;

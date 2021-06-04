@@ -87,6 +87,7 @@ public class Login extends javax.swing.JFrame {
         jPasswordFieldClave = new javax.swing.JPasswordField();
         jLabelConfiguracion = new javax.swing.JLabel();
         jLabelMusica = new javax.swing.JLabel();
+        jButtonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio de sesión");
@@ -238,21 +239,44 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        jButtonSalir.setBackground(new java.awt.Color(255, 186, 106));
+        jButtonSalir.setFont(new java.awt.Font("Century Schoolbook", 1, 18)); // NOI18N
+        jButtonSalir.setText("Salir del sistema");
+        jButtonSalir.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButtonSalir.setContentAreaFilled(false);
+        jButtonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonSalir.setFocusPainted(false);
+        jButtonSalir.setOpaque(true);
+        jButtonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonSalirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButtonSalirMouseExited(evt);
+            }
+        });
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelLoginLayout = new javax.swing.GroupLayout(jPanelLogin);
         jPanelLogin.setLayout(jPanelLoginLayout);
         jPanelLoginLayout.setHorizontalGroup(
             jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLoginLayout.createSequentialGroup()
+                .addGap(395, 395, 395)
+                .addComponent(jPanelEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(404, Short.MAX_VALUE))
+            .addGroup(jPanelLoginLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelLoginLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelConfiguracion)
-                            .addComponent(jLabelMusica)))
-                    .addGroup(jPanelLoginLayout.createSequentialGroup()
-                        .addGap(395, 395, 395)
-                        .addComponent(jPanelEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(395, Short.MAX_VALUE))
+                    .addComponent(jLabelConfiguracion)
+                    .addComponent(jLabelMusica))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
         jPanelLoginLayout.setVerticalGroup(
             jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,10 +284,15 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE)
                 .addComponent(jPanelEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabelMusica)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelConfiguracion)
-                .addContainerGap())
+                .addGroup(jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelLoginLayout.createSequentialGroup()
+                        .addComponent(jLabelMusica)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelConfiguracion)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLoginLayout.createSequentialGroup()
+                        .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -391,6 +420,26 @@ public class Login extends javax.swing.JFrame {
         this.jButtonIngresar.setBackground(color);
     }//GEN-LAST:event_jButtonIngresarMouseExited
 
+    //-Finalizar la ejecución de todo el sistema-//.
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        if(JOptionPane.showConfirmDialog(this, "¿Desea finalizar el sistema?"
+        , "Confirmación", JOptionPane.OK_CANCEL_OPTION) == 0) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    //-Indicar que el cursor se ha posicionado en el botón para finalizar el sistema-//.
+    private void jButtonSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalirMouseEntered
+        Color color = new Color(Integer.parseInt("AF5700", 16));
+        this.jButtonIngresar.setBackground(color);
+    }//GEN-LAST:event_jButtonSalirMouseEntered
+
+    //-Indicar que el cursor dejó de posicionarse en el menú para finalizar el sistema-//.
+    private void jButtonSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalirMouseExited
+        Color color = new Color(Integer.parseInt("FFBA6A", 16));
+        this.jButtonIngresar.setBackground(color);
+    }//GEN-LAST:event_jButtonSalirMouseExited
+
     //-Configuración adicional de ciertos componentes-//.
     private void extraInitProcess() {
         ImageIcon icono;
@@ -468,6 +517,7 @@ public class Login extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonIngresar;
+    private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabelClave;
     private javax.swing.JLabel jLabelConfiguracion;
     private javax.swing.JLabel jLabelCorreo;

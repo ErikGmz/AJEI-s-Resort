@@ -162,11 +162,11 @@ public class CheckOut extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jTextFieldHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonCuenta)))
+                                .addComponent(jButtonCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCheckOutLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonRecibo)
+                .addComponent(jButtonRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanelCheckOutLayout.setVerticalGroup(
@@ -183,9 +183,9 @@ public class CheckOut extends javax.swing.JInternalFrame {
                     .addComponent(jButtonCuenta))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButtonRecibo)
-                .addGap(23, 23, 23))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -263,15 +263,15 @@ public class CheckOut extends javax.swing.JInternalFrame {
                     switch(this.tipoHabitacion) {
                         case "S":
                             this.imprimirTexto("Tipo de habitación: Chaac Suite (simple)", 14, 60, 360, PDType1Font.COURIER);
-                        break;
+                            break;
                 
                         case "D":
                             this.imprimirTexto("Tipo de habitación: Itzamná Suite (doble)", 14, 60, 360, PDType1Font.COURIER);
-                        break;
+                            break;
                 
                         case "T":
                             this.imprimirTexto("Tipo de habitación: Kauil Suite (triple)", 14, 60, 360, PDType1Font.COURIER);
-                        break;
+                            break;
                     }
                     this.imprimirTexto("Número de la habitación: " + this.numeroHabitacion, 14, 60, 380, PDType1Font.COURIER);
                     this.imprimirTexto("Costo de la habitación (por noche): $" + formato.format(this.precioPorHabitacion), 14, 60, 400, PDType1Font.COURIER);
@@ -314,13 +314,13 @@ public class CheckOut extends javax.swing.JInternalFrame {
             }
             catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
+                JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
                 + " modificación del registro.\nSQLException: " + ex.getMessage()
                 + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
                 "Error", JOptionPane.ERROR_MESSAGE);
             }       
         } 
-        catch (Exception ex) {
+        catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
             + "conexión con la base de datos.\n" + "Verifique si el servidor "
@@ -388,16 +388,16 @@ public class CheckOut extends javax.swing.JInternalFrame {
                                 case 1: 
                                     this.precioTotal += (714 * this.diasHospedaje);
                                     this.cargosExtra.add(0, "-Una persona extra  -----------------> $" + formato.format((this.diasHospedaje * 714)));
-                                break;   
+                                    break;   
                                     
                                 case 2:
                                     this.precioTotal += 1428 * (this.diasHospedaje);
                                     this.cargosExtra.add(0, "-Dos personas extra  ----------------> $" + formato.format((this.diasHospedaje * 1428)));
-                                break;
+                                    break;
                                     
                                 default:
                                     this.cargosExtra.add(0, "-Ninguna persona extra  -------------> N/A");
-                                break;   
+                                    break;   
                             }
 
                             if(consulta.getInt("b.room_service") == 1){ 
@@ -506,15 +506,15 @@ public class CheckOut extends javax.swing.JInternalFrame {
                             switch(this.tipoHabitacion) {
                                 case "S":
                                     this.jTextAreaCuenta.append("Chaac Suite (simple).\n");   
-                                break;
+                                    break;
                 
                                 case "D":
                                     this.jTextAreaCuenta.append("Itzamná Suite (doble).\n");   
-                                break;
+                                    break;
                 
                                 case "T":
                                     this.jTextAreaCuenta.append("Kauil Suite (triple).\n");   
-                                break;
+                                    break;
                             }
                             
                             //Imprimir el costo de la habitación.
@@ -563,7 +563,7 @@ public class CheckOut extends javax.swing.JInternalFrame {
                 }
                 catch(SQLException ex) {
                     ex.printStackTrace();
-                    JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
+                    JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
                     + "realización de la consulta.\nSQLException: " + ex.getMessage()
                     + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -587,25 +587,30 @@ public class CheckOut extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButtonCuentaActionPerformed
 
+    //-Cerrar el menú para realizar el check-out-//.
     private void jLabelCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCerrarMouseClicked
         this.dispose();
     }//GEN-LAST:event_jLabelCerrarMouseClicked
 
+    //-Indicar que el cursor se ha posicionado en el botón para generar la cuenta-//.
     private void jButtonCuentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCuentaMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonCuenta.setBackground(color);
     }//GEN-LAST:event_jButtonCuentaMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el botón para generar la cuenta-//.
     private void jButtonCuentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCuentaMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonCuenta.setBackground(color);
     }//GEN-LAST:event_jButtonCuentaMouseExited
 
+    //-Indicar que el cursor se ha posicionado en el botón para generar el recibo-//.
     private void jButtonReciboMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonReciboMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonRecibo.setBackground(color);
     }//GEN-LAST:event_jButtonReciboMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el botón para generar el recibo-//.
     private void jButtonReciboMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonReciboMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonRecibo.setBackground(color);
@@ -666,7 +671,7 @@ public class CheckOut extends javax.swing.JInternalFrame {
             this.contenido.showText(texto);
             this.contenido.endText();
         } 
-        catch (IOException ex) {
+        catch(IOException ex) {
             System.out.println("Ocurrió un error al generar el texto centrado.");
             ex.printStackTrace();
         }    
@@ -681,7 +686,7 @@ public class CheckOut extends javax.swing.JInternalFrame {
             this.contenido.showText(texto);
             this.contenido.endText();
         } 
-        catch (IOException ex) {
+        catch(IOException ex) {
             System.out.println("Ocurrió un error al generar el texto.");
             ex.printStackTrace();
         }    

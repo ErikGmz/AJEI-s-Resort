@@ -1736,7 +1736,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
                 while (resultados.next()) {
                     ImageIcon imagen = new ImageIcon(resultados.getString("image_path"));
                     this.imagenes.put(resultados.getString("description"), new Imagen(resultados.getString("description"),
-                            new ImageIcon(imagen.getImage().getScaledInstance(224, 220, 0))));
+                            new ImageIcon(imagen.getImage().getScaledInstance(224, 159, 0))));
                 }
             } catch (SQLException ex) {
                 ex.printStackTrace();

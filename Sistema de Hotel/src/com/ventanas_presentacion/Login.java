@@ -17,7 +17,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 //---Clase pública---//.
-public class Login extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame implements Runnable {
 
     //---Atributos adicionales---//.
     private Image logoHotel;
@@ -31,7 +31,6 @@ public class Login extends javax.swing.JFrame {
     //---Constructor---//.
     public Login() {
         initComponents();
-        extraInitProcess();
     }
 
     //---Métodos sobreescritos---//.
@@ -215,7 +214,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login/musicOn.png"))); // NOI18N
+        jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login/musicOff.png"))); // NOI18N
         jLabelMusica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelMusica.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -291,7 +290,11 @@ public class Login extends javax.swing.JFrame {
                         this.musicaFondo.stop();
                         this.musicaFondo.close();
                         this.dispose();
-                        new Index().setVisible(true);
+                        
+                        Index index = new Index();
+                        Thread t = new Thread(index);
+                        t.start();
+                        index.setVisible(true);
                     } else {
                         JOptionPane.showMessageDialog(this, "Contraseña incorrecta.\n"
                                 + "Reintroduzca sus datos.\n", "Error", JOptionPane.ERROR_MESSAGE);
@@ -396,14 +399,18 @@ public class Login extends javax.swing.JFrame {
             AudioInputStream flujo = AudioSystem.getAudioInputStream(new File("src/sounds/hotel.wav"));
             this.musicaFondo = AudioSystem.getClip();
             this.musicaFondo.open(flujo);
-            this.musicaFondo.start();
-            this.musicaIniciada = true;
+            this.musicaIniciada = false;
         } catch (Exception ex) {
             System.err.println("No se pudo reproducir el archivo de sonido.");
             System.err.println("Verifique si el fichero \"hotel.wav\" se encuentra en la carpeta /sounds.");
             ex.printStackTrace();
             this.musicaFondo = null;
         }
+        //Ocultamos el ícono de la música.
+        Animacion.Animacion.mover_izquierda(this.jLabelMusica.getX(), -50, 2, 2, this.jLabelMusica);
+        
+        this.setVisible(true);
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -420,5 +427,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordFieldClave;
     private javax.swing.JTextField jTextFieldCorreo;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void run() {
+        this.extraInitProcess();
+    }
 
 }

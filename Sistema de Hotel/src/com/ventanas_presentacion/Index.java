@@ -15,7 +15,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 //---Clase pública---//.
-public class Index extends javax.swing.JFrame {
+public class Index extends javax.swing.JFrame implements Runnable {
 
     //---Atributos Adicionales---//.
     private Clip musicaFondo;
@@ -24,8 +24,6 @@ public class Index extends javax.swing.JFrame {
     //---Constructor---//.
     public Index() {
         initComponents();
-        this.extraInitProcess();
-        this.musicaIniciada = true;
     }
 
     //---Métodos---//.
@@ -50,7 +48,7 @@ public class Index extends javax.swing.JFrame {
         jLabelBtn5 = new javax.swing.JLabel();
         jLabelBtn2 = new javax.swing.JLabel();
         jButtonConsultas = new javax.swing.JButton();
-        jPanelContenedor = new javax.swing.JPanel();
+        jDesktopPaneContenedor = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio");
@@ -165,7 +163,7 @@ public class Index extends javax.swing.JFrame {
             }
         });
 
-        jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/musicOn.png"))); // NOI18N
+        jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/musicOff.png"))); // NOI18N
         jLabelMusica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelMusica.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -359,21 +357,16 @@ public class Index extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanelContenedor.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelContenedor.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentRemoved(java.awt.event.ContainerEvent evt) {
-                jPanelContenedorComponentRemoved(evt);
-            }
-        });
+        jDesktopPaneContenedor.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanelContenedorLayout = new javax.swing.GroupLayout(jPanelContenedor);
-        jPanelContenedor.setLayout(jPanelContenedorLayout);
-        jPanelContenedorLayout.setHorizontalGroup(
-            jPanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jDesktopPaneContenedorLayout = new javax.swing.GroupLayout(jDesktopPaneContenedor);
+        jDesktopPaneContenedor.setLayout(jDesktopPaneContenedorLayout);
+        jDesktopPaneContenedorLayout.setHorizontalGroup(
+            jDesktopPaneContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 880, Short.MAX_VALUE)
         );
-        jPanelContenedorLayout.setVerticalGroup(
-            jPanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jDesktopPaneContenedorLayout.setVerticalGroup(
+            jDesktopPaneContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -384,12 +377,12 @@ public class Index extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jDesktopPaneContenedor))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPaneContenedor)
         );
 
         setBounds(0, 0, 1116, 619);
@@ -429,18 +422,18 @@ public class Index extends javax.swing.JFrame {
     private void jLabelMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMenuMouseClicked
         if (this.jPanelMenu.getWidth() == 60) {
             this.jPanelMenu.setSize(220, this.jPanelMenu.getHeight());
-            this.jPanelContenedor.setSize(this.jPanelContenedor.getWidth() - 160, this.jPanelContenedor.getHeight());
-            this.jPanelContenedor.setLocation(this.jPanelContenedor.getX() + 160, this.jPanelContenedor.getY());
-            if (this.jPanelContenedor.getComponentCount() > 0) {
-                this.jPanelContenedor.getComponent(0).setSize(this.jPanelContenedor.getSize());
+            this.jDesktopPaneContenedor.setSize(this.jDesktopPaneContenedor.getWidth() - 160, this.jDesktopPaneContenedor.getHeight());
+            this.jDesktopPaneContenedor.setLocation(this.jDesktopPaneContenedor.getX() + 160, this.jDesktopPaneContenedor.getY());
+            if (this.jDesktopPaneContenedor.getComponentCount() > 0) {
+                this.jDesktopPaneContenedor.getComponent(0).setSize(this.jDesktopPaneContenedor.getSize());
             }
             this.jLabelMenu.setLocation(165, this.jLabelMenu.getY());
         } else if (this.jPanelMenu.getWidth() == 220) {
             this.jPanelMenu.setSize(60, this.jPanelMenu.getHeight());
-            this.jPanelContenedor.setSize(this.jPanelContenedor.getWidth() + 160, this.jPanelContenedor.getHeight());
-            this.jPanelContenedor.setLocation(this.jPanelContenedor.getX() - 160, this.jPanelContenedor.getY());
-            if (this.jPanelContenedor.getComponentCount() > 0) {
-                this.jPanelContenedor.getComponent(0).setSize(this.jPanelContenedor.getSize());
+            this.jDesktopPaneContenedor.setSize(this.jDesktopPaneContenedor.getWidth() + 160, this.jDesktopPaneContenedor.getHeight());
+            this.jDesktopPaneContenedor.setLocation(this.jDesktopPaneContenedor.getX() - 160, this.jDesktopPaneContenedor.getY());
+            if (this.jDesktopPaneContenedor.getComponentCount() > 0) {
+                this.jDesktopPaneContenedor.getComponent(0).setSize(this.jDesktopPaneContenedor.getSize());
             }
             this.jLabelMenu.setLocation(5, this.jLabelMenu.getY());
         }
@@ -506,7 +499,9 @@ public class Index extends javax.swing.JFrame {
             this.musicaFondo.stop();
             this.musicaFondo.close();
             this.dispose();
-            new Login().setVisible(true);
+            Login login = new Login();
+            Thread t = new Thread(login);
+            t.start();
         }
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
 
@@ -538,26 +533,21 @@ public class Index extends javax.swing.JFrame {
         this.abrirJFrameEnPanelContenedor(new Consultas());
     }//GEN-LAST:event_jButtonConsultasActionPerformed
 
-    private void jPanelContenedorComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jPanelContenedorComponentRemoved
-//        if (evt.getChild() != null) {
-//            this.abrirJFrameEnPanelContenedor(new Inicio());
-//        }
-    }//GEN-LAST:event_jPanelContenedorComponentRemoved
-
     //---Abrir IntrenalJFrames dentro del panel contenedor----//.
     private void abrirJFrameEnPanelContenedor(Object jF) {
         // si existe algún componente en la
         // en el panel contenedor, lo removemos
-        if (this.jPanelContenedor.getComponentCount() > 0) {
-            this.jPanelContenedor.removeAll();
+        if (this.jDesktopPaneContenedor.getComponentCount() > 1) {
+            this.jDesktopPaneContenedor.remove(0);
         }
 
         JInternalFrame jFHijo = (JInternalFrame) jF;
 
         ((javax.swing.plaf.basic.BasicInternalFrameUI) jFHijo.getUI()).setNorthPane(null);
-        jFHijo.setSize(this.jPanelContenedor.getSize());
+        jFHijo.setSize(this.jDesktopPaneContenedor.getSize());
 
-        this.jPanelContenedor.add(jFHijo);
+        this.jDesktopPaneContenedor.add(jFHijo);
+
         jFHijo.setVisible(true);
     }
 
@@ -577,52 +567,20 @@ public class Index extends javax.swing.JFrame {
             AudioInputStream flujo = AudioSystem.getAudioInputStream(new File("src/sounds/hotel.wav"));
             this.musicaFondo = AudioSystem.getClip();
             this.musicaFondo.open(flujo);
-            this.musicaFondo.start();
-            this.musicaIniciada = true;
+            this.musicaIniciada = false;
         } catch (Exception ex) {
             System.err.println("No se pudo reproducir el archivo de sonido.");
             System.err.println("Verifique si el fichero \"hotel.wav\" se encuentra en la carpeta /sounds.");
             ex.printStackTrace();
             this.musicaFondo = null;
         }
-        
+
+        //Ocultar icono de la música.
+        Animacion.Animacion.mover_izquierda(this.jLabelMusica.getX(), -50, 2, 2, this.jLabelMusica);
+
         //Cargar el internalJFrame de la pantalla de inicio.
-        //this.abrirJFrameEnPanelContenedor(new Inicio());
-    }
+        this.abrirJFrameEnPanelContenedor(new Inicio());
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Index().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -632,6 +590,7 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConsultas;
     private javax.swing.JButton jButtonEstadisticas;
     private javax.swing.JButton jButtonModificaciones;
+    private javax.swing.JDesktopPane jDesktopPaneContenedor;
     private javax.swing.JLabel jLabelBtn1;
     private javax.swing.JLabel jLabelBtn2;
     private javax.swing.JLabel jLabelBtn3;
@@ -642,7 +601,11 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMenu;
     private javax.swing.JLabel jLabelMusica;
-    private javax.swing.JPanel jPanelContenedor;
     private javax.swing.JPanel jPanelMenu;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void run() {
+        this.extraInitProcess();
+    }
 }

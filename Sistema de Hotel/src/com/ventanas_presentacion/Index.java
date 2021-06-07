@@ -618,7 +618,13 @@ public class Index extends javax.swing.JFrame {
 
         JInternalFrame jFHijo = (JInternalFrame) jF;
         ((javax.swing.plaf.basic.BasicInternalFrameUI) jFHijo.getUI()).setNorthPane(null);
-        jFHijo.setSize(this.jPanelContenedor.getSize());
+        
+        if(this.jPanelMenu.getWidth() == 60) {
+            jFHijo.setSize(this.jPanelContenedor.getWidth() - 160, this.jPanelContenedor.getHeight());
+        }
+        else {
+            jFHijo.setSize(this.jPanelContenedor.getSize());
+        }
 
         this.jPanelContenedor.add(jFHijo);
         jFHijo.setVisible(true);

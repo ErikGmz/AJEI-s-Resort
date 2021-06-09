@@ -167,9 +167,11 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jLabelAdicional.setText("Información adicional:");
 
         jTextAreaAdicional.setEditable(false);
+        jTextAreaAdicional.setBackground(new java.awt.Color(255, 232, 205));
         jTextAreaAdicional.setColumns(20);
         jTextAreaAdicional.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextAreaAdicional.setRows(5);
+        jTextAreaAdicional.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(jTextAreaAdicional);
 
         jButtonSiguiente.setBackground(new java.awt.Color(228, 130, 0));
@@ -180,6 +182,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jButtonSiguiente.setContentAreaFilled(false);
         jButtonSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonSiguiente.setEnabled(false);
+        jButtonSiguiente.setFocusPainted(false);
         jButtonSiguiente.setOpaque(true);
         jButtonSiguiente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -203,6 +206,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jButtonSalida.setBorderPainted(false);
         jButtonSalida.setContentAreaFilled(false);
         jButtonSalida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonSalida.setFocusPainted(false);
         jButtonSalida.setInheritsPopupMenu(true);
         jButtonSalida.setOpaque(true);
         jButtonSalida.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -453,13 +457,13 @@ public class CheckIn extends javax.swing.JInternalFrame {
                 .addComponent(jLabelHabitacion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBoxHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelPiso)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDatosHabitaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButtonPiso1)
                     .addComponent(jRadioButtonPiso2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jPanelTiempoReservación.setBackground(new java.awt.Color(255, 163, 51));
@@ -498,14 +502,15 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jPanelTiempoReservaciónLayout.setVerticalGroup(
             jPanelTiempoReservaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTiempoReservaciónLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabelIngreso)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jDateChooserIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelTiempoReservaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelDias)
                     .addComponent(jSpinnerDias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jPanelServiciosExtra.setBackground(new java.awt.Color(255, 163, 51));
@@ -974,7 +979,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 244, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -985,57 +990,55 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jPanelHabitacion.setLayout(jPanelHabitacionLayout);
         jPanelHabitacionLayout.setHorizontalGroup(
             jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHabitacionLayout.createSequentialGroup()
-                .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelHabitacionLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabelHabitacion6, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jLabelHabitacion1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabelHabitacion11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanelHabitacionLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButtonRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelHabitacionLayout.createSequentialGroup()
-                        .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelHabitacion7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelHabitacion2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelHabitacion12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelHabitacion13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabelHabitacion8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelHabitacion3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelHabitacion14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabelHabitacion4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelHabitacion9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelHabitacion15, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jLabelHabitacion5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jLabelHabitacion10, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelHabitacionLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButtonSiguiente2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
             .addGroup(jPanelHabitacionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTipoHabitacion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextFieldTipoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelNumeroPiso)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextFieldNumeroPiso, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(299, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHabitacionLayout.createSequentialGroup()
+                        .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabelHabitacion6, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                .addComponent(jLabelHabitacion1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelHabitacion11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButtonRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelHabitacionLayout.createSequentialGroup()
+                                .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelHabitacion7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelHabitacion2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelHabitacion12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelHabitacion13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabelHabitacion8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabelHabitacion3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelHabitacion14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabelHabitacion4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabelHabitacion9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelHabitacion15, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addComponent(jLabelHabitacion5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addComponent(jLabelHabitacion10, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanelHabitacionLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButtonSiguiente2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanelHabitacionLayout.createSequentialGroup()
+                        .addComponent(jLabelTipoHabitacion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldTipoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabelNumeroPiso)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldNumeroPiso, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanelHabitacionLayout.setVerticalGroup(
             jPanelHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1179,8 +1182,8 @@ public class CheckIn extends javax.swing.JInternalFrame {
                 .addGroup(jPanelConfirmacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelInformacionReservacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
-                .addComponent(jButtonGenerarRecibo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
+                .addComponent(jButtonGenerarRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanelConfirmacionLayout.setVerticalGroup(
@@ -1269,15 +1272,15 @@ public class CheckIn extends javax.swing.JInternalFrame {
         this.jTextAreaAdicional.setText("");
 
         //Deshabilitar el botón para cambiar el menú.
-        if (this.jButtonSiguiente.isEnabled()) {
+        if(this.jButtonSiguiente.isEnabled()) {
             this.jButtonSiguiente.setEnabled(false);
         }
-        if (!this.jButtonSalida.isEnabled()) {
+        if(!this.jButtonSalida.isEnabled()) {
             this.jButtonSalida.setEnabled(true);
         }
 
         //Validar la cantidad máxima de personas, según el tipo de habitación.
-        switch (this.jComboBoxHabitacion.getSelectedIndex()) {
+        switch(this.jComboBoxHabitacion.getSelectedIndex()) {
             //Habitación simple seleccionada.
             case 0:
                 this.jRadioButtonDos.setEnabled(false);
@@ -1291,13 +1294,15 @@ public class CheckIn extends javax.swing.JInternalFrame {
                 this.jRadioButtonDos.setEnabled(true);
                 this.jRadioButtonTres.setEnabled(false);
 
-                if (this.jRadioButtonTres.isSelected()) {
+                if(this.jRadioButtonTres.isSelected()) {
                     this.jRadioButtonDos.setSelected(true);
                     this.jComboBoxExtra.setEnabled(true);
-                } else if (!this.jRadioButtonDos.isSelected()) {
+                } 
+                else if(!this.jRadioButtonDos.isSelected()) {
                     this.jComboBoxExtra.setEnabled(false);
                     this.jComboBoxExtra.setSelectedIndex(0);
-                } else {
+                } 
+                else {
                     this.jComboBoxExtra.setEnabled(true);
                 }
                 break;
@@ -1307,7 +1312,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
                 this.jRadioButtonDos.setEnabled(true);
                 this.jRadioButtonTres.setEnabled(true);
 
-                if (!this.jRadioButtonTres.isSelected()) {
+                if(!this.jRadioButtonTres.isSelected()) {
                     this.jComboBoxExtra.setEnabled(false);
                     this.jComboBoxExtra.setSelectedIndex(0);
                 }
@@ -1321,24 +1326,24 @@ public class CheckIn extends javax.swing.JInternalFrame {
         this.jTextAreaAdicional.setText("\n");
 
         //Se verifica si el nombre completo y ciudad fueron introducidos.
-        if (this.nombresYCiudadValidos()) {
+        if(this.nombresYCiudadValidos()) {
 
             //Se verifica la validez de la fecha de ingreso.
-            if (this.jDateChooserIngreso.getDate() != null) {
-
-            } else {
+            if(this.jDateChooserIngreso.getDate() != null) {
+                this.verificarDisponibilidad(this.jComboBoxHabitacion.getSelectedIndex());
+            } 
+            else {
                 this.jButtonSiguiente.setEnabled(false);
                 this.jButtonSalida.setEnabled(true);
             }
-
-            this.verificarDisponibilidad(this.jComboBoxHabitacion.getSelectedIndex());
-        } else {
+        } 
+        else {
             this.jButtonSiguiente.setEnabled(false);
             this.jButtonSalida.setEnabled(true);
         }
 
         //La selección previa de alguna habitación se elimina.
-        if (this.habitacionSeleccionada != null) {
+        if(this.habitacionSeleccionada != null) {
             this.habitacionSeleccionada = null;
             this.jButtonSiguiente2.setEnabled(false);
         }
@@ -1371,10 +1376,10 @@ public class CheckIn extends javax.swing.JInternalFrame {
         this.jTextAreaAdicional.setText("");
 
         //Deshabilitar el botón para cambiar el menú.
-        if (this.jButtonSiguiente.isEnabled()) {
+        if(this.jButtonSiguiente.isEnabled()) {
             this.jButtonSiguiente.setEnabled(false);
         }
-        if (!this.jButtonSalida.isEnabled()) {
+        if(!this.jButtonSalida.isEnabled()) {
             this.jButtonSalida.setEnabled(true);
         }
     }//GEN-LAST:event_jRadioButtonPiso1ActionPerformed
@@ -1385,10 +1390,10 @@ public class CheckIn extends javax.swing.JInternalFrame {
         this.jTextAreaAdicional.setText("");
 
         //Deshabilitar el botón para cambiar el menú.
-        if (this.jButtonSiguiente.isEnabled()) {
+        if(this.jButtonSiguiente.isEnabled()) {
             this.jButtonSiguiente.setEnabled(false);
         }
-        if (!this.jButtonSalida.isEnabled()) {
+        if(!this.jButtonSalida.isEnabled()) {
             this.jButtonSalida.setEnabled(true);
         }
     }//GEN-LAST:event_jRadioButtonPiso2ActionPerformed
@@ -1537,9 +1542,10 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
     //-Verificar si en una habitación doble habrá dos personas o no-//.
     private void jRadioButtonDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonDosActionPerformed
-        if (this.jComboBoxHabitacion.getSelectedIndex() == 1) {
+        if(this.jComboBoxHabitacion.getSelectedIndex() == 1) {
             this.jComboBoxExtra.setEnabled(true);
-        } else {
+        } 
+        else {
             this.jComboBoxExtra.setEnabled(false);
             this.jComboBoxExtra.setSelectedIndex(0);
         }
@@ -1547,9 +1553,10 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
     //-Verificar si en una habitación triple habrá tres personas o no-//.
     private void jRadioButtonTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonTresActionPerformed
-        if (this.jComboBoxHabitacion.getSelectedIndex() == 2) {
+        if(this.jComboBoxHabitacion.getSelectedIndex() == 2) {
             this.jComboBoxExtra.setEnabled(true);
-        } else {
+        } 
+        else {
             this.jComboBoxExtra.setEnabled(false);
             this.jComboBoxExtra.setSelectedIndex(0);
         }
@@ -1558,7 +1565,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
     //-Verificar si habrá una sola persona en una habitación doble o triple.
     private void jRadioButtonUnaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonUnaActionPerformed
         int indice = this.jComboBoxHabitacion.getSelectedIndex();
-        if (indice == 1 || indice == 2) {
+        if(indice == 1 || indice == 2) {
             this.jComboBoxExtra.setEnabled(false);
             this.jComboBoxExtra.setSelectedIndex(0);
         }
@@ -1566,16 +1573,17 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
     //-Evento para verificar que el nombre no exceda los 10 caracteres-//.
     private void jTextFieldNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNombreKeyTyped
-        if (this.jTextFieldNombre.getText().length() > 9) {
+        if(this.jTextFieldNombre.getText().length() > 9) {
             evt.consume();
-        } else {
-            if (this.jTextAreaAdicional.getText().length() > 0) {
+        } 
+        else {
+            if(this.jTextAreaAdicional.getText().length() > 0) {
                 this.jTextAreaAdicional.setText("");
             }
-            if (!this.jButtonSalida.isEnabled()) {
+            if(!this.jButtonSalida.isEnabled()) {
                 this.jButtonSalida.setEnabled(true);
             }
-            if (this.jButtonSiguiente.isEnabled()) {
+            if(this.jButtonSiguiente.isEnabled()) {
                 this.jButtonSiguiente.setEnabled(false);
             }
         }
@@ -1583,16 +1591,17 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
     //-Evento para verificar que el nombre de la ciudad no exceda los 20 caracteres-//.
     private void jTextFieldCiudadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCiudadKeyTyped
-        if (this.jTextFieldCiudad.getText().length() > 19) {
+        if(this.jTextFieldCiudad.getText().length() > 19) {
             evt.consume();
-        } else {
-            if (this.jTextAreaAdicional.getText().length() > 0) {
+        } 
+        else {
+            if(this.jTextAreaAdicional.getText().length() > 0) {
                 this.jTextAreaAdicional.setText("");
             }
-            if (!this.jButtonSalida.isEnabled()) {
+            if(!this.jButtonSalida.isEnabled()) {
                 this.jButtonSalida.setEnabled(true);
             }
-            if (this.jButtonSiguiente.isEnabled()) {
+            if(this.jButtonSiguiente.isEnabled()) {
                 this.jButtonSiguiente.setEnabled(false);
             }
         }
@@ -1600,80 +1609,94 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
     //-Evento para verificar que el apellido no exceda los 10 caracteres-//.
     private void jTextFieldApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldApellidoKeyTyped
-        if (this.jTextFieldApellido.getText().length() > 9) {
+        if(this.jTextFieldApellido.getText().length() > 9) {
             evt.consume();
-        } else {
-            if (this.jTextAreaAdicional.getText().length() > 0) {
+        } 
+        else {
+            if(this.jTextAreaAdicional.getText().length() > 0) {
                 this.jTextAreaAdicional.setText("");
             }
-            if (!this.jButtonSalida.isEnabled()) {
+            if(!this.jButtonSalida.isEnabled()) {
                 this.jButtonSalida.setEnabled(true);
             }
-            if (this.jButtonSiguiente.isEnabled()) {
+            if(this.jButtonSiguiente.isEnabled()) {
                 this.jButtonSiguiente.setEnabled(false);
             }
         }
     }//GEN-LAST:event_jTextFieldApellidoKeyTyped
 
+    //-El menú del check-in se cierra-//.
     private void jLabelCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCerrarMouseClicked
         this.dispose();
     }//GEN-LAST:event_jLabelCerrarMouseClicked
 
+    //-Indicar que el cursor se ha posicionado en el menú para validar los datos del check-in-//.
     private void jButtonSalidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalidaMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonSalida.setBackground(color);
     }//GEN-LAST:event_jButtonSalidaMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el botón para validar los datos del check-in-//.
     private void jButtonSalidaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalidaMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonSalida.setBackground(color);
     }//GEN-LAST:event_jButtonSalidaMouseExited
 
+    //-Indicar que el cursor se ha posicionado en un botón para cambiar el submenú-//.
     private void jButtonSiguienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSiguienteMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonSiguiente.setBackground(color);
     }//GEN-LAST:event_jButtonSiguienteMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en un botón para cambiar el submenú-//.
     private void jButtonSiguienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSiguienteMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonSiguiente.setBackground(color);
     }//GEN-LAST:event_jButtonSiguienteMouseExited
 
+    //-Indicar que el cursor se ha posicionado en un botón para cambiar el submenú-//.
     private void jButtonRegresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRegresarMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonRegresar.setBackground(color);
     }//GEN-LAST:event_jButtonRegresarMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en un botón para cambiar el submenú-//.
     private void jButtonRegresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRegresarMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonRegresar.setBackground(color);
     }//GEN-LAST:event_jButtonRegresarMouseExited
 
+    //-Indicar que el cursor se ha posicionado en un botón para cambiar el submenú-//.
     private void jButtonSiguiente2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSiguiente2MouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonSiguiente2.setBackground(color);
     }//GEN-LAST:event_jButtonSiguiente2MouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en un botón para cambiar el submenú-//.
     private void jButtonSiguiente2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSiguiente2MouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonSiguiente2.setBackground(color);
     }//GEN-LAST:event_jButtonSiguiente2MouseExited
 
+    //-Indicar que el cursor se ha posicionado en un botón para cambiar el submenú-//.
     private void jButtonModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonModificarMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonModificar.setBackground(color);
     }//GEN-LAST:event_jButtonModificarMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en un botón para cambiar el submenú-//.
     private void jButtonModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonModificarMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonModificar.setBackground(color);
     }//GEN-LAST:event_jButtonModificarMouseExited
 
+    //-Indicar que el cursor se ha posicionado en el botón para generar el recibo-//.
     private void jButtonGenerarReciboMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGenerarReciboMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonGenerarRecibo.setBackground(color);
     }//GEN-LAST:event_jButtonGenerarReciboMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en un botón para generar el recibo-//.
     private void jButtonGenerarReciboMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGenerarReciboMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonGenerarRecibo.setBackground(color);
@@ -1706,15 +1729,15 @@ public class CheckIn extends javax.swing.JInternalFrame {
         String apellido = this.jTextFieldApellido.getText();
         String ciudad = this.jTextFieldCiudad.getText();
 
-        if (nombre.equals("")) {
+        if(nombre.equals("")) {
             this.jTextAreaAdicional.append("Se debe agregar algún nombre.\n");
             retorno = false;
         }
-        if (apellido.equals("")) {
+        if(apellido.equals("")) {
             this.jTextAreaAdicional.append("Se debe agregar algún apellido.\n");
             retorno = false;
         }
-        if (ciudad.equals("")) {
+        if(ciudad.equals("")) {
             this.jTextAreaAdicional.append("Se debe agregar el nombre de alguna ciudad.\n");
             retorno = false;
         }
@@ -1728,9 +1751,10 @@ public class CheckIn extends javax.swing.JInternalFrame {
         this.listaHabitacionesOcupadas.clear();
 
         //Determinar el número de piso.
-        if (this.jRadioButtonPiso1.isSelected()) {
+        if(this.jRadioButtonPiso1.isSelected()) {
             this.numeroPiso = 1;
-        } else {
+        } 
+        else {
             this.numeroPiso = 2;
         }
 
@@ -1769,48 +1793,53 @@ public class CheckIn extends javax.swing.JInternalFrame {
             try {
                 //Consultar en la base de datos todas las habitaciones reservadas.
                 ResultSet consulta = conexion.consultarTabla("huespedes",
-                        "room_id", " WHERE room_type = '" + this.tipoHabitacion + "' AND active = 1 AND floor =" + this.numeroPiso);
+                "room_id", " WHERE room_type = '" + this.tipoHabitacion + "' AND active = 1 AND floor =" + this.numeroPiso);
 
-                while (consulta.next()) {
+                while(consulta.next()) {
                     HabitacionesReservadas++;
                     this.listaHabitacionesOcupadas.add(consulta.getString("room_id"));
                 }
 
                 //Se verifica si la cantidad de habitaciones ocupadas equivale o no al total.
-                if (HabitacionesReservadas >= this.contadorHabitaciones) {
+                if(HabitacionesReservadas >= this.contadorHabitaciones) {
                     this.jTextAreaAdicional.append("No hay habitaciones tipo " + nombreHabitacion
-                            + " disponibles en el piso no. " + this.numeroPiso + ".\nModifique su selección.");
-                } else {
+                    + " disponibles en el piso no. " + this.numeroPiso + ".\nModifique su selección.");
+                } 
+                else {
                     int habitacionesDisponibles = this.contadorHabitaciones - HabitacionesReservadas;
 
                     //Se verifica si solo hay una habitación disponible.
-                    if (habitacionesDisponibles == 1) {
+                    if(habitacionesDisponibles == 1) {
                         this.jTextAreaAdicional.append("Hay una habitación tipo "
-                                + nombreHabitacion + " disponible en el piso no. " + this.numeroPiso
-                                + ".\nProceda a reservarla.");
-                    } else {
+                        + nombreHabitacion + " disponible en el piso no. " + this.numeroPiso
+                        + ".\nProceda a reservarla.");
+                    } 
+                    else {
                         this.jTextAreaAdicional.append("Hay " + habitacionesDisponibles
-                                + " habitaciones " + "tipo " + nombreHabitacion + " disponibles"
-                                + " en el piso no. " + this.numeroPiso + ".\n"
-                                + "Proceda a reservar alguna.");
+                        + " habitaciones " + "tipo " + nombreHabitacion + " disponibles"
+                        + " en el piso no. " + this.numeroPiso + ".\n"
+                        + "Proceda a reservar alguna.");
                     }
                     this.jButtonSiguiente.setEnabled(true);
                     this.jButtonSalida.setEnabled(false);
                 }
-            } catch (SQLException ex) {
+            } 
+            catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                        + " realización de la consulta.\nSQLException: " + ex.getMessage()
-                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                        "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                + " realización de la consulta.\nSQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception ex) {
+        } 
+        catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                    + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                    + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            if (conexion != null) {
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        finally {
+            if(conexion != null) {
                 conexion.cerrarConexion();
             }
         }
@@ -1819,10 +1848,11 @@ public class CheckIn extends javax.swing.JInternalFrame {
     //-Calcular el total de habitaciones, según el tipo y piso-//.
     private void calcularNumeroHabitaciones() {
         //Se verifica si se seleccionó el primer piso del hotel.
-        if (this.numeroPiso == 1) {
+        if(this.numeroPiso == 1) {
             this.contadorHabitaciones = 5;
-        } else {
-            switch (this.jComboBoxHabitacion.getSelectedIndex()) {
+        } 
+        else {
+            switch(this.jComboBoxHabitacion.getSelectedIndex()) {
                 //Habitaciones simples.
                 case 0:
 
@@ -1842,9 +1872,10 @@ public class CheckIn extends javax.swing.JInternalFrame {
     //-Control para gestionar la selección de cierta habitación-//.
     private void segundoMenu() {
         //Verificar el piso cuyas habitaciones se mostrarán.
-        if (this.numeroPiso == 1) {
+        if(this.numeroPiso == 1) {
             this.jTextFieldNumeroPiso.setText(" Primer piso");
-        } else {
+        } 
+        else {
             this.jTextFieldNumeroPiso.setText(" Segundo piso");
         }
 
@@ -1861,7 +1892,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
     //-Definir las características generales de las habitaciones, según el piso-//.
     private void definirHabitaciones() {
         this.listaTotalHabitaciones.clear();
-        if (this.numeroPiso == 1) {
+        if(this.numeroPiso == 1) {
             this.listaTotalHabitaciones.add(new Habitacion("101", "S"));
             this.listaTotalHabitaciones.add(new Habitacion("102", "D"));
             this.listaTotalHabitaciones.add(new Habitacion("103", "T"));
@@ -1877,7 +1908,8 @@ public class CheckIn extends javax.swing.JInternalFrame {
             this.listaTotalHabitaciones.add(new Habitacion("113", "S"));
             this.listaTotalHabitaciones.add(new Habitacion("114", "D"));
             this.listaTotalHabitaciones.add(new Habitacion("115", "T"));
-        } else {
+        } 
+        else {
             this.listaTotalHabitaciones.add(new Habitacion("201", "T"));
             this.listaTotalHabitaciones.add(new Habitacion("202", "S"));
             this.listaTotalHabitaciones.add(new Habitacion("203", "T"));
@@ -1899,35 +1931,39 @@ public class CheckIn extends javax.swing.JInternalFrame {
     //-Se define el estado de cada habitación-//.
     private void definirEstadoHabitaciones() {
         //Según el número de piso, mostrar la distribución de habitaciones.
-        if (this.numeroPiso == 1) {
+        if(this.numeroPiso == 1) {
             this.jTextFieldNumeroPiso.setText(" Primer piso");
-        } else {
+        } 
+        else {
             this.jTextFieldNumeroPiso.setText(" Segundo piso");
         }
         this.definirNumerosHabitaciones(numeroPiso);
 
         //Establecer el estado de todas las habitaciones del piso.
-        for (int i = 0; i < 15; i++) {
-            if (!this.listaTotalHabitaciones.get(i).getTipoHabitacion().equals(this.tipoHabitacion)) {
+        for(int i = 0; i < 15; i++) {
+            if(!this.listaTotalHabitaciones.get(i).getTipoHabitacion().equals(this.tipoHabitacion)) {
                 //Las habitaciones no correspondientes al tipo seleccionado se colorean de amarillo.
                 this.seleccionarHabitación(i).setBackground(new Color(255, 255, 209));
-            } else if (this.habitacionOcupada(this.listaTotalHabitaciones.get(i).getIdHabitacion())) {
+            } 
+            else if(this.habitacionOcupada(this.listaTotalHabitaciones.get(i).getIdHabitacion())) {
                 //Las habitaciones ocupadas se colorean de rojo.
                 this.seleccionarHabitación(i).setBackground(new Color(255, 215, 215));
-            } else {
+            } 
+            else {
                 //El resto de habitaciones se colorea de verde.
                 this.seleccionarHabitación(i).setBackground(new Color(219, 255, 209));
             }
         }
+        
         //La habitación seleccionada se colorea de rojo oscuro.
-        if (this.habitacionSeleccionada != null) {
+        if(this.habitacionSeleccionada != null) {
             this.habitacionSeleccionada.setBackground(new Color(236, 118, 125));
         }
     }
 
     //-Definir los números de habitaciones, según el piso-//.
     private void definirNumerosHabitaciones(int numeroPiso) {
-        for (int i = 0; i < 15; i++) {
+        for(int i = 0; i < 15; i++) {
             JLabel habitacion = this.seleccionarHabitación(i);
             habitacion.setText(Integer.toString(numeroPiso * 100 + (i + 1)));
         }
@@ -1937,7 +1973,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
     private JLabel seleccionarHabitación(int indice) {
         JLabel habitacion = null;
 
-        switch (indice) {
+        switch(indice) {
             case 0:
                 habitacion = this.jLabelHabitacion1;
                 break;
@@ -1990,8 +2026,8 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
     //-Se verifica si una habitación específica está ocupada-//.
     private boolean habitacionOcupada(String idHabitacion) {
-        for (String listaHabitacionesOcupada : this.listaHabitacionesOcupadas) {
-            if (idHabitacion.equals(listaHabitacionesOcupada)) {
+        for(String listaHabitacionesOcupada : this.listaHabitacionesOcupadas) {
+            if(idHabitacion.equals(listaHabitacionesOcupada)) {
                 return true;
             }
         }
@@ -2001,20 +2037,21 @@ public class CheckIn extends javax.swing.JInternalFrame {
     //-Se escoge una habitación específica (debe estar disponible o no seleccionada)-//.
     private void seleccionarHabitacion(JLabel habitacion) {
         //Se verifica si la habitación no estaba seleccionada.
-        if (this.habitacionSeleccionada == null) {
+        if(this.habitacionSeleccionada == null) {
             //Se verifica si la habitación está disponible.
             Color estado = habitacion.getBackground();
 
-            if (!estado.equals(new Color(255, 215, 215)) && !estado.equals(new Color(255, 255, 209))) {
+            if(!estado.equals(new Color(255, 215, 215)) && !estado.equals(new Color(255, 255, 209))) {
                 habitacion.setBackground(new Color(236, 118, 125));
                 this.habitacionSeleccionada = habitacion;
                 this.jButtonSiguiente2.setEnabled(true);
             }
-        } else if (this.habitacionSeleccionada != habitacion) {
+        } 
+        else if (this.habitacionSeleccionada != habitacion) {
             //Se verifica si la habitación está disponible.
             Color estado = habitacion.getBackground();
 
-            if (!estado.equals(new Color(255, 215, 215)) && !estado.equals(new Color(255, 255, 209))) {
+            if(!estado.equals(new Color(255, 215, 215)) && !estado.equals(new Color(255, 255, 209))) {
                 this.habitacionSeleccionada.setBackground(new Color(219, 255, 209));
                 habitacion.setBackground(new Color(236, 118, 125));
                 this.habitacionSeleccionada = habitacion;
@@ -2029,7 +2066,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
         //Imprimir el nombre del huésped.
         this.jTextAreaDatos.append("\nNombre completo del huésped: " + this.jTextFieldNombre.getText().trim()
-                + " " + this.jTextFieldApellido.getText().trim() + ".\n");
+        + " " + this.jTextFieldApellido.getText().trim() + ".\n");
 
         //Imprimir la ciudad de origen.
         this.jTextAreaDatos.append("Ciudad de origen: " + this.jTextFieldCiudad.getText() + ".\n\n");
@@ -2080,13 +2117,15 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
         //Imprimir y almacenar la cantidad de huéspedes.
         this.jTextAreaDatos.append("\nCantidad de huéspedes: ");
-        if (this.jRadioButtonUna.isSelected()) {
+        if(this.jRadioButtonUna.isSelected()) {
             this.jTextAreaDatos.append("1.\n");
             this.cantidadHuespedes = 1;
-        } else if (this.jRadioButtonDos.isSelected()) {
+        } 
+        else if(this.jRadioButtonDos.isSelected()) {
             this.jTextAreaDatos.append("2.\n");
             this.cantidadHuespedes = 2;
-        } else {
+        } 
+        else {
             this.jTextAreaDatos.append("3.\n");
             this.cantidadHuespedes = 3;
         }
@@ -2101,34 +2140,34 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
         //Imprimir la lista de servicios adicionales.
         this.jTextAreaDatos.append("\nServicios adicionales:\n");
-        if (this.jCheckBoxCuarto.isSelected()) {
+        if(this.jCheckBoxCuarto.isSelected()) {
             this.jTextAreaDatos.append("- " + this.jCheckBoxCuarto.getText() + ".\n");
         }
-        if (this.jCheckBoxBar.isSelected()) {
+        if(this.jCheckBoxBar.isSelected()) {
             this.jTextAreaDatos.append("- " + this.jCheckBoxBar.getText() + ".\n");
         }
-        if (this.jCheckBoxTintoreria.isSelected()) {
+        if(this.jCheckBoxTintoreria.isSelected()) {
             this.jTextAreaDatos.append("- " + this.jCheckBoxTintoreria.getText() + ".\n");
         }
-        if (this.jCheckBoxSPA.isSelected()) {
+        if(this.jCheckBoxSPA.isSelected()) {
             this.jTextAreaDatos.append("- " + this.jCheckBoxSPA.getText() + ".\n");
         }
-        if (this.jCheckBoxCuidado.isSelected()) {
+        if(this.jCheckBoxCuidado.isSelected()) {
             this.jTextAreaDatos.append("- " + this.jCheckBoxCuidado.getText() + ".\n");
         }
-        if (this.jCheckBoxGimnasio.isSelected()) {
+        if(this.jCheckBoxGimnasio.isSelected()) {
             this.jTextAreaDatos.append("- " + this.jCheckBoxGimnasio.getText() + ".\n");
         }
-        if (this.jCheckBoxJuegos.isSelected()) {
+        if(this.jCheckBoxJuegos.isSelected()) {
             this.jTextAreaDatos.append("- " + this.jCheckBoxJuegos.getText() + ".\n");
         }
-        if (this.jCheckBoxTennis.isSelected()) {
+        if(this.jCheckBoxTennis.isSelected()) {
             this.jTextAreaDatos.append("- " + this.jCheckBoxTennis.getText() + ".\n");
         }
-        if (this.jCheckBoxArco.isSelected()) {
+        if(this.jCheckBoxArco.isSelected()) {
             this.jTextAreaDatos.append("- " + this.jCheckBoxArco.getText() + ".\n");
         }
-        if (this.jCheckBoxGolf.isSelected()) {
+        if(this.jCheckBoxGolf.isSelected()) {
             this.jTextAreaDatos.append("- " + this.jCheckBoxGolf.getText() + ".\n");
         }
     }
@@ -2200,9 +2239,9 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
                 //Agregar los datos a la tabla de huéspedes.
                 PreparedStatement comando = conexion.getConexion().prepareStatement(
-                        "INSERT INTO huespedes(name, city, check_in, check_out, days, "
-                        + "room_id, room_type, floor, guests, extras, active) VALUES"
-                        + "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                "INSERT INTO huespedes(name, city, check_in, check_out, days, "
+                + "room_id, room_type, floor, guests, extras, active) VALUES"
+                + "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                 comando.setString(1, this.jTextFieldNombre.getText().trim() + " " + this.jTextFieldApellido.getText().trim());
                 comando.setString(2, this.jTextFieldCiudad.getText());
                 comando.setDate(3, fechaI);
@@ -2218,45 +2257,49 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
                 //Consultar el identificador de huésped.
                 ResultSet consulta = conexion.consultarTabla("huespedes",
-                        "guest_id", " ORDER BY guest_id DESC LIMIT 1");
+                "guest_id", " ORDER BY guest_id DESC LIMIT 1");
 
                 //Agregar datos a la tabla de servicios.
-                if (consulta.next()) {
+                if(consulta.next()) {
                     //Agregar datos a la tabla de servicios.
                     conexion.insertarDatos("servicios", "(guest_id, room_service,"
-                            + " bar_access, cleaner_service, SPA_service, baby_sister_service,"
-                            + "gym_access, gaming_access, tennis_access, bow_shooting, golf_access)",
-                            "(" + consulta.getInt("guest_id") + ", "
-                            + this.aEntero(this.jCheckBoxCuarto.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxBar.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxTintoreria.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxSPA.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxCuidado.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxGimnasio.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxJuegos.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxTennis.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxArco.isSelected()) + ", "
-                            + this.aEntero(this.jCheckBoxGolf.isSelected()) + ")");
+                    + " bar_access, cleaner_service, SPA_service, baby_sister_service,"
+                    + "gym_access, gaming_access, tennis_access, bow_shooting, golf_access)",
+                    "(" + consulta.getInt("guest_id") + ", "
+                    + this.aEntero(this.jCheckBoxCuarto.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxBar.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxTintoreria.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxSPA.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxCuidado.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxGimnasio.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxJuegos.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxTennis.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxArco.isSelected()) + ", "
+                    + this.aEntero(this.jCheckBoxGolf.isSelected()) + ")");
 
                     JOptionPane.showMessageDialog(this, "El registro fue exitosamente "
-                            + "realizado.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-                } else {
+                    + "realizado.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                } 
+                else {
                     throw new SQLException();
                 }
-            } catch (SQLException ex) {
+            } 
+            catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                        "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception ex) {
+        } 
+        catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                    + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                    + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            if (conexion != null) {
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        finally {
+            if(conexion != null) {
                 conexion.cerrarConexion();
             }
         }
@@ -2266,7 +2309,8 @@ public class CheckIn extends javax.swing.JInternalFrame {
     private int aEntero(boolean booleano) {
         if (booleano) {
             return 1;
-        } else {
+        } 
+        else {
             return 0;
         }
     }

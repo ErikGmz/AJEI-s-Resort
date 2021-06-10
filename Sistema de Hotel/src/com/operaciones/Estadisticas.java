@@ -1,5 +1,7 @@
+//---Paquete---//.
 package com.operaciones;
 
+//---Sentencias import---//.
 import com.bases_de_datos.ConexionMySQL;
 import java.awt.Color;
 import java.awt.Font;
@@ -26,12 +28,15 @@ import org.jfree.chart.renderer.category.StandardBarPainter;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 
+//---Clase pública---//.
 public class Estadisticas extends javax.swing.JInternalFrame implements Runnable {
 
+    //---Constructor---//.
     public Estadisticas() {
         initComponents();
     }
 
+    //---Métodos---//.
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -306,7 +311,7 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
                         .addGroup(jPanelOcupacionHoteleraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabelBtnOcup4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonOcupacionTriple, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
-                        .addGap(0, 48, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanelGraficosOcupacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -359,13 +364,13 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
         jLabelImgTotalHuespedes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/Persons.png"))); // NOI18N
 
         jLabelTotalHuespedes.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
-        jLabelTotalHuespedes.setForeground(new java.awt.Color(255, 0, 51));
+        jLabelTotalHuespedes.setForeground(new java.awt.Color(162, 3, 34));
         jLabelTotalHuespedes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTotalHuespedes.setText("0");
         jLabelTotalHuespedes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabelTxtIngresosTotales1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabelTxtIngresosTotales1.setForeground(new java.awt.Color(255, 0, 51));
+        jLabelTxtIngresosTotales1.setForeground(new java.awt.Color(162, 3, 34));
         jLabelTxtIngresosTotales1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTxtIngresosTotales1.setText("Total De Huéspedes");
 
@@ -399,7 +404,7 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
         jPanelServicios.setBackground(new java.awt.Color(255, 163, 51));
 
         jLabelServicios.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabelServicios.setForeground(new java.awt.Color(255, 0, 51));
+        jLabelServicios.setForeground(new java.awt.Color(0, 117, 27));
         jLabelServicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/bar-chart.png"))); // NOI18N
         jLabelServicios.setText("Estadísticas De Servicios");
 
@@ -413,7 +418,7 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
         );
         jPanelGraficoServiciosLayout.setVerticalGroup(
             jPanelGraficoServiciosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 141, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanelServiciosLayout = new javax.swing.GroupLayout(jPanelServicios);
@@ -421,13 +426,13 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
         jPanelServiciosLayout.setHorizontalGroup(
             jPanelServiciosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelServiciosLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(5, 5, 5)
                 .addGroup(jPanelServiciosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelGraficoServicios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelServiciosLayout.createSequentialGroup()
                         .addComponent(jLabelServicios)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanelGraficoServicios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addGap(0, 209, Short.MAX_VALUE)))
+                .addGap(5, 5, 5))
         );
         jPanelServiciosLayout.setVerticalGroup(
             jPanelServiciosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -442,7 +447,7 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
         jPanelTotalHabitaciones.setBackground(new java.awt.Color(255, 163, 51));
 
         jLabelTotalHabitaciones.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabelTotalHabitaciones.setForeground(new java.awt.Color(0, 153, 153));
+        jLabelTotalHabitaciones.setForeground(new java.awt.Color(120, 0, 146));
         jLabelTotalHabitaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/ring-chart.png"))); // NOI18N
         jLabelTotalHabitaciones.setText("Total De Habitaciones");
 
@@ -452,11 +457,11 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
         jPanelGraficoTotalHabitaciones.setLayout(jPanelGraficoTotalHabitacionesLayout);
         jPanelGraficoTotalHabitacionesLayout.setHorizontalGroup(
             jPanelGraficoTotalHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 385, Short.MAX_VALUE)
         );
         jPanelGraficoTotalHabitacionesLayout.setVerticalGroup(
             jPanelGraficoTotalHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 168, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanelTotalHabitacionesLayout = new javax.swing.GroupLayout(jPanelTotalHabitaciones);
@@ -466,11 +471,9 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
             .addGroup(jPanelTotalHabitacionesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelTotalHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelTotalHabitacionesLayout.createSequentialGroup()
-                        .addComponent(jLabelTotalHabitaciones)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanelGraficoTotalHabitaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jLabelTotalHabitaciones)
+                    .addComponent(jPanelGraficoTotalHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelTotalHabitacionesLayout.setVerticalGroup(
             jPanelTotalHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -521,9 +524,9 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
                 .addComponent(jLabelTxtPrecioSencilla)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelTxtPrecioSencilla2)
-                .addGap(40, 40, 40)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelPrecioSencilla)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         jPanelPrecioDoble.setBackground(new java.awt.Color(255, 163, 51));
@@ -539,7 +542,7 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
         jLabelTxtPrecioDoble2.setText("Itzamná Suite");
 
         jLabelPrecioDoble.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
-        jLabelPrecioDoble.setForeground(new java.awt.Color(102, 102, 0));
+        jLabelPrecioDoble.setForeground(new java.awt.Color(73, 73, 0));
         jLabelPrecioDoble.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelPrecioDoble.setText("$ 0.00");
 
@@ -562,7 +565,7 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
                 .addComponent(jLabelTxtPrecioDoble)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelTxtPrecioDoble2)
-                .addGap(40, 40, 40)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelPrecioDoble)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -603,7 +606,7 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
                 .addComponent(jLabelTxtPrecioTriple)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelTxtPrecioTriple2)
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelPrecioTriple)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -624,7 +627,7 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
 
         jPanelPreciosHabitacionesLayout.setVerticalGroup(
             jPanelPreciosHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelPrecioSencilla, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+            .addComponent(jPanelPrecioSencilla, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
             .addComponent(jPanelPrecioDoble, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanelPrecioTriple, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -664,18 +667,18 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
                     .addComponent(jLabelCerrar)
                     .addComponent(jLabelTitulo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanelOcupacionHotelera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelBaseLayout.createSequentialGroup()
                         .addGroup(jPanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanelTotalHuespedes, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
-                            .addComponent(jPanelIngresosTotales, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
+                            .addComponent(jPanelTotalHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanelIngresosTotales, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanelPreciosHabitaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jPanelPreciosHabitaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelOcupacionHotelera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelServicios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelTotalHabitaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelTotalHabitaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelServicios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -693,67 +696,80 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //-Cerrar el menú de las estadísticas-//.
     private void jLabelCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCerrarMouseClicked
         this.dispose();
     }//GEN-LAST:event_jLabelCerrarMouseClicked
 
+    //-Indicar que el cursor se ha posicionado en el botón para generar la gráfica de la ocupación total-//.
     private void jButtonOcupacionTotalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOcupacionTotalMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonOcupacionTotal.setBackground(color);
     }//GEN-LAST:event_jButtonOcupacionTotalMouseEntered
 
+    //-Indicar que el cursor se dejó de posicionar en el botón para generar la gráfica de la ocupación total-//.
     private void jButtonOcupacionTotalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOcupacionTotalMouseExited
         Color color = new Color(Integer.parseInt("FFA333", 16));
         this.jButtonOcupacionTotal.setBackground(color);
     }//GEN-LAST:event_jButtonOcupacionTotalMouseExited
 
+    //-Generar la gráfica para indicar la ocupación total del hotel-//.
     private void jButtonOcupacionTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOcupacionTotalActionPerformed
         this.rellenarInformacion_PanelOcupacion(0);
     }//GEN-LAST:event_jButtonOcupacionTotalActionPerformed
 
+    //-Indicar que el cursor se ha posicionado en el botón para generar la gráfica de la ocupación de habitaciones simples-//.
     private void jButtonOcupacionSimpleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOcupacionSimpleMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonOcupacionSimple.setBackground(color);
     }//GEN-LAST:event_jButtonOcupacionSimpleMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el botón para generar la gráfica de la ocupación de habitaciones simples-//.
     private void jButtonOcupacionSimpleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOcupacionSimpleMouseExited
         Color color = new Color(Integer.parseInt("FFA333", 16));
         this.jButtonOcupacionSimple.setBackground(color);
     }//GEN-LAST:event_jButtonOcupacionSimpleMouseExited
 
+    //-Generar la gráfica para indicar la ocupación de habitaciones simples-//.
     private void jButtonOcupacionSimpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOcupacionSimpleActionPerformed
         this.rellenarInformacion_PanelOcupacion(1);
     }//GEN-LAST:event_jButtonOcupacionSimpleActionPerformed
 
+    //-Indicar que el cursor se ha posicionado en el botón para generar la gráfica de la ocupación de habitaciones dobles-//.
     private void jButtonOcupacionDobleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOcupacionDobleMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonOcupacionDoble.setBackground(color);
     }//GEN-LAST:event_jButtonOcupacionDobleMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el botón para generar la gráfica de la ocupación de habitaciones dobles-//.
     private void jButtonOcupacionDobleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOcupacionDobleMouseExited
         Color color = new Color(Integer.parseInt("FFA333", 16));
         this.jButtonOcupacionDoble.setBackground(color);
     }//GEN-LAST:event_jButtonOcupacionDobleMouseExited
 
+    //-Generar la gráfica para indicar la ocupación de habitaciones dobles-//.
     private void jButtonOcupacionDobleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOcupacionDobleActionPerformed
         this.rellenarInformacion_PanelOcupacion(2);
     }//GEN-LAST:event_jButtonOcupacionDobleActionPerformed
 
+    //-Indicar que el cursor se ha posicionado en el botón para generar la gráfica de la ocupación de habitaciones triples-//.
     private void jButtonOcupacionTripleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOcupacionTripleMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonOcupacionTriple.setBackground(color);
     }//GEN-LAST:event_jButtonOcupacionTripleMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el botón para generar la gráfica de la ocupación de habitaciones triples-//.
     private void jButtonOcupacionTripleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOcupacionTripleMouseExited
         Color color = new Color(Integer.parseInt("FFA333", 16));
         this.jButtonOcupacionTriple.setBackground(color);
     }//GEN-LAST:event_jButtonOcupacionTripleMouseExited
 
+    //-Generar la gráfica para indicar la ocupación de habitaciones triples-//.
     private void jButtonOcupacionTripleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOcupacionTripleActionPerformed
         this.rellenarInformacion_PanelOcupacion(3);
     }//GEN-LAST:event_jButtonOcupacionTripleActionPerformed
 
-    //- LLamada a los métodos para rellenar toda la seccion de estadísticas del hotel-//
+    //-LLamada a los métodos para rellenar toda la sección de estadísticas del hotel-//.
     private void rellenaInformacion() {
         this.rellenarInformacion_PanelOcupacion(0);
         this.rellenarInformacion_PanelIngresosTotales();
@@ -779,18 +795,20 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
             try {
                 //Consultar en la base de datos los huéspedes actuales.
                 ResultSet consulta = conexion.consultarTabla("huespedes",
-                        "guests, extras", " WHERE active = 1");
-                while (consulta.next()) {
+                "guests, extras", " WHERE active = 1");
+                
+                while(consulta.next()) {
                     totalHuespedes += consulta.getInt("guests");
                     totalHuespedes += consulta.getInt("extras");
                 }
                 this.jLabelOcupacionHotelera.setText(totalHuespedes * 100 / 80 + " %");
-            } catch (SQLException ex) {
+            } 
+            catch (SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                        "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
 
             switch (tipo) {
@@ -798,54 +816,58 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
                     try {
                         //Consultar en la base de datos las habitaciones ocupadas en todo el hotel.
                         ResultSet consulta = conexion.consultarTabla("huespedes",
-                                "COUNT(room_id) AS c_room", " WHERE active = 1");
+                        "COUNT(room_id) AS c_room", " WHERE active = 1");
 
-                        if (consulta.next()) {
+                        if(consulta.next()) {
                             habitacionesOcupadas = consulta.getInt("c_room");
 
                             //Hay un total de 30 habitaciones en el hotel.
                             habitacionesLibres = 30 - habitacionesOcupadas;
-                        } else {
+                        } 
+                        else {
                             throw new SQLException();
                         }
-
+                        
                         //Generar una gráfica de pastel correspondiente al porcentaje de ocupación de 
                         //todas las habitaciones del hotel.
                         this.generarGraficaCircular(habitacionesOcupadas, habitacionesLibres, "Ocupación Total",
-                                this.jPanelGraficosOcupacion, new Color(Integer.parseInt("7D9707", 16)), new Color(Integer.parseInt("C84404", 16)));
-                    } catch (SQLException ex) {
+                        this.jPanelGraficosOcupacion, new Color(Integer.parseInt("7D9707", 16)), new Color(Integer.parseInt("C84404", 16)));
+                    } 
+                    catch(SQLException ex) {
                         ex.printStackTrace();
-                        JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                                + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                                "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                        "Error", JOptionPane.ERROR_MESSAGE);
                     }
                     break;
                 case 1:
                     try {
                         //Consultar en la base de datos las habitaciones simples ocupadas en todo el hotel.
                         ResultSet consulta = conexion.consultarTabla("huespedes",
-                                "COUNT(room_id) AS c_simple_room", " WHERE active = 1 AND room_type = 'S'");
+                        "COUNT(room_id) AS c_simple_room", " WHERE active = 1 AND room_type = 'S'");
 
-                        if (consulta.next()) {
+                        if(consulta.next()) {
                             habitacionesOcupadas = consulta.getInt("c_simple_room");
 
                             //Hay un total de 9 habitaciones simples en el hotel.
                             habitacionesLibres = 9 - habitacionesOcupadas;
-                        } else {
+                        } 
+                        else {
                             throw new SQLException();
                         }
 
                         //Generar una gráfica de pastel correspondiente al porcentaje de ocupación de 
                         //porcentaje de ocupación de habitaciones simples.
                         this.generarGraficaCircular(habitacionesOcupadas, habitacionesLibres, "Habitaciones Chaac Suite (simples)",
-                                this.jPanelGraficosOcupacion, new Color(Integer.parseInt("7D9707", 16)), new Color(Integer.parseInt("C84404", 16)));
-                    } catch (SQLException ex) {
+                        this.jPanelGraficosOcupacion, new Color(Integer.parseInt("7D9707", 16)), new Color(Integer.parseInt("C84404", 16)));
+                    } 
+                    catch(SQLException ex) {
                         ex.printStackTrace();
-                        JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                                + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                                "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                        "Error", JOptionPane.ERROR_MESSAGE);
                     }
                     break;
 
@@ -853,27 +875,29 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
                     try {
                         //Consultar en la base de datos las habitaciones dobles ocupadas en todo el hotel.
                         ResultSet consulta = conexion.consultarTabla("huespedes",
-                                "COUNT(room_id) AS c_double_room", " WHERE active = 1 AND room_type = 'D'");
+                        "COUNT(room_id) AS c_double_room", " WHERE active = 1 AND room_type = 'D'");
 
-                        if (consulta.next()) {
+                        if(consulta.next()) {
                             habitacionesOcupadas = consulta.getInt("c_double_room");
 
                             //Hay un total de 9 habitaciones dobles en el hotel.
                             habitacionesLibres = 9 - habitacionesOcupadas;
-                        } else {
+                        } 
+                        else {
                             throw new SQLException();
                         }
 
                         //Generar una gráfica de pastel correspondiente al porcentaje de ocupación de 
                         //porcentaje de ocupación de habitaciones dobles.
                         this.generarGraficaCircular(habitacionesOcupadas, habitacionesLibres, "Habitaciones Itzamná Suite (dobles)",
-                                this.jPanelGraficosOcupacion, new Color(Integer.parseInt("7D9707", 16)), new Color(Integer.parseInt("C84404", 16)));
-                    } catch (SQLException ex) {
+                        this.jPanelGraficosOcupacion, new Color(Integer.parseInt("7D9707", 16)), new Color(Integer.parseInt("C84404", 16)));
+                    } 
+                    catch(SQLException ex) {
                         ex.printStackTrace();
-                        JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                                + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                                "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                        "Error", JOptionPane.ERROR_MESSAGE);
                     }
                     break;
 
@@ -881,43 +905,47 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
                     try {
                         //Consultar en la base de datos las habitaciones triples ocupadas en todo el hotel.
                         ResultSet consulta = conexion.consultarTabla("huespedes",
-                                "COUNT(room_id) AS c_triple_room", " WHERE active = 1 AND room_type = 'T'");
+                        "COUNT(room_id) AS c_triple_room", " WHERE active = 1 AND room_type = 'T'");
 
                         if (consulta.next()) {
                             habitacionesOcupadas = consulta.getInt("c_triple_room");
 
                             //Hay un total de 12 habitaciones triples en el hotel.
                             habitacionesLibres = 12 - habitacionesOcupadas;
-                        } else {
+                        } 
+                        else {
                             throw new SQLException();
                         }
 
                         //Generar una gráfica de pastel correspondiente al porcentaje de ocupación de 
                         //porcentaje de ocupación de habitaciones triples.
                         this.generarGraficaCircular(habitacionesOcupadas, habitacionesLibres, "Habitaciones Kauil Suite (triples)",
-                                this.jPanelGraficosOcupacion, new Color(Integer.parseInt("7D9707", 16)), new Color(Integer.parseInt("C84404", 16)));
-                    } catch (SQLException ex) {
+                        this.jPanelGraficosOcupacion, new Color(Integer.parseInt("7D9707", 16)), new Color(Integer.parseInt("C84404", 16)));
+                    } 
+                    catch(SQLException ex) {
                         ex.printStackTrace();
-                        JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                                + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                                "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                        "Error", JOptionPane.ERROR_MESSAGE);
                     }
                     break;
             }
-        } catch (Exception ex) {
+        } 
+        catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                    + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                    + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            if (conexion != null) {
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        finally {
+            if(conexion != null) {
                 conexion.cerrarConexion();
             }
         }
     }
 
-    //-Generar una gráfica de pastel, a partir de ciertos datos y un JPanel-//.
+    //-Generar una gráfica de pastel a partir de ciertos datos y un JPanel-//.
     private void generarGraficaCircular(int habitacionesOcupadas, int habitacionesLibres, String nombre, JPanel jPanel, Color primerColor, Color segundoColor) {
         DefaultPieDataset<String> datos = new DefaultPieDataset<String>();
         datos.setValue("Ocupadas", habitacionesOcupadas);
@@ -960,30 +988,32 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
             try {
                 //Consultar en la base de datos lo que cada huésped ha pagado tras realizar el check-out.
                 ResultSet consulta = conexion.consultarTabla("huespedes",
-                        "name, expense", " WHERE active = 0");
-
+                "name, expense", " WHERE active = 0");
                 DecimalFormat formato1 = new DecimalFormat("###,###.00");
 
                 // se realiza la suma de las cuentas de cada huésped.
-                while (consulta.next()) {
+                while(consulta.next()) {
                     double ingresosHuesped = consulta.getDouble("expense");
                     ingresosTotales += ingresosHuesped;
                 }
                 this.jLabelIngresosTotales.setText("$ " + formato1.format(ingresosTotales));
-            } catch (SQLException ex) {
+            } 
+            catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                        "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception ex) {
+        } 
+        catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                    + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                    + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            if (conexion != null) {
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        finally {
+            if(conexion != null) {
                 conexion.cerrarConexion();
             }
         }
@@ -1001,26 +1031,30 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
             try {
                 //Consultar en la base de datos los huéspedes actuales.
                 ResultSet consulta = conexion.consultarTabla("huespedes",
-                        "guests, extras", " WHERE active = 1");
-                while (consulta.next()) {
+                "guests, extras", " WHERE active = 1");
+                
+                while(consulta.next()) {
                     totalHuespedes += consulta.getInt("guests");
                     totalHuespedes += consulta.getInt("extras");
                 }
                 this.jLabelTotalHuespedes.setText("" + totalHuespedes);
-            } catch (SQLException ex) {
+            } 
+            catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                        "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception ex) {
+        } 
+        catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                    + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                    + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            if (conexion != null) {
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        finally {
+            if(conexion != null) {
                 conexion.cerrarConexion();
             }
         }
@@ -1038,29 +1072,31 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
             try {
                 //Consultar en la base de datos los precios de cada habitación.
                 ResultSet consulta = conexion.consultarTabla("precios", "price", "");
-
                 DecimalFormat formato = new DecimalFormat("$0,000.00");
 
-                while (consulta.next()) {
+                while(consulta.next()) {
                     listaPrecios.add(consulta.getDouble("price"));
                 }
                 this.jLabelPrecioSencilla.setText(formato.format(listaPrecios.get(0)));
                 this.jLabelPrecioDoble.setText(formato.format(listaPrecios.get(1)));
                 this.jLabelPrecioTriple.setText(formato.format(listaPrecios.get(2)));
-            } catch (SQLException ex) {
+            } 
+            catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                        "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception ex) {
+        } 
+        catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                    + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                    + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            if (conexion != null) {
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        finally {
+            if(conexion != null) {
                 conexion.cerrarConexion();
             }
         }
@@ -1078,101 +1114,131 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
             try {
                 //Consultar en la base de datos la cantidad de contrataciones del servicio de atención al cuarto.
                 ResultSet consulta = conexion.consultarTabla("servicios",
-                        "COUNT(room_service) AS r_count", " WHERE room_service = 1 LIMIT 1");
-                if (consulta.next()) {
+                "COUNT(room_service) AS r_count", " WHERE room_service = 1 LIMIT 1");
+                
+                if(consulta.next()) {
                     servicios.put("Atencion Al Cuarto", consulta.getInt(1));
-                } else {
+                } 
+                else {
                     servicios.put("Atencion Al Cuarto", 0);
                 }
+                
                 //Consultar en la base de datos la cantidad de contrataciones del servicio de acceso al bar.
                 consulta = conexion.consultarTabla("servicios",
-                        "COUNT(bar_access) AS b_count", " WHERE bar_access = 1 LIMIT 1");
-                if (consulta.next()) {
+                "COUNT(bar_access) AS b_count", " WHERE bar_access = 1 LIMIT 1");
+                
+                if(consulta.next()) {
                     servicios.put("Acceso Al Bar", consulta.getInt(1));
-                } else {
+                } 
+                else {
                     servicios.put("Acceso Al Bar", 0);
                 }
+                
                 //Consultar en la base de datos la cantidad de contrataciones del servicio de tintorería.
                 consulta = conexion.consultarTabla("servicios",
-                        "COUNT(cleaner_service) AS c_count", " WHERE cleaner_service = 1 LIMIT 1");
-                if (consulta.next()) {
+                "COUNT(cleaner_service) AS c_count", " WHERE cleaner_service = 1 LIMIT 1");
+                
+                if(consulta.next()) {
                     servicios.put("Servicio De Tintorería", consulta.getInt(1));
-                } else {
+                } 
+                else {
                     servicios.put("Servico de Tintorería", 0);
                 }
+                
                 //Consultar en la base de datos la cantidad de contrataciones del servicio de SPA.
                 consulta = conexion.consultarTabla("servicios",
-                        "COUNT(SPA_service) AS s_count", " WHERE SPA_service = 1 LIMIT 1");
-                if (consulta.next()) {
+                "COUNT(SPA_service) AS s_count", " WHERE SPA_service = 1 LIMIT 1");
+                
+                if(consulta.next()) {
                     servicios.put("Servicio De SPA", consulta.getInt(1));
-                } else {
+                } 
+                else {
                     servicios.put("Servicio De SPA", 0);
                 }
+                
                 //Consultar en la base de datos la cantidad de contrataciones del servicio de niñera.
                 consulta = conexion.consultarTabla("servicios",
-                        "COUNT(baby_sister_service) AS bs_count", " WHERE baby_sister_service = 1 LIMIT 1");
-                if (consulta.next()) {
+                "COUNT(baby_sister_service) AS bs_count", " WHERE baby_sister_service = 1 LIMIT 1");
+                
+                if(consulta.next()) {
                     servicios.put("Contratación De Niñera", consulta.getInt(1));
-                } else {
+                } 
+                else {
                     servicios.put("Contratación De Niñera", 0);
                 }
+                
                 //Consultar en la base de datos la cantidad de contrataciones del servicio de acceso al gimnasio.
                 consulta = conexion.consultarTabla("servicios",
-                        "COUNT(gym_access) AS g_count", " WHERE gym_access = 1 LIMIT 1");
-                if (consulta.next()) {
+                "COUNT(gym_access) AS g_count", " WHERE gym_access = 1 LIMIT 1");
+                
+                if(consulta.next()) {
                     servicios.put("Acceso Al Gimnasio", consulta.getInt(1));
-                } else {
+                } 
+                else {
                     servicios.put("Acceso Al Gimnasio", 0);
                 }
+                
                 //Consultar en la base de datos la cantidad de contrataciones del servicio de acceso a la zona de juegos.
                 consulta = conexion.consultarTabla("servicios",
-                        "COUNT(gaming_access) AS ga_count", " WHERE gaming_access = 1 LIMIT 1");
-                if (consulta.next()) {
+                "COUNT(gaming_access) AS ga_count", " WHERE gaming_access = 1 LIMIT 1");
+                
+                if(consulta.next()) {
                     servicios.put("Acceso A Zona De Juegos", consulta.getInt(1));
-                } else {
+                } 
+                else {
                     servicios.put("Acceso A Zona De Juegos", 0);
                 }
+                
                 //Consultar en la base de datos la cantidad de contrataciones del servicio de acceso a las canchas de tennis.
                 consulta = conexion.consultarTabla("servicios",
-                        "COUNT(tennis_access) AS t_count", " WHERE tennis_access = 1 LIMIT 1");
-                if (consulta.next()) {
+                "COUNT(tennis_access) AS t_count", " WHERE tennis_access = 1 LIMIT 1");
+                
+                if(consulta.next()) {
                     servicios.put("Acceso A Canchas De Tenis", consulta.getInt(1));
-                } else {
+                } 
+                else {
                     servicios.put("Acceso A Canchas De Tenis", 0);
-                };
+                }
+                
                 //Consultar en la base de datos la cantidad de contrataciones del servicio de acceso al campo de tiro con arco.
                 consulta = conexion.consultarTabla("servicios",
-                        "COUNT(bow_shooting) AS bw_count", " WHERE bow_shooting = 1 LIMIT 1");
-                if (consulta.next()) {
+                "COUNT(bow_shooting) AS bw_count", " WHERE bow_shooting = 1 LIMIT 1");
+                
+                if(consulta.next()) {
                     servicios.put("Acceso A Campo De Tiro Con Arco", consulta.getInt(1));
-                } else {
+                } 
+                else {
                     servicios.put("Acceso A Campo De Tiro Con Arco", 0);
                 }
+                
                 //Consultar en la base de datos la cantidad de contrataciones del servicio de acceso al campo de golf.
                 consulta = conexion.consultarTabla("servicios",
-                        "COUNT(golf_access) AS gf_count", " WHERE golf_access = 1 LIMIT 1");
+                "COUNT(golf_access) AS gf_count", " WHERE golf_access = 1 LIMIT 1");
+                
                 if (consulta.next()) {
                     servicios.put("Acceso A Campo De Golf", consulta.getInt(1));
-                } else {
+                } 
+                else {
                     servicios.put("Acceso A Campo De Golf", 0);
                 }
-
                 this.generarGraficoServicios(servicios);
-
-            } catch (SQLException ex) {
+            } 
+            catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                        "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception ex) {
+        } 
+        catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                    + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                    + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            if (conexion != null) {
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        finally {
+            if(conexion != null) {
                 conexion.cerrarConexion();
             }
         }
@@ -1182,27 +1248,30 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
     private void generarGraficoServicios(HashMap<String, Integer> servicios) {
         DefaultCategoryDataset datos = new DefaultCategoryDataset();
         Iterator it = servicios.keySet().iterator();
-        while (it.hasNext()) {
+        
+        while(it.hasNext()) {
             String clave = (String) it.next();
             datos.setValue(servicios.get(clave), "Contrataciones", clave);
         }
 
-        JFreeChart grafico = ChartFactory.createBarChart("Contratación De Servicios",
-                "Servicios", "No. De Contrataciones", datos, PlotOrientation.HORIZONTAL, true, true, false);
+        JFreeChart grafico = ChartFactory.createBarChart("",
+        "Servicios", "No. De Contrataciones", datos, PlotOrientation.HORIZONTAL, true, true, false);
         grafico.setBackgroundPaint(new Color(Integer.parseInt("FFA333", 16)));
-        grafico.getTitle().setFont(new Font("SansSerif", Font.BOLD, 14));
-        grafico.getTitle().setPaint(new Color(Integer.parseInt("FF0033", 16)));
-
+        
+        String auxiliar = null;
+        grafico.setTitle(auxiliar);
+        
         CategoryPlot plot = grafico.getCategoryPlot();
         plot.setRangeGridlinePaint(Color.BLACK);
         plot.setBackgroundPaint(new Color(Integer.parseInt("FFA333", 16)));
-        plot.getDomainAxis().setLabelPaint(new Color(Integer.parseInt("FF0033", 16)));
-        plot.getRangeAxis().setLabelPaint(new Color(Integer.parseInt("FF0033", 16)));
+        plot.getDomainAxis().setLabelPaint(new Color(Integer.parseInt("000069", 16)));
+        plot.getRangeAxis().setLabelPaint(new Color(Integer.parseInt("000069", 16)));
         plot.getDomainAxis().setTickLabelFont(new Font("SansSerif", Font.PLAIN, 8));
         plot.getRangeAxis().setTickLabelFont(new Font("SansSerif", Font.BOLD, 12));
-        plot.getDomainAxis().setTickLabelPaint(new Color(Integer.parseInt("FF0033", 16)));
+        plot.getDomainAxis().setTickLabelPaint(new Color(Integer.parseInt("000069", 16)));
 
         BarRenderer renderizado = (BarRenderer) plot.getRenderer();
+        renderizado.setSeriesPaint(0, new Color(Integer.parseInt("000069", 16)));
         renderizado.setBarPainter(new StandardBarPainter());
 
         ChartPanel panel = new ChartPanel(grafico);
@@ -1226,36 +1295,38 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
             try {
                 //Consultar en la base de datos la cantidad total de habitaciones.
                 ResultSet consulta = conexion.consultarTabla("habitaciones",
-                        "rooms_count", "");
+                "rooms_count", "");
 
-                while (consulta.next()) {
+                while(consulta.next()) {
                     totalesHabitaciones.add(consulta.getInt("rooms_count"));
                 }
 
                 //Generar una gráfica de anillo correspondiente al total de
                 //habitaciones de cada tipo.
                 this.generarGraficoTotalHabitaciones(totalesHabitaciones);
-
-            } catch (SQLException ex) {
+            } 
+            catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                        "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception ex) {
+        }
+        catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                    + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                    + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            if (conexion != null) {
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        finally {
+            if(conexion != null) {
                 conexion.cerrarConexion();
             }
         }
     }
 
-    //- A partir de la información de un ArrayList, se genera un gráfico de anillo -//.
+    //-A partir de la información de un ArrayList, se genera un gráfico de anillo-//.
     private void generarGraficoTotalHabitaciones(ArrayList<Integer> totalesHabitaciones) {
         DefaultPieDataset<String> datos = new DefaultPieDataset<String>();
         datos.setValue("Chaac Suite", totalesHabitaciones.get(0));
@@ -1266,7 +1337,7 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
         grafico.setBackgroundPaint(new Color(Integer.parseInt("FFA333", 16)));
         grafico.getTitle().setFont(new Font("SansSerif", Font.BOLD, 14));
         grafico.getTitle().setPaint(new Color(Integer.parseInt("009999", 16)));
-
+        
         RingPlot plot = (RingPlot) grafico.getPlot();
         plot.setBackgroundPaint(new Color(Integer.parseInt("FFA333", 16)));
         plot.setSectionOutlinesVisible(false);
@@ -1280,8 +1351,8 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
         plot.setLabelGenerator(generador);
 
         ChartPanel panel = new ChartPanel(grafico);
-
         panel.setSize(this.jPanelGraficoTotalHabitaciones.getWidth(), this.jPanelGraficoTotalHabitaciones.getHeight());
+        
         this.jPanelGraficoTotalHabitaciones.removeAll();
         this.jPanelGraficoTotalHabitaciones.add(panel);
 
@@ -1333,8 +1404,8 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
     private javax.swing.JPanel jPanelTotalHuespedes;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void run() {
+    //-Método diseñado para ser ejecutado por un hilo-//.
+    @Override public void run() {
         this.rellenaInformacion();
     }
 }

@@ -231,11 +231,13 @@ public class Inicio extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //-Indicar que el cursor se ha posicionado en la flecha izquierda-//.
     private void jButtonRegresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRegresarMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonRegresar.setBackground(color);
     }//GEN-LAST:event_jButtonRegresarMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en la flecha izquierda-//.
     private void jButtonRegresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRegresarMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonRegresar.setBackground(color);
@@ -251,11 +253,13 @@ public class Inicio extends javax.swing.JInternalFrame {
         this.jLabelImagenActual.setIcon(this.imagenes.get(this.indiceActual).getImagen());
     }//GEN-LAST:event_jButtonRegresarActionPerformed
 
+    //-Indicar que el cursor se ha posicionado en la flecha derecha-//.
     private void jButtonSiguienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSiguienteMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonSiguiente.setBackground(color);
     }//GEN-LAST:event_jButtonSiguienteMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en la flecha derecha-//.
     private void jButtonSiguienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSiguienteMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonSiguiente.setBackground(color);

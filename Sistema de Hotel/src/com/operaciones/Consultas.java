@@ -1,5 +1,7 @@
+//---Paquete---//.
 package com.operaciones;
 
+//---Sentencias import---//.
 import com.bases_de_datos.ConexionMySQL;
 import java.awt.Color;
 import java.sql.ResultSet;
@@ -15,10 +17,12 @@ public class Consultas extends javax.swing.JInternalFrame {
     private ArrayList<Integer> habitacionesDobles = new ArrayList<>();
     private ArrayList<Integer> habitacionesTriples = new ArrayList<>();
 
+    //---Constructor---//.
     public Consultas() {
         initComponents();
     }
 
+    //---Métodos---//.
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -159,9 +163,10 @@ public class Consultas extends javax.swing.JInternalFrame {
         jPanelConsultaHuespedLayout.setVerticalGroup(
             jPanelConsultaHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConsultaHuespedLayout.createSequentialGroup()
+                .addComponent(jLabelEstadoConsultaHuesped)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelConsultaHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelConsultaHuespedLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanelConsultaHuespedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelNombreHuesped)
                             .addComponent(jTextFieldNombreHuesped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -170,11 +175,8 @@ public class Consultas extends javax.swing.JInternalFrame {
                             .addComponent(jLabelApellidoHuesped)
                             .addComponent(jTextFieldApellidoHuesped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonConsultaHuesped, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelConsultaHuespedLayout.createSequentialGroup()
-                        .addComponent(jLabelEstadoConsultaHuesped)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1)))
+                        .addComponent(jButtonConsultaHuesped, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -250,12 +252,12 @@ public class Consultas extends javax.swing.JInternalFrame {
                 .addGroup(jPanelConsultaHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNumeroHabitacion)
                     .addComponent(jTextFieldNumeroHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelEstadoConsultaHabitacion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldConsultaHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonConsultaHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(jButtonConsultaHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -331,26 +333,27 @@ public class Consultas extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanelConsultaDisponibilidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelConsultaDisponibilidadLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2)
-                        .addContainerGap())
-                    .addGroup(jPanelConsultaDisponibilidadLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addGroup(jPanelConsultaDisponibilidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelConsultaDisponibilidadLayout.createSequentialGroup()
                                 .addComponent(jLabelNumeroPiso)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanelConsultaDisponibilidadLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
                                 .addGroup(jPanelConsultaDisponibilidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jRadioButtonPiso1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanelConsultaDisponibilidadLayout.createSequentialGroup()
                                         .addGroup(jPanelConsultaDisponibilidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabelEstadoConsultaDisponiblidad)
                                             .addComponent(jRadioButtonPiso2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
-                        .addGap(62, 62, 62))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(62, 62, 62))))
                     .addGroup(jPanelConsultaDisponibilidadLayout.createSequentialGroup()
-                        .addComponent(jButtonConsultaDisponibilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jScrollPane2)
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConsultaDisponibilidadLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonConsultaDisponibilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanelConsultaDisponibilidadLayout.setVerticalGroup(
             jPanelConsultaDisponibilidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -363,10 +366,10 @@ public class Consultas extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelEstadoConsultaDisponiblidad)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonConsultaDisponibilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonConsultaDisponibilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6))
         );
 
         jPanelConsultaHuespedes.setBackground(new java.awt.Color(255, 163, 51));
@@ -427,9 +430,9 @@ public class Consultas extends javax.swing.JInternalFrame {
                 .addComponent(jLabelEstadoConsultaHuespedes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonConsultaHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(jButtonConsultaHuespedes, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6))
         );
 
         javax.swing.GroupLayout jPanelBaseLayout = new javax.swing.GroupLayout(jPanelBase);
@@ -488,15 +491,18 @@ public class Consultas extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //-Cerrar el menú de las consultas-//.
     private void jLabelCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCerrarMouseClicked
         this.dispose();
     }//GEN-LAST:event_jLabelCerrarMouseClicked
 
+    //-Indicar que el cursor se ha posicionado en el botón para consultar algún huésped-//.
     private void jButtonConsultaHuespedMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConsultaHuespedMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonConsultaHuesped.setBackground(color);
     }//GEN-LAST:event_jButtonConsultaHuespedMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el botón para consultar algún huésped-//.
     private void jButtonConsultaHuespedMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConsultaHuespedMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonConsultaHuesped.setBackground(color);
@@ -504,7 +510,7 @@ public class Consultas extends javax.swing.JInternalFrame {
 
     //-A partir de la información de la base de datos, se muestran las habitaciones reservadas por un huésped-//.
     private void jButtonConsultaHuespedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultaHuespedActionPerformed
-        if (this.jTextFieldNombreHuesped.getText().length() > 0 && this.jTextFieldApellidoHuesped.getText().length() > 0) {
+        if(this.jTextFieldNombreHuesped.getText().length() > 0 && this.jTextFieldApellidoHuesped.getText().length() > 0) {
             ConexionMySQL conexion = null;
             ArrayList<String> listaHabitaciones = new ArrayList<>();
 
@@ -516,54 +522,60 @@ public class Consultas extends javax.swing.JInternalFrame {
 
                 try {
                     String nombreCompleto = this.jTextFieldNombreHuesped.getText().trim() + " "
-                            + this.jTextFieldApellidoHuesped.getText().trim();
+                    + this.jTextFieldApellidoHuesped.getText().trim();
 
                     //Consultar en la base de datos las habitaciones reservadas por un huésped.
                     ResultSet consulta = conexion.consultarTabla("huespedes",
-                            "room_id", " WHERE name = '" + nombreCompleto + "' AND active = 1");
+                    "room_id", " WHERE name = '" + nombreCompleto + "' AND active = 1");
 
                     //Se genera una lista de todas las habitaciones reservadas por el huésped.
-                    while (consulta.next()) {
+                    while(consulta.next()) {
                         listaHabitaciones.add(Integer.toString(consulta.getInt("room_id")));
                     }
 
                     //Se verifica si el huésped reservó habitaciones.
-                    if (!listaHabitaciones.isEmpty()) {
+                    if(!listaHabitaciones.isEmpty()) {
                         this.jTextAreaConsultaHuesped.append(String.format("Huésped: %-15s\n\n", nombreCompleto));
 
-                        for (String idHabitacion : listaHabitaciones) {
-                            this.jTextAreaConsultaHuesped.append("Habitación: " + idHabitacion + "\n\n");
+                        for(String idHabitacion : listaHabitaciones) {
+                            this.jTextAreaConsultaHuesped.append("Habitación: " + idHabitacion + "\n");
 
                             //Se indica que la habitación pertenece al primer o segundo piso.
-                            if (idHabitacion.charAt(0) == '1') {
-                                this.jTextAreaConsultaHuesped.append("Piso: 1");
-                            } else {
-                                this.jTextAreaConsultaHuesped.append("Piso: 2");
+                            if(idHabitacion.charAt(0) == '1') {
+                                this.jTextAreaConsultaHuesped.append("Piso: 1\n\n");
+                            } 
+                            else {
+                                this.jTextAreaConsultaHuesped.append("Piso: 2\n\n");
                             }
                         }
-                    } else {
-                        this.jTextAreaConsultaHuesped.setText("Huésped no registrado en el sistema.");
+                    } 
+                    else {
+                        this.jTextAreaConsultaHuesped.setText("Huésped no registrado\nen el sistema.");
                     }
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                    JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                            + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                            + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                            "Error", JOptionPane.ERROR_MESSAGE);
                 }
-            } catch (Exception ex) {
+                catch(SQLException ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                    + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                    + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } 
+            catch (Exception ex) {
                 ex.printStackTrace();
                 JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                        + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                        + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-            } finally {
-                if (conexion != null) {
+                + "conexión con la base de datos.\n" + "Verifique si el servidor "
+                + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+            } 
+            finally {
+                if(conexion != null) {
                     conexion.cerrarConexion();
                 }
             }
-        } else {
+        } 
+        else {
             JOptionPane.showMessageDialog(this, "Es necesario introducir "
-                    + "nombre y apellido.\n", "Error", JOptionPane.ERROR_MESSAGE);
+            + "nombre y apellido.\n", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonConsultaHuespedActionPerformed
 
@@ -585,11 +597,13 @@ public class Consultas extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jTextFieldApellidoHuespedKeyTyped
 
+    //-Indicar que el cursor se ha posicionado en el botón para consultar alguna habitación-//.
     private void jButtonConsultaHabitacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConsultaHabitacionMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonConsultaHabitacion.setBackground(color);
     }//GEN-LAST:event_jButtonConsultaHabitacionMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el botón para consultar alguna habitación-//.
     private void jButtonConsultaHabitacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConsultaHabitacionMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonConsultaHabitacion.setBackground(color);
@@ -609,47 +623,55 @@ public class Consultas extends javax.swing.JInternalFrame {
 
                     //Consultar en la base de datos si la habitación está reservada o no.
                     ResultSet consulta = conexion.consultarTabla("huespedes",
-                            "name", " WHERE room_id = '" + habitacion + "' AND active = 1 LIMIT 1");
+                    "name", " WHERE room_id = '" + habitacion + "' AND active = 1 LIMIT 1");
 
                     //Se verifica si la habitación está reservada.
-                    if (consulta.next()) {
+                    if(consulta.next()) {
                         this.jTextFieldConsultaHabitacion.setText("Reservada por " + consulta.getString("name"));
-                    } else {
+                    } 
+                    else {
                         try {
                             int numero = Integer.parseInt(habitacion);
 
-                            if (numero <= 215 && numero >= 201) {
+                            if(numero <= 215 && numero >= 201) {
                                 this.jTextFieldConsultaHabitacion.setText("Habitación disponible (segundo piso)");
-                            } else if (numero <= 115 && numero >= 101) {
+                            } 
+                            else if(numero <= 115 && numero >= 101) {
                                 this.jTextFieldConsultaHabitacion.setText("Habitación disponible (primer piso)");
-                            } else {
+                            } 
+                            else {
                                 this.jTextFieldConsultaHabitacion.setText("Habitación inexistente");
                             }
-                        } catch (NumberFormatException ex) {
+                        } 
+                        catch(NumberFormatException ex) {
                             JOptionPane.showMessageDialog(this, "La entrada es inválida.\n"
-                                    + "Solo es posible introducir números.", "Error", JOptionPane.ERROR_MESSAGE);
+                            + "Solo es posible introducir números.", "Error", JOptionPane.ERROR_MESSAGE);
                         }
                     }
-                } catch (SQLException ex) {
+                } 
+                catch(SQLException ex) {
                     ex.printStackTrace();
-                    JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                            + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                            + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                            "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                    + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                    + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                    "Error", JOptionPane.ERROR_MESSAGE);
                 }
-            } catch (Exception ex) {
+            } 
+            catch(Exception ex) {
                 ex.printStackTrace();
                 JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                        + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                        + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-            } finally {
-                if (conexion != null) {
+                + "conexión con la base de datos.\n" + "Verifique si el servidor "
+                + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+            } 
+            finally {
+                if(conexion != null) {
                     conexion.cerrarConexion();
                 }
             }
-        } else {
+        } 
+        else {
             JOptionPane.showMessageDialog(this, "Es necesario introducir "
-                    + "el número de la habitación a buscar.", "Error", JOptionPane.ERROR_MESSAGE);
+            + "el número de la habitación a buscar.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonConsultaHabitacionActionPerformed
 
@@ -657,8 +679,9 @@ public class Consultas extends javax.swing.JInternalFrame {
     private void jTextFieldNumeroHabitacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNumeroHabitacionKeyTyped
         if (this.jTextFieldNumeroHabitacion.getText().length() > 2) {
             evt.consume();
-        } else {
-            this.jTextAreaConsultaHuesped.setText("");
+        } 
+        else {
+            this.jTextFieldConsultaHabitacion.setText("");
         }
     }//GEN-LAST:event_jTextFieldNumeroHabitacionKeyTyped
 
@@ -672,11 +695,13 @@ public class Consultas extends javax.swing.JInternalFrame {
         this.jTextAreaConsultaDisponibilidad.setText("");
     }//GEN-LAST:event_jRadioButtonPiso2ActionPerformed
 
+    //-Indicar que el cursor se ha posicionado en el botón para consultar la disponibilidad-//.
     private void jButtonConsultaDisponibilidadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConsultaDisponibilidadMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonConsultaDisponibilidad.setBackground(color);
     }//GEN-LAST:event_jButtonConsultaDisponibilidadMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el botón para consultar la disponibilidad-//.
     private void jButtonConsultaDisponibilidadMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConsultaDisponibilidadMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonConsultaDisponibilidad.setBackground(color);
@@ -693,7 +718,8 @@ public class Consultas extends javax.swing.JInternalFrame {
         //Se verifica si se seleccionó el primer piso para la búsqueda de habitaciones.
         if (this.jRadioButtonPiso1.isSelected()) {
             numeroPiso = 1;
-        } else {
+        } 
+        else {
             numeroPiso = 2;
         }
         this.habitacionesSimples.clear();
@@ -708,36 +734,36 @@ public class Consultas extends javax.swing.JInternalFrame {
             try {
                 //Consultar en la base de datos las habitaciones reservadas simples del piso correspondiente.
                 ResultSet consulta = conexion.consultarTabla("huespedes",
-                        "room_id", " WHERE room_type = 'S' AND active = 1 AND floor = " + numeroPiso);
+                "room_id", " WHERE room_type = 'S' AND active = 1 AND floor = " + numeroPiso);
 
                 //Se eliminan todas las habitaciones reservadas simples del piso correspondiente.
-                while (consulta.next()) {
+                while(consulta.next()) {
                     int numeroHabitacion = consulta.getInt("room_id");
 
-                    if (this.habitacionesSimples.contains(numeroHabitacion)) {
+                    if(this.habitacionesSimples.contains(numeroHabitacion)) {
                         this.habitacionesSimples.removeAll(Arrays.asList(numeroHabitacion));
                     }
                 }
 
                 //Consultar en la base de datos las habitaciones reservadas dobles del piso correspondiente.
                 consulta = conexion.consultarTabla("huespedes",
-                        "room_id", " WHERE room_type = 'D' AND active = 1 AND floor = " + numeroPiso);
+                "room_id", " WHERE room_type = 'D' AND active = 1 AND floor = " + numeroPiso);
 
                 //Se eliminan todas las habitaciones reservadas dobles del piso correspondiente.
-                while (consulta.next()) {
+                while(consulta.next()) {
                     int numeroHabitacion = consulta.getInt("room_id");
 
-                    if (this.habitacionesDobles.contains(numeroHabitacion)) {
+                    if(this.habitacionesDobles.contains(numeroHabitacion)) {
                         this.habitacionesDobles.removeAll(Arrays.asList(numeroHabitacion));
                     }
                 }
 
                 //Consultar en la base de datos las habitaciones reservadas triples del piso correspondiente.
                 consulta = conexion.consultarTabla("huespedes",
-                        "room_id", " WHERE room_type = 'T' AND active = 1 AND floor = " + numeroPiso);
+                "room_id", " WHERE room_type = 'T' AND active = 1 AND floor = " + numeroPiso);
 
                 //Se eliminan todas las habitaciones reservadas triples del piso correspondiente.
-                while (consulta.next()) {
+                while(consulta.next()) {
                     int numeroHabitacion = consulta.getInt("room_id");
 
                     if (this.habitacionesTriples.contains(numeroHabitacion)) {
@@ -747,57 +773,62 @@ public class Consultas extends javax.swing.JInternalFrame {
 
                 //Se verifica si hay habitaciones disponibles o no.
                 this.jTextAreaConsultaDisponibilidad.setForeground(new Color(Integer.parseInt("AF5700", 16)));
-                if (this.habitacionesSimples.isEmpty() && this.habitacionesDobles.isEmpty() && this.habitacionesTriples.isEmpty()) {
+                if(this.habitacionesSimples.isEmpty() && this.habitacionesDobles.isEmpty() && this.habitacionesTriples.isEmpty()) {
                     this.jTextAreaConsultaDisponibilidad.setText("**No hay  habitaciones**\n"
-                            + "       disponibles");
-                } else {
-                    if (!this.habitacionesSimples.isEmpty()) {
+                    + "       disponibles");
+                } 
+                else {
+                    if(!this.habitacionesSimples.isEmpty()) {
                         this.jTextAreaConsultaDisponibilidad.append("**Habitaciones Simples**\n");
-                        for (Integer entero : this.habitacionesSimples) {
+                        for(Integer entero : this.habitacionesSimples) {
                             this.jTextAreaConsultaDisponibilidad.append(" Habitación número " + entero + ".\n");
                         }
                         this.jTextAreaConsultaDisponibilidad.append("************************\n");
                     }
-                    if (!this.habitacionesDobles.isEmpty()) {
+                    if(!this.habitacionesDobles.isEmpty()) {
                         this.jTextAreaConsultaDisponibilidad.append("**Habitaciones  Dobles**\n");
-                        for (Integer entero : this.habitacionesDobles) {
+                        for(Integer entero : this.habitacionesDobles) {
                             this.jTextAreaConsultaDisponibilidad.append(" Habitación número " + entero + ".\n");
                         }
                         this.jTextAreaConsultaDisponibilidad.append("************************\n");
                     }
-                    if (!this.habitacionesTriples.isEmpty()) {
+                    if(!this.habitacionesTriples.isEmpty()) {
                         this.jTextAreaConsultaDisponibilidad.append("**Habitaciones Triples**\n");
-                        for (Integer entero : this.habitacionesTriples) {
+                        for(Integer entero : this.habitacionesTriples) {
                             this.jTextAreaConsultaDisponibilidad.append(" Habitación número " + entero + ".\n");
                         }
                         this.jTextAreaConsultaDisponibilidad.append("************************\n");
                     }
                 }
-
-            } catch (SQLException ex) {
+            } 
+            catch(SQLException ex) {
                 ex.printStackTrace();
                 JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                        "Error", JOptionPane.ERROR_MESSAGE);
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception ex) {
+        } 
+        catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                    + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                    + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        finally {
             if (conexion != null) {
                 conexion.cerrarConexion();
             }
         }
     }//GEN-LAST:event_jButtonConsultaDisponibilidadActionPerformed
 
+    //-Indicar que el cursor se ha posicionado en el botón para consultar algún huésped-//.
     private void jButtonConsultaHuespedesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConsultaHuespedesMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonConsultaHuespedes.setBackground(color);
     }//GEN-LAST:event_jButtonConsultaHuespedesMouseEntered
 
+    //-Indicar que el cursor se dejó de posicionar en el botón para consultar algún huésped-//.
     private void jButtonConsultaHuespedesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConsultaHuespedesMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonConsultaHuespedes.setBackground(color);
@@ -816,31 +847,35 @@ public class Consultas extends javax.swing.JInternalFrame {
             try {
                 //Consultar en la base de datos los huéspedes actuales.
                 ResultSet consulta = conexion.consultarTabla("huespedes",
-                        "name, room_id", " WHERE active = 1 ORDER BY name ASC");
+                "name, room_id", " WHERE active = 1 ORDER BY name ASC");
 
-                if (!consulta.first()) {
+                if(!consulta.first()) {
                     this.jTextAreaConsultaHuespedes.setText("No hay huéspedes registrados.");
-                } else {
+                } 
+                else {
                     consulta.previous();
-                    while (consulta.next()) {
-                        this.jTextAreaConsultaHuespedes.append(String.format("%-15s\t%d\n",
-                                consulta.getString("name"), consulta.getInt("room_id")));
+                    while(consulta.next()) {
+                        this.jTextAreaConsultaHuespedes.append(String.format("%-20s\t%d\n",
+                        consulta.getString("name"), consulta.getInt("room_id")));
                     }
                 }
-            } catch (SQLException ex) {
+            } 
+            catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                        + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                        + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                        "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception ex) {
+        } 
+        catch(Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                    + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                    + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            if (conexion != null) {
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        finally {
+            if(conexion != null) {
                 conexion.cerrarConexion();
             }
         }
@@ -869,7 +904,8 @@ public class Consultas extends javax.swing.JInternalFrame {
             this.habitacionesTriples.add(109);
             this.habitacionesTriples.add(112);
             this.habitacionesTriples.add(115);
-        } else {
+        } 
+        else {
             //Definir las habitaciones simples del segundo piso.
             this.habitacionesSimples.add(202);
             this.habitacionesSimples.add(208);

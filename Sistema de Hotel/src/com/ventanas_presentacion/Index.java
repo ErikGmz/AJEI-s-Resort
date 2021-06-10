@@ -18,7 +18,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 //---Clase pública---//.
-public class Index extends javax.swing.JFrame {
+public class Index extends javax.swing.JFrame implements Runnable {
 
     //---Atributos Adicionales---//.
     private Clip musicaFondo;
@@ -27,8 +27,6 @@ public class Index extends javax.swing.JFrame {
     //---Constructor---//.
     public Index() {
         initComponents();
-        this.extraInitProcess();
-        this.musicaIniciada = true;
     }
     
     //---Constructor con argumentos---//.
@@ -36,7 +34,6 @@ public class Index extends javax.swing.JFrame {
         this.musicaIniciada = musicaIniciada;
         this.musicaFondo = musicaFondo;
         initComponents();
-        this.extraInitProcess();
     }
 
     //---Métodos---//.
@@ -61,7 +58,7 @@ public class Index extends javax.swing.JFrame {
         jLabelBtn5 = new javax.swing.JLabel();
         jLabelBtn2 = new javax.swing.JLabel();
         jButtonConsultas = new javax.swing.JButton();
-        jPanelContenedor = new javax.swing.JPanel();
+        jDesktopPaneContenedor = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio");
@@ -176,7 +173,7 @@ public class Index extends javax.swing.JFrame {
             }
         });
 
-        jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/musicOn.png"))); // NOI18N
+        jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/musicOff.png"))); // NOI18N
         jLabelMusica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelMusica.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -370,16 +367,16 @@ public class Index extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanelContenedor.setBackground(new java.awt.Color(255, 255, 255));
+        jDesktopPaneContenedor.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanelContenedorLayout = new javax.swing.GroupLayout(jPanelContenedor);
-        jPanelContenedor.setLayout(jPanelContenedorLayout);
-        jPanelContenedorLayout.setHorizontalGroup(
-            jPanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jDesktopPaneContenedorLayout = new javax.swing.GroupLayout(jDesktopPaneContenedor);
+        jDesktopPaneContenedor.setLayout(jDesktopPaneContenedorLayout);
+        jDesktopPaneContenedorLayout.setHorizontalGroup(
+            jDesktopPaneContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 880, Short.MAX_VALUE)
         );
-        jPanelContenedorLayout.setVerticalGroup(
-            jPanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jDesktopPaneContenedorLayout.setVerticalGroup(
+            jDesktopPaneContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -390,12 +387,12 @@ public class Index extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jDesktopPaneContenedor))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPaneContenedor)
         );
 
         setBounds(0, 0, 1116, 619);
@@ -441,19 +438,19 @@ public class Index extends javax.swing.JFrame {
     private void jLabelMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMenuMouseClicked
         if(this.jPanelMenu.getWidth() == 60) {
             this.jPanelMenu.setSize(220, this.jPanelMenu.getHeight());
-            this.jPanelContenedor.setSize(this.jPanelContenedor.getWidth() - 160, this.jPanelContenedor.getHeight());
-            this.jPanelContenedor.setLocation(this.jPanelContenedor.getX() + 160, this.jPanelContenedor.getY());
-            if (this.jPanelContenedor.getComponentCount() > 0) {
-                this.jPanelContenedor.getComponent(0).setSize(this.jPanelContenedor.getSize());
+            this.jDesktopPaneContenedor.setSize(this.jDesktopPaneContenedor.getWidth() - 160, this.jDesktopPaneContenedor.getHeight());
+            this.jDesktopPaneContenedor.setLocation(this.jDesktopPaneContenedor.getX() + 160, this.jDesktopPaneContenedor.getY());
+            if (this.jDesktopPaneContenedor.getComponentCount() > 0) {
+                this.jDesktopPaneContenedor.getComponent(0).setSize(this.jDesktopPaneContenedor.getSize());
             }
             this.jLabelMenu.setLocation(165, this.jLabelMenu.getY());
         } 
         else if(this.jPanelMenu.getWidth() == 220) {
             this.jPanelMenu.setSize(60, this.jPanelMenu.getHeight());
-            this.jPanelContenedor.setSize(this.jPanelContenedor.getWidth() + 160, this.jPanelContenedor.getHeight());
-            this.jPanelContenedor.setLocation(this.jPanelContenedor.getX() - 160, this.jPanelContenedor.getY());
-            if(this.jPanelContenedor.getComponentCount() > 0) {
-                this.jPanelContenedor.getComponent(0).setSize(this.jPanelContenedor.getSize());
+            this.jDesktopPaneContenedor.setSize(this.jDesktopPaneContenedor.getWidth() + 160, this.jDesktopPaneContenedor.getHeight());
+            this.jDesktopPaneContenedor.setLocation(this.jDesktopPaneContenedor.getX() - 160, this.jDesktopPaneContenedor.getY());
+            if(this.jDesktopPaneContenedor.getComponentCount() > 0) {
+                this.jDesktopPaneContenedor.getComponent(0).setSize(this.jDesktopPaneContenedor.getSize());
             }
             this.jLabelMenu.setLocation(5, this.jLabelMenu.getY());
         }
@@ -571,7 +568,9 @@ public class Index extends javax.swing.JFrame {
         if(JOptionPane.showConfirmDialog(this, "¿Desea cerrar la sesión?"
         , "Confirmación", JOptionPane.OK_CANCEL_OPTION) == 0) {
             this.dispose();
-            new Login(this.musicaFondo, this.musicaIniciada).setVisible(true);
+            Login login = new Login(this.musicaFondo, this.musicaIniciada);
+            Thread t = new Thread(login);
+            t.start();
         }
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
 
@@ -612,21 +611,19 @@ public class Index extends javax.swing.JFrame {
     //-Abrir InternalJFrames dentro del panel contenedor--//.
     private void abrirJFrameEnPanelContenedor(Object jF) {
         //Se borra el menú actualmente cargado en la interfaz.
-        if(this.jPanelContenedor.getComponentCount() > 0) {
-            this.jPanelContenedor.removeAll();
+        if (this.jDesktopPaneContenedor.getComponentCount() > 1) {
+            this.jDesktopPaneContenedor.remove(0);
         }
 
         JInternalFrame jFHijo = (JInternalFrame) jF;
         ((javax.swing.plaf.basic.BasicInternalFrameUI) jFHijo.getUI()).setNorthPane(null);
-        
         if(this.jPanelMenu.getWidth() == 60) {
-            jFHijo.setSize(this.jPanelContenedor.getWidth() - 160, this.jPanelContenedor.getHeight());
+            jFHijo.setSize(this.jDesktopPaneContenedor.getWidth() - 160, this.jDesktopPaneContenedor.getHeight());
         }
         else {
-            jFHijo.setSize(this.jPanelContenedor.getSize());
+            jFHijo.setSize(this.jDesktopPaneContenedor.getSize());
         }
-
-        this.jPanelContenedor.add(jFHijo);
+        this.jDesktopPaneContenedor.add(jFHijo);
         jFHijo.setVisible(true);
     }
 
@@ -668,6 +665,19 @@ public class Index extends javax.swing.JFrame {
                 this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOff.png")));
             }
         }
+        
+        //Cambiar el tipo de ícono de la música, según sea el caso.
+        if(this.musicaFondo != null) {
+            if(this.musicaIniciada) {
+                this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOn.png")));
+            }
+            else {
+                this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOff.png")));
+            }
+        }
+        
+        //Cargar el internalJFrame de la pantalla de inicio.
+        this.abrirJFrameEnPanelContenedor(new Inicio());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -677,6 +687,7 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConsultas;
     private javax.swing.JButton jButtonEstadisticas;
     private javax.swing.JButton jButtonModificaciones;
+    private javax.swing.JDesktopPane jDesktopPaneContenedor;
     private javax.swing.JLabel jLabelBtn1;
     private javax.swing.JLabel jLabelBtn2;
     private javax.swing.JLabel jLabelBtn3;
@@ -687,8 +698,12 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMenu;
     private javax.swing.JLabel jLabelMusica;
-    private javax.swing.JPanel jPanelContenedor;
     private javax.swing.JPanel jPanelMenu;
     // End of variables declaration//GEN-END:variables
 
+    //-Método para la ejecución del hilo-//.
+    @Override public void run() {
+        this.extraInitProcess();
+    }
+    
 }

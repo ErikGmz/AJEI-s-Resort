@@ -21,6 +21,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 //---Clase pública---//.
@@ -187,10 +189,10 @@ public class Portada extends javax.swing.JFrame {
     //-Iniciar el sistema de administración del hotel-//.
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
         this.dispose();
-        
         //Cambiar a la pantalla de login.
-        Login inicio = new Login();
-        inicio.setVisible(true);
+        Login login = new Login();
+        Thread t = new Thread(login);
+        t.start();        
     }//GEN-LAST:event_jButtonIngresarActionPerformed
 
     //-Desplegar el contenido del menú lateral-//.

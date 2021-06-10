@@ -1328,7 +1328,7 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
 
     //-A partir de la información de un ArrayList, se genera un gráfico de anillo-//.
     private void generarGraficoTotalHabitaciones(ArrayList<Integer> totalesHabitaciones) {
-        DefaultPieDataset<String> datos = new DefaultPieDataset();
+        DefaultPieDataset<String> datos = new DefaultPieDataset<String>();
         datos.setValue("Chaac Suite", totalesHabitaciones.get(0));
         datos.setValue("Itzamná Suite", totalesHabitaciones.get(1));
         datos.setValue("Kauil Suite", totalesHabitaciones.get(2));

@@ -17,7 +17,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 //---Clase pública---//.
-public class Login extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame implements Runnable {
 
     //---Atributos adicionales---//.
     private Image logoHotel;
@@ -32,7 +32,6 @@ public class Login extends javax.swing.JFrame {
     //---Constructor---//.
     public Login() {
         initComponents();
-        extraInitProcess();
     }
     
     //---Constructor con argumentos---//.
@@ -40,7 +39,6 @@ public class Login extends javax.swing.JFrame {
         this.musicaFondo = musicaFondo;
         this.musicaIniciada = musicaIniciada;
         initComponents();
-        extraInitProcess();
     }
 
     //---Métodos sobreescritos---//.
@@ -50,23 +48,23 @@ public class Login extends javax.swing.JFrame {
         super.paint(g);
 
         //Dibujar el logo del hotel.
-        g.drawImage(this.logoHotel, this.jPanelEntradas.getX() - 300, this.jPanelEntradas.getY() + 50, this);
+        g.drawImage(this.logoHotel, this.jPanelEntradas.getX() - 290, this.jPanelEntradas.getY() + 50, this);
         g.drawImage(this.logoHotel, this.jPanelEntradas.getX() + 446, this.jPanelEntradas.getY() + 50, this);
         
         //Dibujar los slogans del hotel.
-        g.drawImage(this.sloganHotel, this.jPanelEntradas.getX() - 395, this.jPanelEntradas.getY() + 300, this);
+        g.drawImage(this.sloganHotel, this.jPanelEntradas.getX() - 385, this.jPanelEntradas.getY() + 300, this);
         g.drawImage(this.sloganHotel, this.jPanelEntradas.getX() + 346, this.jPanelEntradas.getY() + 300, this);
         
         //Dibujar las pirámides.
-        g.drawImage(this.piramide, this.jPanelEntradas.getX() - 325, this.jPanelEntradas.getY() + 100, this);
+        g.drawImage(this.piramide, this.jPanelEntradas.getX() - 315, this.jPanelEntradas.getY() + 100, this);
         g.drawImage(this.piramide, this.jPanelEntradas.getWidth() + this.jPanelEntradas.getX() + 76, this.jPanelEntradas.getY() + 100, this);
         
         //Dibujar las palmeras izquierdas.
-        g.drawImage(this.palmeraIzquierda, this.jPanelEntradas.getX() - 390, this.jPanelEntradas.getY() + 185, this);
+        g.drawImage(this.palmeraIzquierda, this.jPanelEntradas.getX() - 380, this.jPanelEntradas.getY() + 185, this);
         g.drawImage(this.palmeraIzquierda, this.jPanelEntradas.getX() + 351, this.jPanelEntradas.getY() + 185, this);
         
         //Dibujar las palmeras derechas.
-        g.drawImage(this.palmeraDerecha, this.jPanelEntradas.getX() - 160, this.jPanelEntradas.getY() + 185, this);
+        g.drawImage(this.palmeraDerecha, this.jPanelEntradas.getX() - 150, this.jPanelEntradas.getY() + 185, this);
         g.drawImage(this.palmeraDerecha, this.jPanelEntradas.getX() + 581, this.jPanelEntradas.getY() + 185, this);
     }
 
@@ -209,7 +207,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanelEntradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanelCampos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanelEntradasLayout.setVerticalGroup(
             jPanelEntradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,17 +264,17 @@ public class Login extends javax.swing.JFrame {
         jPanelLoginLayout.setHorizontalGroup(
             jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLoginLayout.createSequentialGroup()
-                .addGap(395, 395, 395)
-                .addComponent(jPanelEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(404, Short.MAX_VALUE))
-            .addGroup(jPanelLoginLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelConfiguracion)
                     .addComponent(jLabelMusica))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 863, Short.MAX_VALUE)
                 .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
+            .addGroup(jPanelLoginLayout.createSequentialGroup()
+                .addGap(384, 384, 384)
+                .addComponent(jPanelEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanelLoginLayout.setVerticalGroup(
             jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,8 +332,11 @@ public class Login extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "Login exitoso.\n"
                         + "Bienvenido al sistema, " + campo_u + ".\n", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
                         
-                        this.dispose();
-                        new Index(this.musicaFondo, this.musicaIniciada).setVisible(true);
+                        this.dispose();              
+                        Index index = new Index(this.musicaFondo, this.musicaIniciada);
+                        Thread t = new Thread(index);
+                        t.start();
+                        index.setVisible(true);
                     } 
                     else {
                         this.sonidoError.setMicrosecondPosition(0);
@@ -431,19 +432,19 @@ public class Login extends javax.swing.JFrame {
     //-Indicar que el cursor se ha posicionado en el botón para finalizar el sistema-//.
     private void jButtonSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalirMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
-        this.jButtonIngresar.setBackground(color);
+        this.jButtonSalir.setBackground(color);
     }//GEN-LAST:event_jButtonSalirMouseEntered
 
     //-Indicar que el cursor dejó de posicionarse en el menú para finalizar el sistema-//.
     private void jButtonSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalirMouseExited
         Color color = new Color(Integer.parseInt("FFBA6A", 16));
-        this.jButtonIngresar.setBackground(color);
+        this.jButtonSalir.setBackground(color);
     }//GEN-LAST:event_jButtonSalirMouseExited
 
     //-Configuración adicional de ciertos componentes-//.
     private void extraInitProcess() {
         ImageIcon icono;
-
+        
         //Centrar el JFrame.
         this.setLocationRelativeTo(this);
 
@@ -513,6 +514,7 @@ public class Login extends javax.swing.JFrame {
             System.err.println("Verifique si el fichero \"error.wav\" se encuentra en la carpeta /sounds.");
             ex.printStackTrace();
         }
+        this.setVisible(true);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -530,5 +532,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordFieldClave;
     private javax.swing.JTextField jTextFieldCorreo;
     // End of variables declaration//GEN-END:variables
+
+    //-Método para la ejecución del hilo-//.
+    @Override public void run() {
+        this.extraInitProcess();
+    }
 
 }

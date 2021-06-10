@@ -404,7 +404,7 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
         jPanelServicios.setBackground(new java.awt.Color(255, 163, 51));
 
         jLabelServicios.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabelServicios.setForeground(new java.awt.Color(0, 117, 27));
+        jLabelServicios.setForeground(new java.awt.Color(0, 0, 105));
         jLabelServicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/bar-chart.png"))); // NOI18N
         jLabelServicios.setText("Estadísticas De Servicios");
 
@@ -447,7 +447,7 @@ public class Estadisticas extends javax.swing.JInternalFrame implements Runnable
         jPanelTotalHabitaciones.setBackground(new java.awt.Color(255, 163, 51));
 
         jLabelTotalHabitaciones.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabelTotalHabitaciones.setForeground(new java.awt.Color(120, 0, 146));
+        jLabelTotalHabitaciones.setForeground(new java.awt.Color(0, 153, 153));
         jLabelTotalHabitaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/ring-chart.png"))); // NOI18N
         jLabelTotalHabitaciones.setText("Total De Habitaciones");
 

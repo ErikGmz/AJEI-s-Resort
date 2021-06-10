@@ -177,7 +177,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jTextAreaAdicional.setColumns(20);
         jTextAreaAdicional.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextAreaAdicional.setRows(5);
-        jTextAreaAdicional.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTextAreaAdicional.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 163, 51), 10));
         jScrollPane1.setViewportView(jTextAreaAdicional);
 
         jButtonSiguiente.setBackground(new java.awt.Color(228, 130, 0));
@@ -713,7 +713,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelAdicional)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addGap(1064, 1064, 1064))
         );
 

@@ -666,6 +666,16 @@ public class Index extends javax.swing.JFrame implements Runnable {
             }
         }
         
+        //Cambiar el tipo de ícono de la música, según sea el caso.
+        if(this.musicaFondo != null) {
+            if(this.musicaIniciada) {
+                this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOn.png")));
+            }
+            else {
+                this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOff.png")));
+            }
+        }
+        
         //Cargar el internalJFrame de la pantalla de inicio.
         this.abrirJFrameEnPanelContenedor(new Inicio());
     }

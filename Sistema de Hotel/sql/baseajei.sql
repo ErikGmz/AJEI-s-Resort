@@ -5,7 +5,7 @@
 -- Server version	5.7.34-log
 
 CREATE DATABASE baseajei;
-use baseajei;
+USE baseajei;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -30,7 +30,7 @@ CREATE TABLE `galeria` (
   `description` varchar(50) NOT NULL,
   `image_path` text NOT NULL,
   PRIMARY KEY (`image_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `galeria` (
 
 LOCK TABLES `galeria` WRITE;
 /*!40000 ALTER TABLE `galeria` DISABLE KEYS */;
-INSERT INTO `galeria` VALUES (1,'Habitación Chaac Suite (T1)','src/img/fotos/habitacionsimple1.jpg'), (2,'Habitación Chaac Suite (T2)','src/img/fotos/habitacionsimple2.jpg'),(3,'Habitación Chaac Suite (T3)','src/img/fotos/habitacionsimple3.jpg'),(4,'Habitación Itzamná Suite (T1)','src/img/fotos/habitaciondoble1.jpg'),(5,'Habitación Itzamná Suite (T2)','src/img/fotos/habitaciondoble2.jpg'),(6,'Habitación Itzamná Suite (T3)','src/img/fotos/habitaciondoble3.jpg'),(7,'Habitación Kauil Suite (T1)','src/img/fotos/habitaciontriple1.jpg'),(8,'Habitación Kauil Suite (T2)','src/img/fotos/habitaciontriple2.jpg'),(9,'Habitación Kauil Suite (T3)','src/img/fotos/habitaciontriple3.jpg'),(10,'Bar del Resort','src/img/fotos/bar.jpg'),(11,'SPA de Lujo','src/img/fotos/spa.jpg'),(12,'Gimnasio del Resort','src/img/fotos/gimnasio.jpg'),(13,'Zona de Juegos','src/img/fotos/zonajuegos.jpg'),(14,'Canchas de Tennis','src/img/fotos/tennis.jpg'),(15,'Tiro con Arco','src/img/fotos/tiroconarco.jpg'),(16,'Campo de Golf','src/img/fotos/campogolf.jpg');
+INSERT INTO `galeria` VALUES (1,'Habitación Chaac Suite (T1)','src/img/fotos/habitacionsimple1.jpg'),(2,'Habitación Chaac Suite (T2)','src/img/fotos/habitacionsimple2.jpg'),(3,'Habitación Chaac Suite (T3)','src/img/fotos/habitacionsimple3.jpg'),(4,'Habitación Itzamná Suite (T1)','src/img/fotos/habitaciondoble1.jpg'),(5,'Habitación Itzamná Suite (T2)','src/img/fotos/habitaciondoble2.jpg'),(6,'Habitación Itzamná Suite (T3)','src/img/fotos/habitaciondoble3.jpg'),(7,'Habitación Kauil Suite (T1)','src/img/fotos/habitaciontriple1.jpg'),(8,'Habitación Kauil Suite (T2)','src/img/fotos/habitaciontriple2.jpg'),(9,'Habitación Kauil Suite (T3)','src/img/fotos/habitaciontriple3.jpg'),(10,'Bar del Resort','src/img/fotos/bar.jpg'),(11,'SPA de Lujo','src/img/fotos/spa.jpg'),(12,'Gimnasio del Resort','src/img/fotos/gimnasio.jpg'),(13,'Zona de Juegos','src/img/fotos/zonajuegos.jpg'),(14,'Canchas de Tennis','src/img/fotos/tennis.jpg'),(15,'Tiro con Arco','src/img/fotos/tiroconarco.jpg'),(16,'Campo de Golf','src/img/fotos/campogolf.jpg');
 /*!40000 ALTER TABLE `galeria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +90,7 @@ CREATE TABLE `huespedes` (
   `active` tinyint(1) NOT NULL DEFAULT '0',
   `expense` double(9,2) NOT NULL DEFAULT '0.00',
   PRIMARY KEY (`guest_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,6 +99,7 @@ CREATE TABLE `huespedes` (
 
 LOCK TABLES `huespedes` WRITE;
 /*!40000 ALTER TABLE `huespedes` DISABLE KEYS */;
+INSERT INTO `huespedes` VALUES (1,'Maricruz Jiménez','Aguascalientes','2021-05-20','2021-05-29',9,'213','S',2,1,0,1,0.00),(2,'Alejandro Montañez','Aguascalientes','2019-05-18','2019-06-04',17,'105','D',1,2,2,1,0.00),(3,'Erik Gómez','Aguascalientes','2021-02-27','2021-03-13',14,'207','T',2,2,0,0,98972.80),(4,'José Ramírez','Guanajuato','2021-05-25','2021-05-29',4,'215','T',2,3,1,0,30844.25),(5,'Emiliano Torres','Florida','2021-05-19','2021-05-28',9,'212','D',2,2,2,1,0.00),(6,'Carmen Guadalupe','Chihuahua','2021-06-30','2021-07-06',6,'209','D',2,2,0,0,34975.58),(7,'Ricardo Sánchez','Nueva York','2021-06-19','2021-06-30',11,'208','S',2,1,1,1,0.00),(8,'Salvador López','Guadalajara','2021-05-25','2021-06-06',12,'207','T',2,3,2,0,102733.23),(9,'Ernesto Galindo','Yucatán','2021-06-26','2021-07-02',6,'103','T',1,3,1,1,0.00),(10,'Mariana Velázquez','Oaxaca','2021-11-13','2021-11-15',2,'211','S',2,1,0,0,10116.84),(11,'Mariano Luna','Monterrey','2021-02-09','2021-02-15',6,'104','S',1,1,1,1,0.00),(12,'Sandra Juárez','Acapulco','2021-06-30','2021-07-11',11,'215','T',2,3,2,1,0.00);
 /*!40000 ALTER TABLE `huespedes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,6 +157,7 @@ CREATE TABLE `servicios` (
 
 LOCK TABLES `servicios` WRITE;
 /*!40000 ALTER TABLE `servicios` DISABLE KEYS */;
+INSERT INTO `servicios` VALUES (1,1,1,1,1,1,1,1,1,1,1),(2,0,1,0,1,0,0,1,0,1,1),(3,1,1,0,0,0,1,1,0,0,1),(4,0,0,0,0,0,1,1,0,0,0),(5,0,1,0,0,1,0,1,0,1,0),(6,1,0,0,1,1,0,1,0,0,0),(7,1,0,1,0,1,0,1,0,0,1),(8,1,0,0,1,0,0,1,0,1,1),(9,1,1,1,1,0,1,0,1,0,1),(10,1,0,1,1,0,0,0,0,0,0),(11,0,0,0,0,0,1,0,1,1,1),(12,0,0,1,1,0,1,1,0,0,0);
 /*!40000 ALTER TABLE `servicios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,7 +184,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Erik Gómez','erikgmz@ajei.com.mx','Ä>ôÞ¹ÑÞŒs€|ì'),(2,'Gabriel Galindo','gabogalindo@ajei.com.mx','kÔhM³·E£ÇiýIû'),(3,'Israel Mora','israel@ajei.com.mx','ZL¡Ý€y”*\'vgo‚²’'),(4,'Emmanuel Rodríguez','emmanuel@ajei.com.mx','Œ¨üÕ×¸ç“ÝŠ=]M');
+INSERT INTO `usuarios` VALUES (1,'Erik Gómez','erikgomez@ajei.com.mx','Ä>ôÞ¹ÑÞŒs€|ì'),(2,'Gabriel Galindo','gabogalindo@ajei.com.mx','kÔhM³·E£ÇiýIû'),(3,'Israel Mora','israel@ajei.com.mx','ZL¡Ý€y”*\'vgo‚²’'),(4,'Emmanuel Rodríguez','emmanuel@ajei.com.mx','Œ¨üÕ×¸ç“ÝŠ=]M');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -195,5 +197,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-15 17:23:48
-
+-- Dump completed on 2021-06-10  1:55:23

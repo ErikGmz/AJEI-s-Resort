@@ -107,11 +107,6 @@ public class Modificaciones extends javax.swing.JInternalFrame {
         jTextFieldHabitacion.setBackground(new java.awt.Color(255, 232, 205));
         jTextFieldHabitacion.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jTextFieldHabitacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextFieldHabitacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldHabitacionActionPerformed(evt);
-            }
-        });
         jTextFieldHabitacion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldHabitacionKeyTyped(evt);
@@ -159,10 +154,11 @@ public class Modificaciones extends javax.swing.JInternalFrame {
         jPanelConsultaHabitacionLayout.setVerticalGroup(
             jPanelConsultaHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelConsultaHabitacionLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanelConsultaHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -195,6 +191,7 @@ public class Modificaciones extends javax.swing.JInternalFrame {
         jPanelEstadoHabitacionLayout.setVerticalGroup(
             jPanelEstadoHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelEstadoHabitacionLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -410,13 +407,31 @@ public class Modificaciones extends javax.swing.JInternalFrame {
                     .addGroup(jPanelModificacionesLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelDias)
-                            .addComponent(jLabelPersonasExtra))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxExtra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSpinnerDias, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                            .addGroup(jPanelModificacionesLayout.createSequentialGroup()
+                                .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelDias)
+                                    .addComponent(jLabelPersonasExtra))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBoxExtra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jSpinnerDias, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabelDatosHospedaje)
+                            .addGroup(jPanelModificacionesLayout.createSequentialGroup()
+                                .addComponent(jLabelCiudad)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelModificacionesLayout.createSequentialGroup()
+                                .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabelNombre)
+                                    .addGroup(jPanelModificacionesLayout.createSequentialGroup()
+                                        .addComponent(jLabelApellido)
+                                        .addGap(3, 3, 3)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldNombre)
+                                    .addComponent(jTextFieldApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabelDatosPersonales))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                         .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelModificacionesLayout.createSequentialGroup()
                                 .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -443,39 +458,13 @@ public class Modificaciones extends javax.swing.JInternalFrame {
                                         .addComponent(jCheckBoxTennis)
                                         .addComponent(jCheckBoxArco, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jCheckBoxCuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabelServicios)))
-                    .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanelModificacionesLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabelCiudad)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextFieldCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelModificacionesLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabelDatosHospedaje))
-                            .addGroup(jPanelModificacionesLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabelNombre)
-                                    .addGroup(jPanelModificacionesLayout.createSequentialGroup()
-                                        .addComponent(jLabelApellido)
-                                        .addGap(3, 3, 3)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldApellido)))
-                            .addGroup(jPanelModificacionesLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabelDatosPersonales)))))
+                            .addComponent(jLabelServicios))))
                 .addContainerGap())
         );
         jPanelModificacionesLayout.setVerticalGroup(
             jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelModificacionesLayout.createSequentialGroup()
-                .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelServicios)
-                    .addComponent(jLabelDatosPersonales))
+                .addComponent(jLabelServicios)
                 .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelModificacionesLayout.createSequentialGroup()
                         .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -519,6 +508,8 @@ public class Modificaciones extends javax.swing.JInternalFrame {
                             .addComponent(jCheckBoxGolf, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(0, 64, Short.MAX_VALUE))
                     .addGroup(jPanelModificacionesLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabelDatosPersonales)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -527,11 +518,11 @@ public class Modificaciones extends javax.swing.JInternalFrame {
                         .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextFieldApellido)
                             .addComponent(jLabelApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextFieldCiudad))
-                        .addGap(18, 18, 18)
+                        .addGap(38, 38, 38)
                         .addComponent(jLabelDatosHospedaje)
                         .addGap(15, 15, 15)
                         .addGroup(jPanelModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -622,7 +613,8 @@ public class Modificaciones extends javax.swing.JInternalFrame {
     private void jTextFieldHabitacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldHabitacionKeyTyped
         if (this.jTextFieldHabitacion.getText().length() > 2) {
             evt.consume();
-        } else {
+        } 
+        else {
             //Desactivar todos los campos para cambiar información.
             this.reajustarControles(false);
             this.jButtonCambios.setEnabled(false);
@@ -641,20 +633,28 @@ public class Modificaciones extends javax.swing.JInternalFrame {
                 conexion = new ConexionMySQL();
 
                 try {
+                    try {
+                        int numero = Integer.parseInt(this.jTextFieldHabitacion.getText().trim());
+                    } 
+                    catch(NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(this, "La entrada es inválida.\n"
+                        + "Solo es posible introducir números.", "Error", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
                     this.numeroHabitacion = this.jTextFieldHabitacion.getText().trim();
 
                     //Consultar en la base de datos la información del huésped alojado en la habitación.
                     ResultSet consulta = conexion.consultarTabla("huespedes",
-                            "a.guest_id, a.name, a.city, a.days, a.extras, a.check_in, a.room_type"
-                            + ", a.guests, b.room_service, b.bar_access, b.cleaner_service, "
-                            + "b.SPA_service, b.baby_sister_service, b.gym_access, "
-                            + "b.gaming_access, b.tennis_access, b.bow_shooting, "
-                            + "b.golf_access", " AS a JOIN servicios AS b ON a.guest_id "
-                            + "= b.guest_id WHERE active = 1 AND room_id = " + this.numeroHabitacion
-                            + " LIMIT 1");
+                    "a.guest_id, a.name, a.city, a.days, a.extras, a.check_in, a.room_type"
+                    + ", a.guests, b.room_service, b.bar_access, b.cleaner_service, "
+                    + "b.SPA_service, b.baby_sister_service, b.gym_access, "
+                    + "b.gaming_access, b.tennis_access, b.bow_shooting, "
+                    + "b.golf_access", " AS a JOIN servicios AS b ON a.guest_id "
+                    + "= b.guest_id WHERE active = 1 AND room_id = " + this.numeroHabitacion
+                    + " LIMIT 1");
 
                     //Se verifica si la habitación está ocupada o no.
-                    if (consulta.next()) {
+                    if(consulta.next()) {
                         //Mostrar el nombre de la persona que reservó la habitación.
                         this.jTextFieldResultado.setText("Reservada por " + consulta.getString("a.name"));
 
@@ -680,15 +680,16 @@ public class Modificaciones extends javax.swing.JInternalFrame {
                         this.jSpinnerDias.setValue(consulta.getInt("a.days"));
                         this.numeros.add(consulta.getInt("a.days"));
 
-                        if (consulta.getInt("a.extras") > 0) {
+                        if(consulta.getInt("a.extras") > 0) {
                             this.jComboBoxExtra.setSelectedIndex(consulta.getInt("a.extras"));
                             this.numeros.add(consulta.getInt("a.extras"));
-                        } else {
+                        } 
+                        else {
                             this.numeros.add(0);
                         }
 
                         int maxPersonas = 0;
-                        switch (consulta.getString("a.room_type")) {
+                        switch(consulta.getString("a.room_type")) {
                             case "S":
                                 maxPersonas = 1;
                                 break;
@@ -702,120 +703,138 @@ public class Modificaciones extends javax.swing.JInternalFrame {
                                 break;
                         }
 
-                        if (maxPersonas > consulta.getInt("a.guests")) {
+                        if(maxPersonas > consulta.getInt("a.guests")) {
                             this.jLabelPersonasExtra.setEnabled(false);
                             this.jComboBoxExtra.setEnabled(false);
-                        } else {
+                        } 
+                        else {
                             this.jLabelPersonasExtra.setEnabled(true);
                             this.jComboBoxExtra.setEnabled(true);
                         }
 
-                        if (consulta.getInt("b.room_service") == 1) {
+                        if(consulta.getInt("b.room_service") == 1) {
                             this.jCheckBoxCuarto.setSelected(true);
                             this.numeros.add(1);
-                        } else {
+                        } 
+                        else {
                             this.numeros.add(0);
                         }
 
-                        if (consulta.getInt("b.bar_access") == 1) {
+                        if(consulta.getInt("b.bar_access") == 1) {
                             this.jCheckBoxBar.setSelected(true);
                             this.numeros.add(1);
-                        } else {
+                        } 
+                        else {
                             this.numeros.add(0);
                         }
 
-                        if (consulta.getInt("b.cleaner_service") == 1) {
+                        if(consulta.getInt("b.cleaner_service") == 1) {
                             this.jCheckBoxTintoreria.setSelected(true);
                             this.numeros.add(1);
-                        } else {
+                        } 
+                        else {
                             this.numeros.add(0);
                         }
 
-                        if (consulta.getInt("b.SPA_service") == 1) {
+                        if(consulta.getInt("b.SPA_service") == 1) {
                             this.jCheckBoxSPA.setSelected(true);
                             this.numeros.add(1);
-                        } else {
+                        } 
+                        else {
                             this.numeros.add(0);
                         }
 
-                        if (consulta.getInt("b.baby_sister_service") == 1) {
+                        if(consulta.getInt("b.baby_sister_service") == 1) {
                             this.jCheckBoxCuidado.setSelected(true);
                             this.numeros.add(1);
-                        } else {
+                        } 
+                        else {
                             this.numeros.add(0);
                         }
 
-                        if (consulta.getInt("b.gym_access") == 1) {
+                        if(consulta.getInt("b.gym_access") == 1) {
                             this.jCheckBoxGimnasio.setSelected(true);
                             this.numeros.add(1);
-                        } else {
+                        } 
+                        else {
                             this.numeros.add(0);
                         }
 
-                        if (consulta.getInt("b.gaming_access") == 1) {
+                        if(consulta.getInt("b.gaming_access") == 1) {
                             this.jCheckBoxJuegos.setSelected(true);
                             this.numeros.add(1);
-                        } else {
+                        } 
+                        else {
                             this.numeros.add(0);
                         }
 
-                        if (consulta.getInt("b.tennis_access") == 1) {
+                        if(consulta.getInt("b.tennis_access") == 1) {
                             this.jCheckBoxTennis.setSelected(true);
                             this.numeros.add(1);
-                        } else {
+                        } 
+                        else {
                             this.numeros.add(0);
                         }
 
-                        if (consulta.getInt("b.bow_shooting") == 1) {
+                        if(consulta.getInt("b.bow_shooting") == 1) {
                             this.jCheckBoxArco.setSelected(true);
                             this.numeros.add(1);
-                        } else {
+                        } 
+                        else {
                             this.numeros.add(0);
                         }
 
-                        if (consulta.getInt("b.golf_access") == 1) {
+                        if(consulta.getInt("b.golf_access") == 1) {
                             this.jCheckBoxGolf.setSelected(true);
                             this.numeros.add(1);
-                        } else {
+                        } 
+                        else {
                             this.numeros.add(0);
                         }
 
                         this.jButtonBusqueda.setEnabled(false);
                         this.jButtonCambios.setEnabled(true);
-                    } else {
+                    } 
+                    else {
                         try {
                             int numero = Integer.parseInt(this.numeroHabitacion);
 
-                            if (numero <= 215 && numero >= 201 || numero <= 115 && numero >= 101) {
+                            if(numero <= 215 && numero >= 201 || numero <= 115 && numero >= 101) {
                                 this.jTextFieldResultado.setText("Habitación no ocupada");
-                            } else {
+                            } 
+                            else {
                                 this.jTextFieldResultado.setText("Habitación inexistente");
                             }
-                        } catch (NumberFormatException ex) {
+                        } 
+                        catch(NumberFormatException ex) {
                             JOptionPane.showMessageDialog(this, "La entrada es inválida.\n"
-                                    + "Solo es posible introducir números.", "Error", JOptionPane.ERROR_MESSAGE);
+                            + "Solo es posible introducir números.", "Error", JOptionPane.ERROR_MESSAGE);
                         }
                     }
-                } catch (SQLException ex) {
+                } 
+                catch(SQLException ex) {
                     ex.printStackTrace();
-                    JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                            + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                            + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                            "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                    + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                    + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                    "Error", JOptionPane.ERROR_MESSAGE);
                 }
-            } catch (Exception ex) {
+            } 
+            catch(Exception ex) {
                 ex.printStackTrace();
                 JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                        + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                        + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-            } finally {
-                if (conexion != null) {
+                + "conexión con la base de datos.\n" + "Verifique si el servidor "
+                + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+            } 
+            finally {
+                if(conexion != null) {
                     conexion.cerrarConexion();
                 }
             }
-        } else {
+        } 
+        else {
             JOptionPane.showMessageDialog(this, "Es necesario introducir "
-                    + "el número de la habitación a buscar.", "Error", JOptionPane.ERROR_MESSAGE);
+            + "el número de la habitación a buscar.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonBusquedaActionPerformed
 
@@ -824,24 +843,25 @@ public class Modificaciones extends javax.swing.JInternalFrame {
         String mensaje = "";
         boolean invalido = false;
 
-        if (this.jTextFieldNombre.getText().length() == 0) {
+        if(this.jTextFieldNombre.getText().length() == 0) {
             mensaje += "Se debe escribir algún nombre.\n";
             invalido = true;
         }
-        if (this.jTextFieldApellido.getText().length() == 0) {
+        if(this.jTextFieldApellido.getText().length() == 0) {
             mensaje += "Se debe escribir algún apellido.\n";
             invalido = true;
         }
-        if (this.jTextFieldCiudad.getText().length() == 0) {
+        if(this.jTextFieldCiudad.getText().length() == 0) {
             mensaje += "Se debe escribir el nombre de alguna ciudad.\n";
             invalido = true;
         }
         mensaje += "Reintroduzca sus datos.";
 
-        if (invalido) {
+        if(invalido) {
             JOptionPane.showMessageDialog(this, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else {
+        } 
+        else {
             ConexionMySQL conexion = null;
 
             try {
@@ -859,32 +879,32 @@ public class Modificaciones extends javax.swing.JInternalFrame {
 
                     //Cambiar los datos correspondientes.
                     PreparedStatement comando = conexion.getConexion().prepareStatement(
-                            "UPDATE huespedes set name = '" + nombreCompleto + "', "
-                            + "city = '" + this.jTextFieldCiudad.getText() + "', "
-                            + "check_out = ?, "
-                            + "days = " + (Integer) this.jSpinnerDias.getValue() + ", "
-                            + "extras = " + this.jComboBoxExtra.getSelectedIndex()
-                            + " WHERE active = 1 AND room_id = " + this.numeroHabitacion + ";");
+                    "UPDATE huespedes set name = '" + nombreCompleto + "', "
+                    + "city = '" + this.jTextFieldCiudad.getText() + "', "
+                    + "check_out = ?, "
+                    + "days = " + (Integer) this.jSpinnerDias.getValue() + ", "
+                    + "extras = " + this.jComboBoxExtra.getSelectedIndex()
+                    + " WHERE active = 1 AND room_id = " + this.numeroHabitacion + ";");
                     comando.setDate(1, fechaSalida);
                     comando.executeUpdate();
                     comando.getUpdateCount();
 
                     conexion.actualizarDatos("servicios",
-                            "room_service = " + this.casillaSeleccionada(this.jCheckBoxCuarto)
-                            + ", bar_access = " + this.casillaSeleccionada(this.jCheckBoxBar)
-                            + ", cleaner_service = " + this.casillaSeleccionada(this.jCheckBoxTintoreria)
-                            + ", SPA_service = " + this.casillaSeleccionada(this.jCheckBoxSPA)
-                            + ", baby_sister_service = " + this.casillaSeleccionada(this.jCheckBoxCuidado)
-                            + ", gym_access = " + this.casillaSeleccionada(this.jCheckBoxGimnasio)
-                            + ", gaming_access = " + this.casillaSeleccionada(this.jCheckBoxJuegos)
-                            + ", tennis_access = " + this.casillaSeleccionada(this.jCheckBoxTennis)
-                            + ", bow_shooting = " + this.casillaSeleccionada(this.jCheckBoxArco)
-                            + ", golf_access = " + this.casillaSeleccionada(this.jCheckBoxGolf), " WHERE guest_id = " + this.identificador + " LIMIT 1");
+                    "room_service = " + this.casillaSeleccionada(this.jCheckBoxCuarto)
+                    + ", bar_access = " + this.casillaSeleccionada(this.jCheckBoxBar)
+                    + ", cleaner_service = " + this.casillaSeleccionada(this.jCheckBoxTintoreria)
+                    + ", SPA_service = " + this.casillaSeleccionada(this.jCheckBoxSPA)
+                    + ", baby_sister_service = " + this.casillaSeleccionada(this.jCheckBoxCuidado)
+                    + ", gym_access = " + this.casillaSeleccionada(this.jCheckBoxGimnasio)
+                    + ", gaming_access = " + this.casillaSeleccionada(this.jCheckBoxJuegos)
+                    + ", tennis_access = " + this.casillaSeleccionada(this.jCheckBoxTennis)
+                    + ", bow_shooting = " + this.casillaSeleccionada(this.jCheckBoxArco)
+                    + ", golf_access = " + this.casillaSeleccionada(this.jCheckBoxGolf), " WHERE guest_id = " + this.identificador + " LIMIT 1");
 
-                    if (this.cambiosRealizados()) {
-                        JOptionPane.showMessageDialog(null, "Los datos fueron actualizados "
-                                + "exitosamente.",
-                                "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                    if(this.cambiosRealizados()) {
+                        JOptionPane.showMessageDialog(this, "Los datos fueron actualizados "
+                        + "exitosamente.",
+                        "Mensaje", JOptionPane.INFORMATION_MESSAGE);
 
                         //Desactivar los controles.
                         this.reajustarControles(false);
@@ -893,57 +913,62 @@ public class Modificaciones extends javax.swing.JInternalFrame {
                         this.jButtonCambios.setEnabled(false);
                         this.jTextFieldHabitacion.setText("");
                         this.jTextFieldResultado.setText("");
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Ningún dato fue cambiado.",
-                                "Advertencia", JOptionPane.WARNING_MESSAGE);
+                    } 
+                    else {
+                        JOptionPane.showMessageDialog(this, "Ningún dato fue cambiado.",
+                        "Advertencia", JOptionPane.WARNING_MESSAGE);
                     }
-                } catch (SQLException ex) {
+                } 
+                catch(SQLException ex) {
                     ex.printStackTrace();
-                    JOptionPane.showMessageDialog(null, "Ocurrió un error durante la "
-                            + "realización de la consulta.\nSQLException: " + ex.getMessage()
-                            + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
-                            "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                    + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                    + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                    "Error", JOptionPane.ERROR_MESSAGE);
                 }
-            } catch (Exception ex) {
+            } 
+            catch(Exception ex) {
                 ex.printStackTrace();
                 JOptionPane.showMessageDialog(this, "No fue posible realizar la "
-                        + "conexión con la base de datos.\n" + "Verifique si el servidor "
-                        + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
-            } finally {
-                if (conexion != null) {
+                + "conexión con la base de datos.\n" + "Verifique si el servidor "
+                + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+            } 
+            finally {
+                if(conexion != null) {
                     conexion.cerrarConexion();
                 }
             }
         }
     }//GEN-LAST:event_jButtonCambiosActionPerformed
 
+    //-Cerrar el menú de cambios-//.
     private void jLabelCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCerrarMouseClicked
         this.dispose();
     }//GEN-LAST:event_jLabelCerrarMouseClicked
 
+    //-Indicar que el cursor se ha posicionado en el botón para realizar la búsqueda-//.
     private void jButtonBusquedaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBusquedaMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonBusqueda.setBackground(color);
     }//GEN-LAST:event_jButtonBusquedaMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el botón para realizar la búsqueda-//.
     private void jButtonBusquedaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBusquedaMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonBusqueda.setBackground(color);
     }//GEN-LAST:event_jButtonBusquedaMouseExited
 
+    //-Indicar que el cursor se ha posicionado en el botón para realizar la realizar los cambios-//.
     private void jButtonCambiosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCambiosMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonCambios.setBackground(color);
     }//GEN-LAST:event_jButtonCambiosMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el botón para realizar los cambios-//.
     private void jButtonCambiosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCambiosMouseExited
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonCambios.setBackground(color);
     }//GEN-LAST:event_jButtonCambiosMouseExited
-
-    private void jTextFieldHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHabitacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldHabitacionActionPerformed
 
     //-Configuración adicional de ciertos componentes-//.
     private void extraInitProcess() {
@@ -958,90 +983,91 @@ public class Modificaciones extends javax.swing.JInternalFrame {
         this.jLabelDatosPersonales.setEnabled(cambio);
         this.jLabelNombre.setEnabled(cambio);
         this.jTextFieldNombre.setEnabled(cambio);
-        if (!cambio) {
+        if(!cambio) {
             this.jTextFieldNombre.setText("");
         }
 
         this.jLabelApellido.setEnabled(cambio);
         this.jTextFieldApellido.setEnabled(cambio);
-        if (!cambio) {
+        if(!cambio) {
             this.jTextFieldApellido.setText("");
         }
 
         this.jLabelCiudad.setEnabled(cambio);
         this.jTextFieldCiudad.setEnabled(cambio);
-        if (!cambio) {
+        if(!cambio) {
             this.jTextFieldCiudad.setText("");
         }
 
         this.jLabelDatosHospedaje.setEnabled(cambio);
         this.jLabelPersonasExtra.setEnabled(cambio);
-        if (!cambio) {
+        if(!cambio) {
             this.jComboBoxExtra.setSelectedIndex(0);
         }
         this.jComboBoxExtra.setEnabled(cambio);
 
         this.jLabelDias.setEnabled(cambio);
-        if (!cambio) {
+        if(!cambio) {
             this.jSpinnerDias.setValue(1);
         }
         this.jSpinnerDias.setEnabled(cambio);
 
         this.jLabelServicios.setEnabled(cambio);
-        if (!cambio) {
+        if(!cambio) {
             this.jCheckBoxCuarto.setSelected(cambio);
         }
         this.jLabelServicioAlCuarto.setEnabled(cambio);
         this.jCheckBoxCuarto.setEnabled(cambio);
 
-        if (!cambio) {
+        if(!cambio) {
             this.jCheckBoxBar.setSelected(cambio);
         }
         this.jLabelBar.setEnabled(cambio);
         this.jCheckBoxBar.setEnabled(cambio);
-        if (!cambio) {
+        
+        if(!cambio) {
             this.jCheckBoxTintoreria.setSelected(cambio);
         }
         this.jLabelTintoreria.setEnabled(cambio);
         this.jCheckBoxTintoreria.setEnabled(cambio);
 
-        if (!cambio) {
+        if(!cambio) {
             this.jCheckBoxSPA.setSelected(cambio);
         }
         this.jLabelSPA.setEnabled(cambio);
         this.jCheckBoxSPA.setEnabled(cambio);
 
-        if (!cambio) {
+        if(!cambio) {
             this.jCheckBoxCuidado.setSelected(cambio);
         }
         this.jLabelNiñera.setEnabled(cambio);
         this.jCheckBoxCuidado.setEnabled(cambio);
 
-        if (!cambio) {
+        if(!cambio) {
             this.jCheckBoxGimnasio.setSelected(cambio);
         }
         this.jLabelGimnasio.setEnabled(cambio);
         this.jCheckBoxGimnasio.setEnabled(cambio);
 
-        if (!cambio) {
+        if(!cambio) {
             this.jCheckBoxJuegos.setSelected(cambio);
         }
         this.jLabelZonaJuegos.setEnabled(cambio);
         this.jCheckBoxJuegos.setEnabled(cambio);
 
-        if (!cambio) {
+        if(!cambio) {
             this.jCheckBoxTennis.setSelected(cambio);
         }
         this.jLabelTenis.setEnabled(cambio);
         this.jCheckBoxTennis.setEnabled(cambio);
 
-        if (!cambio) {
+        if(!cambio) {
             this.jCheckBoxArco.setSelected(cambio);
         }
         this.jLabelTiroConArco.setEnabled(cambio);
         this.jCheckBoxArco.setEnabled(cambio);
 
-        if (!cambio) {
+        if(!cambio) {
             this.jCheckBoxGolf.setSelected(cambio);
         }
         this.jLabelGolf.setEnabled(cambio);
@@ -1050,51 +1076,51 @@ public class Modificaciones extends javax.swing.JInternalFrame {
 
     //-Se verifica si hubo algún cambio de información-//.
     private boolean cambiosRealizados() {
-        if (!this.jTextFieldNombre.getText().trim().equals(this.cadenas.get(0))) {
+        if(!this.jTextFieldNombre.getText().trim().equals(this.cadenas.get(0))) {
             return true;
         }
-        if (!this.jTextFieldApellido.getText().trim().equals(this.cadenas.get(1))) {
+        if(!this.jTextFieldApellido.getText().trim().equals(this.cadenas.get(1))) {
             return true;
         }
-        if (!this.jTextFieldCiudad.getText().equals(this.cadenas.get(2))) {
-            return true;
-        }
-
-        if ((Integer) this.jSpinnerDias.getValue() != this.numeros.get(0)) {
-            return true;
-        }
-        if (this.jComboBoxExtra.getSelectedIndex() != this.numeros.get(1)) {
+        if(!this.jTextFieldCiudad.getText().equals(this.cadenas.get(2))) {
             return true;
         }
 
-        if (this.casillaSeleccionada(this.jCheckBoxCuarto) != this.numeros.get(2)) {
+        if((Integer) this.jSpinnerDias.getValue() != this.numeros.get(0)) {
             return true;
         }
-        if (this.casillaSeleccionada(this.jCheckBoxBar) != this.numeros.get(3)) {
+        if(this.jComboBoxExtra.getSelectedIndex() != this.numeros.get(1)) {
             return true;
         }
-        if (this.casillaSeleccionada(this.jCheckBoxTintoreria) != this.numeros.get(4)) {
+
+        if(this.casillaSeleccionada(this.jCheckBoxCuarto) != this.numeros.get(2)) {
             return true;
         }
-        if (this.casillaSeleccionada(this.jCheckBoxSPA) != this.numeros.get(5)) {
+        if(this.casillaSeleccionada(this.jCheckBoxBar) != this.numeros.get(3)) {
             return true;
         }
-        if (this.casillaSeleccionada(this.jCheckBoxCuidado) != this.numeros.get(6)) {
+        if(this.casillaSeleccionada(this.jCheckBoxTintoreria) != this.numeros.get(4)) {
             return true;
         }
-        if (this.casillaSeleccionada(this.jCheckBoxGimnasio) != this.numeros.get(7)) {
+        if(this.casillaSeleccionada(this.jCheckBoxSPA) != this.numeros.get(5)) {
             return true;
         }
-        if (this.casillaSeleccionada(this.jCheckBoxJuegos) != this.numeros.get(8)) {
+        if(this.casillaSeleccionada(this.jCheckBoxCuidado) != this.numeros.get(6)) {
             return true;
         }
-        if (this.casillaSeleccionada(this.jCheckBoxTennis) != this.numeros.get(9)) {
+        if(this.casillaSeleccionada(this.jCheckBoxGimnasio) != this.numeros.get(7)) {
             return true;
         }
-        if (this.casillaSeleccionada(this.jCheckBoxArco) != this.numeros.get(10)) {
+        if(this.casillaSeleccionada(this.jCheckBoxJuegos) != this.numeros.get(8)) {
             return true;
         }
-        if (this.casillaSeleccionada(this.jCheckBoxGolf) != this.numeros.get(11)) {
+        if(this.casillaSeleccionada(this.jCheckBoxTennis) != this.numeros.get(9)) {
+            return true;
+        }
+        if(this.casillaSeleccionada(this.jCheckBoxArco) != this.numeros.get(10)) {
+            return true;
+        }
+        if(this.casillaSeleccionada(this.jCheckBoxGolf) != this.numeros.get(11)) {
             return true;
         }
         return false;
@@ -1102,9 +1128,10 @@ public class Modificaciones extends javax.swing.JInternalFrame {
 
     //-Se retorna un valor numérico que indica si un JCheckBox está seleccionado o no-//.
     private int casillaSeleccionada(JCheckBox casilla) {
-        if (casilla.isSelected()) {
+        if(casilla.isSelected()) {
             return 1;
-        } else {
+        } 
+        else {
             return 0;
         }
     }

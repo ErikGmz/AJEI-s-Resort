@@ -162,9 +162,9 @@
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jButtonSiguiente" max="32767" attributes="0"/>
-                              <Component id="jButtonSalida" pref="309" max="32767" attributes="0"/>
-                              <Component id="jPanelServiciosExtra" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jPanelServiciosExtra" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jButtonSalida" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jButtonSiguiente" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -195,7 +195,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabelAdicional" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="1064" max="-2" attributes="0"/>
@@ -223,11 +223,21 @@
                     <Component class="javax.swing.JTextArea" name="jTextAreaAdicional">
                       <Properties>
                         <Property name="editable" type="boolean" value="false"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cd" green="e8" red="ff" type="rgb"/>
+                        </Property>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="SansSerif" size="14" style="0"/>
                         </Property>
                         <Property name="rows" type="int" value="5"/>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                            <LineBorder thickness="10">
+                              <Color PropertyName="color" blue="33" green="a3" red="ff" type="rgb"/>
+                            </LineBorder>
+                          </Border>
+                        </Property>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -250,6 +260,7 @@
                       <Color id="Cursor de Mano"/>
                     </Property>
                     <Property name="enabled" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <Events>
@@ -276,6 +287,7 @@
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Cursor de Mano"/>
                     </Property>
+                    <Property name="focusPainted" type="boolean" value="false"/>
                     <Property name="inheritsPopupMenu" type="boolean" value="true"/>
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
@@ -622,14 +634,14 @@
                               <Component id="jLabelHabitacion" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jComboBoxHabitacion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="jLabelPiso" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jRadioButtonPiso1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jRadioButtonPiso2" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -747,16 +759,17 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabelIngreso" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jDateChooserIngreso" min="-2" pref="29" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabelDias" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jSpinnerDias" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -843,14 +856,14 @@
                                   <Component id="jCheckBoxSPA" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jCheckBoxCuidado" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jCheckBoxGimnasio" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBoxJuegos" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jCheckBoxJuegos" alignment="0" pref="234" max="32767" attributes="0"/>
                                   <Component id="jCheckBoxTennis" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jCheckBoxArco" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jCheckBoxGolf" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jCheckBoxBar" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                                   <Component id="jCheckBoxCuarto" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="8" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1121,66 +1134,76 @@
 
               <Layout>
                 <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButtonRegresar" min="-2" pref="50" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jButtonSiguiente2" min="-2" pref="50" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" attributes="0">
+                          <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jLabelHabitacion6" pref="100" max="32767" attributes="0"/>
-                                      <Component id="jLabelHabitacion1" max="32767" attributes="0"/>
-                                      <Component id="jLabelHabitacion11" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jLabelHabitacion6" pref="100" max="32767" attributes="0"/>
+                                          <Component id="jLabelHabitacion1" max="32767" attributes="0"/>
+                                          <Component id="jLabelHabitacion11" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="jButtonRegresar" min="-2" pref="50" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabelHabitacion7" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <Component id="jLabelHabitacion2" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <Component id="jLabelHabitacion12" min="-2" pref="100" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabelHabitacion13" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                          <Component id="jLabelHabitacion8" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jLabelHabitacion3" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="jButtonSiguiente2" min="-2" pref="50" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabelHabitacion7" min="-2" pref="100" max="-2" attributes="0"/>
+                                              <Component id="jLabelHabitacion2" min="-2" pref="100" max="-2" attributes="0"/>
+                                              <Component id="jLabelHabitacion12" min="-2" pref="100" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabelHabitacion13" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabelHabitacion8" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="jLabelHabitacion3" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabelHabitacion14" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabelHabitacion4" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="jLabelHabitacion9" min="-2" pref="100" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabelHabitacion15" alignment="0" pref="100" max="32767" attributes="0"/>
+                                              <Component id="jLabelHabitacion5" alignment="0" pref="100" max="32767" attributes="0"/>
+                                              <Component id="jLabelHabitacion10" alignment="0" pref="100" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="jPanelImagenes" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabelHabitacion14" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                          <Component id="jLabelHabitacion4" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jLabelHabitacion9" min="-2" pref="100" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabelHabitacion15" alignment="0" pref="100" max="32767" attributes="0"/>
-                                      <Component id="jLabelHabitacion5" alignment="0" pref="100" max="32767" attributes="0"/>
-                                      <Component id="jLabelHabitacion10" alignment="0" pref="100" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabelTipoHabitacion" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldTipoHabitacion" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabelNumeroPiso" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldNumeroPiso" min="-2" pref="94" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="139" pref="139" max="-2" attributes="0"/>
+                                          <Component id="jLabelNumeroPiso" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldNumeroPiso" min="-2" pref="94" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabelTipoHabitacion" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldTipoHabitacion" min="-2" pref="226" max="-2" attributes="0"/>
+                                          <EmptySpace pref="236" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="49" pref="241" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="16" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1216,7 +1239,7 @@
                                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                           <Component id="jLabelHabitacion11" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jPanel1" max="32767" attributes="0"/>
+                                      <Component id="jPanelImagenes" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1722,20 +1745,53 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JPanel" name="jPanel1">
+                <Container class="javax.swing.JPanel" name="jPanelImagenes">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="33" green="a3" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="255" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabelImagenHabitacion" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="224" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabelDescripcionImagenHabitacion" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabelDescripcionImagenHabitacion" min="-2" pref="24" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabelImagenHabitacion" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="jLabelImagenHabitacion">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabelDescripcionImagenHabitacion">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="SansSerif" size="14" style="0"/>
+                        </Property>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
                 </Container>
               </SubComponents>
             </Container>
@@ -1762,9 +1818,9 @@
                               <Component id="jButtonModificar" max="32767" attributes="0"/>
                               <Component id="jPanelInformacionReservacion" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="256" max="32767" attributes="0"/>
-                          <Component id="jButtonGenerarRecibo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                          <EmptySpace pref="265" max="32767" attributes="0"/>
+                          <Component id="jButtonGenerarRecibo" min="-2" pref="169" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

@@ -2,11 +2,14 @@
 package com.ventanas_presentacion;
 
 //---Sentencias import---//.
+import com.bases_de_datos.ConexionMySQL;
 import com.operaciones.Estadisticas;
 import com.operaciones.*;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.io.File;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -15,7 +18,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 //---Clase pública---//.
-public class Index extends javax.swing.JFrame {
+public class Index extends javax.swing.JFrame implements Runnable {
 
     //---Atributos Adicionales---//.
     private Clip musicaFondo;
@@ -24,8 +27,13 @@ public class Index extends javax.swing.JFrame {
     //---Constructor---//.
     public Index() {
         initComponents();
-        this.extraInitProcess();
-        this.musicaIniciada = true;
+    }
+    
+    //---Constructor con argumentos---//.
+    public Index(Clip musicaFondo, boolean musicaIniciada) {
+        this.musicaIniciada = musicaIniciada;
+        this.musicaFondo = musicaFondo;
+        initComponents();
     }
 
     //---Métodos---//.
@@ -50,7 +58,7 @@ public class Index extends javax.swing.JFrame {
         jLabelBtn5 = new javax.swing.JLabel();
         jLabelBtn2 = new javax.swing.JLabel();
         jButtonConsultas = new javax.swing.JButton();
-        jPanelContenedor = new javax.swing.JPanel();
+        jDesktopPaneContenedor = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio");
@@ -165,7 +173,7 @@ public class Index extends javax.swing.JFrame {
             }
         });
 
-        jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/musicOn.png"))); // NOI18N
+        jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/index/musicOff.png"))); // NOI18N
         jLabelMusica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelMusica.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -359,16 +367,16 @@ public class Index extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanelContenedor.setBackground(new java.awt.Color(255, 255, 255));
+        jDesktopPaneContenedor.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanelContenedorLayout = new javax.swing.GroupLayout(jPanelContenedor);
-        jPanelContenedor.setLayout(jPanelContenedorLayout);
-        jPanelContenedorLayout.setHorizontalGroup(
-            jPanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jDesktopPaneContenedorLayout = new javax.swing.GroupLayout(jDesktopPaneContenedor);
+        jDesktopPaneContenedor.setLayout(jDesktopPaneContenedorLayout);
+        jDesktopPaneContenedorLayout.setHorizontalGroup(
+            jDesktopPaneContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 880, Short.MAX_VALUE)
         );
-        jPanelContenedorLayout.setVerticalGroup(
-            jPanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jDesktopPaneContenedorLayout.setVerticalGroup(
+            jDesktopPaneContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -379,86 +387,97 @@ public class Index extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jDesktopPaneContenedor))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPaneContenedor)
         );
 
         setBounds(0, 0, 1116, 619);
     }// </editor-fold>//GEN-END:initComponents
 
+    //-Indicar que el cursor se ha posicionado en el menú de las estadísticas-//.
     private void jButtonEstadisticasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEstadisticasMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonEstadisticas.setBackground(color);
     }//GEN-LAST:event_jButtonEstadisticasMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el menú de las estadísticas-//.
     private void jButtonEstadisticasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEstadisticasMouseExited
         Color color = new Color(Integer.parseInt("FFBA6A", 16));
         this.jButtonEstadisticas.setBackground(color);
     }//GEN-LAST:event_jButtonEstadisticasMouseExited
 
+    //-Indicar que el cursor se ha posicionado en el menú del check-in-//.
     private void jButtonCheckInMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCheckInMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonCheckIn.setBackground(color);
     }//GEN-LAST:event_jButtonCheckInMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el menú del check-in-//.
     private void jButtonCheckInMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCheckInMouseExited
         Color color = new Color(Integer.parseInt("FFBA6A", 16));
         this.jButtonCheckIn.setBackground(color);
     }//GEN-LAST:event_jButtonCheckInMouseExited
 
+    //-Indicar que el cursor se ha posicionado en el menú del check-out-//.
     private void jButtonCheckOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCheckOutMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonCheckOut.setBackground(color);
     }//GEN-LAST:event_jButtonCheckOutMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el menú del check-out-//.
     private void jButtonCheckOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCheckOutMouseExited
         Color color = new Color(Integer.parseInt("FFBA6A", 16));
         this.jButtonCheckOut.setBackground(color);
     }//GEN-LAST:event_jButtonCheckOutMouseExited
 
-    //---Bootón del menú deslizable---//.
+    //-Botón para gestionar el comportamiento del menú desplegable-//.
     private void jLabelMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMenuMouseClicked
-        if (this.jPanelMenu.getWidth() == 60) {
+        if(this.jPanelMenu.getWidth() == 60) {
             this.jPanelMenu.setSize(220, this.jPanelMenu.getHeight());
-            this.jPanelContenedor.setSize(this.jPanelContenedor.getWidth() - 160, this.jPanelContenedor.getHeight());
-            this.jPanelContenedor.setLocation(this.jPanelContenedor.getX() + 160, this.jPanelContenedor.getY());
-            if (this.jPanelContenedor.getComponentCount() > 0) {
-                this.jPanelContenedor.getComponent(0).setSize(this.jPanelContenedor.getSize());
+            this.jDesktopPaneContenedor.setSize(this.jDesktopPaneContenedor.getWidth() - 160, this.jDesktopPaneContenedor.getHeight());
+            this.jDesktopPaneContenedor.setLocation(this.jDesktopPaneContenedor.getX() + 160, this.jDesktopPaneContenedor.getY());
+            if (this.jDesktopPaneContenedor.getComponentCount() > 0) {
+                this.jDesktopPaneContenedor.getComponent(0).setSize(this.jDesktopPaneContenedor.getSize());
             }
             this.jLabelMenu.setLocation(165, this.jLabelMenu.getY());
-        } else if (this.jPanelMenu.getWidth() == 220) {
+        } 
+        else if(this.jPanelMenu.getWidth() == 220) {
             this.jPanelMenu.setSize(60, this.jPanelMenu.getHeight());
-            this.jPanelContenedor.setSize(this.jPanelContenedor.getWidth() + 160, this.jPanelContenedor.getHeight());
-            this.jPanelContenedor.setLocation(this.jPanelContenedor.getX() - 160, this.jPanelContenedor.getY());
-            if (this.jPanelContenedor.getComponentCount() > 0) {
-                this.jPanelContenedor.getComponent(0).setSize(this.jPanelContenedor.getSize());
+            this.jDesktopPaneContenedor.setSize(this.jDesktopPaneContenedor.getWidth() + 160, this.jDesktopPaneContenedor.getHeight());
+            this.jDesktopPaneContenedor.setLocation(this.jDesktopPaneContenedor.getX() - 160, this.jDesktopPaneContenedor.getY());
+            if(this.jDesktopPaneContenedor.getComponentCount() > 0) {
+                this.jDesktopPaneContenedor.getComponent(0).setSize(this.jDesktopPaneContenedor.getSize());
             }
             this.jLabelMenu.setLocation(5, this.jLabelMenu.getY());
         }
     }//GEN-LAST:event_jLabelMenuMouseClicked
 
+    //-Se despliega u oculta el ícono de la música-//.
     private void jLabelConfiguracionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelConfiguracionMouseClicked
-        if (this.jLabelMusica.getX() >= 5) {
+        if(this.jLabelMusica.getX() >= 5) {
             Animacion.Animacion.mover_izquierda(this.jLabelMusica.getX(), -50, 2, 2, this.jLabelMusica);
-        } else {
+        } 
+        else {
             Animacion.Animacion.mover_derecha(this.jLabelMusica.getX(), 10, 2, 2, this.jLabelMusica);
         }
     }//GEN-LAST:event_jLabelConfiguracionMouseClicked
 
+    //-Se gestiona la reproducción de la música-//.
     private void jLabelMusicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMusicaMouseClicked
-        if (this.musicaFondo != null) {
-            if (this.musicaIniciada) {
+        if(this.musicaFondo != null) {
+            if(this.musicaIniciada) {
                 //Detener la música.
                 this.musicaFondo.stop();
                 this.musicaIniciada = false;
 
                 //Cambiar el ícono para indicar que la música está pausada.
                 this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOff.png")));
-            } else {
+            } 
+            else {
                 //Iniciar la música a partir del punto exacto de la reproducción previa.
                 this.musicaFondo.start();
                 this.musicaFondo.loop(Clip.LOOP_CONTINUOUSLY);
@@ -470,147 +489,196 @@ public class Index extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jLabelMusicaMouseClicked
 
+    //-Se inicializa el menú de las estadísticas-//.
     private void jButtonEstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEstadisticasActionPerformed
+        //Mediante un hilo de ejecución, el menú de las estadísticas se precarga.
         Estadisticas obj = new Estadisticas();
         Thread t = new Thread(obj);
         t.start();
+        
         this.abrirJFrameEnPanelContenedor(obj);
     }//GEN-LAST:event_jButtonEstadisticasActionPerformed
 
+    //-Se inicializa el menú para el check-out-//.
     private void jButtonCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCheckOutActionPerformed
         this.abrirJFrameEnPanelContenedor(new CheckOut());
     }//GEN-LAST:event_jButtonCheckOutActionPerformed
 
+    //-Se inicializa el menú para el check-in-//.
     private void jButtonCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCheckInActionPerformed
-        this.abrirJFrameEnPanelContenedor(new CheckIn());
+        ConexionMySQL conexion = null;
+        try {
+            //Conexión a la base de datos.
+            conexion = new ConexionMySQL();
+
+            try {
+                //Consultar en la base de datos la cantidad de habitaciones reservadas.
+                ResultSet consulta = conexion.consultarTabla("huespedes",
+                "COUNT(room_id) AS room_count", " WHERE active = 1");
+
+                //Se verifica si todas las habitaciones del hotel están reservadas.
+                if(consulta.next()) {
+                    if(consulta.getInt("room_count") >= 30) {
+                        JOptionPane.showMessageDialog(this, "No hay habitaciones disponibles",
+                        "Error", JOptionPane.WARNING_MESSAGE);
+                    }
+                    else {
+                        this.abrirJFrameEnPanelContenedor(new CheckIn());
+                    }
+                }
+                else {
+                    throw new SQLException();
+                }
+            } 
+            catch(SQLException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Ocurrió un error durante la "
+                + "realización de la consulta.\nSQLException: " + ex.getMessage()
+                + ".\nSQLState: " + ex.getSQLState() + ".\nError: " + ex.getErrorCode() + ".",
+                "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } 
+        catch (Exception ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "No fue posible realizar la "
+            + "conexión con la base de datos.\n" + "Verifique si el servidor "
+            + "XAMPP o MySQL local se encuentra activado.", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
+        finally {
+            if (conexion != null) {
+                conexion.cerrarConexion();
+            }
+        }
     }//GEN-LAST:event_jButtonCheckInActionPerformed
 
+    //-Indicar que el cursor se ha posicionado en el menú del cierre de sesión-//.
     private void jButtonCerrarSesionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonCerrarSesion.setBackground(color);
     }//GEN-LAST:event_jButtonCerrarSesionMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el menú del cierre de sesión-//.
     private void jButtonCerrarSesionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionMouseExited
         Color color = new Color(Integer.parseInt("FFBA6A", 16));
         this.jButtonCerrarSesion.setBackground(color);
     }//GEN-LAST:event_jButtonCerrarSesionMouseExited
 
+    //-Se verifica si el usuario desea cerrar sesión-//.
     private void jButtonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarSesionActionPerformed
-        if (JOptionPane.showConfirmDialog(this, "¿Esta seguro de que desea\nabandonar"
-                + " la sesión?", "Cerrar Sesión", JOptionPane.OK_CANCEL_OPTION) == 0) {
-            this.musicaFondo.stop();
-            this.musicaFondo.close();
+        if(JOptionPane.showConfirmDialog(this, "¿Desea cerrar la sesión?"
+        , "Confirmación", JOptionPane.OK_CANCEL_OPTION) == 0) {
             this.dispose();
-            new Login().setVisible(true);
+            Login login = new Login(this.musicaFondo, this.musicaIniciada);
+            Thread t = new Thread(login);
+            t.start();
         }
     }//GEN-LAST:event_jButtonCerrarSesionActionPerformed
 
+    //-Indicar que el cursor se ha posicionado en el menú de cambios-//.
     private void jButtonModificacionesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonModificacionesMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonModificaciones.setBackground(color);
     }//GEN-LAST:event_jButtonModificacionesMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el menú de cambios-//.
     private void jButtonModificacionesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonModificacionesMouseExited
         Color color = new Color(Integer.parseInt("FFBA6A", 16));
         this.jButtonModificaciones.setBackground(color);
     }//GEN-LAST:event_jButtonModificacionesMouseExited
 
+    //-Se inicializa el menú para realizar los cambios-//.
     private void jButtonModificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificacionesActionPerformed
         this.abrirJFrameEnPanelContenedor(new Modificaciones());
     }//GEN-LAST:event_jButtonModificacionesActionPerformed
 
+    //-Indicar que el cursor se ha posicionado en el menú de consultas-//.
     private void jButtonConsultasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConsultasMouseEntered
         Color color = new Color(Integer.parseInt("AF5700", 16));
         this.jButtonConsultas.setBackground(color);
     }//GEN-LAST:event_jButtonConsultasMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el menú de consultas-//.
     private void jButtonConsultasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConsultasMouseExited
         Color color = new Color(Integer.parseInt("FFBA6A", 16));
         this.jButtonConsultas.setBackground(color);
     }//GEN-LAST:event_jButtonConsultasMouseExited
 
+    //-Se inicializa el menú para consultar información-//.
     private void jButtonConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultasActionPerformed
         this.abrirJFrameEnPanelContenedor(new Consultas());
     }//GEN-LAST:event_jButtonConsultasActionPerformed
 
-    //---Abrir IntrenalJFrames dentro del panel contenedor----//.
+    //-Abrir InternalJFrames dentro del panel contenedor--//.
     private void abrirJFrameEnPanelContenedor(Object jF) {
-        // si existe algún componente en la
-        // en el panel contenedor, lo removemos
-        if (this.jPanelContenedor.getComponentCount() > 0) {
-            this.jPanelContenedor.removeAll();
+        //Se borra el menú actualmente cargado en la interfaz.
+        if (this.jDesktopPaneContenedor.getComponentCount() > 1) {
+            this.jDesktopPaneContenedor.remove(0);
         }
 
         JInternalFrame jFHijo = (JInternalFrame) jF;
-
         ((javax.swing.plaf.basic.BasicInternalFrameUI) jFHijo.getUI()).setNorthPane(null);
-        jFHijo.setSize(this.jPanelContenedor.getSize());
-
-        this.jPanelContenedor.add(jFHijo);
+        if(this.jPanelMenu.getWidth() == 60) {
+            jFHijo.setSize(this.jDesktopPaneContenedor.getWidth() - 160, this.jDesktopPaneContenedor.getHeight());
+        }
+        else {
+            jFHijo.setSize(this.jDesktopPaneContenedor.getSize());
+        }
+        this.jDesktopPaneContenedor.add(jFHijo);
         jFHijo.setVisible(true);
-        //jFHijo.repaint();
     }
 
-    //---Procesos iniciales extras---//.
+    //-Configuración adicional de ciertos componentes-//.
     private void extraInitProcess() {
         // Configuraciones básicas del JFrame.
         this.setLocationRelativeTo(this);
         try {
             super.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/index/house.png")));
-        } catch (Exception ex) {
+        } 
+        catch(Exception ex) {
             System.err.println("Error al abrir el ícono.");
             ex.printStackTrace();
         }
 
         //Reproducir la música de fondo.
-        try {
-            AudioInputStream flujo = AudioSystem.getAudioInputStream(new File("src/sounds/hotel.wav"));
-            this.musicaFondo = AudioSystem.getClip();
-            this.musicaFondo.open(flujo);
-            this.musicaFondo.start();
-            this.musicaIniciada = true;
-        } catch (Exception ex) {
-            System.err.println("No se pudo reproducir el archivo de sonido.");
-            System.err.println("Verifique si el fichero \"hotel.wav\" se encuentra en la carpeta /sounds.");
-            ex.printStackTrace();
-            this.musicaFondo = null;
+        if(this.musicaFondo == null) {
+            try {
+                AudioInputStream flujo = AudioSystem.getAudioInputStream(new File("src/sounds/hotel.wav"));
+                this.musicaFondo = AudioSystem.getClip();
+                this.musicaFondo.open(flujo);
+                this.musicaFondo.start();
+                this.musicaIniciada = true;
+            } 
+            catch (Exception ex) {
+                System.err.println("No se pudo reproducir el archivo de sonido.");
+                System.err.println("Verifique si el fichero \"hotel.wav\" se encuentra en la carpeta /sounds.");
+                ex.printStackTrace();
+                this.musicaFondo = null;
+            }
         }
+        
+        //Cambiar el tipo de ícono de la música, según sea el caso.
+        if(this.musicaFondo != null) {
+            if(this.musicaIniciada) {
+                this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOn.png")));
+            }
+            else {
+                this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOff.png")));
+            }
+        }
+        
+        //Cambiar el tipo de ícono de la música, según sea el caso.
+        if(this.musicaFondo != null) {
+            if(this.musicaIniciada) {
+                this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOn.png")));
+            }
+            else {
+                this.jLabelMusica.setIcon(new ImageIcon(getClass().getResource("/img/login/musicOff.png")));
+            }
+        }
+        
+        //Cargar el internalJFrame de la pantalla de inicio.
+        this.abrirJFrameEnPanelContenedor(new Inicio());
     }
-
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Windows".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Index().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCerrarSesion;
@@ -619,6 +687,7 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConsultas;
     private javax.swing.JButton jButtonEstadisticas;
     private javax.swing.JButton jButtonModificaciones;
+    private javax.swing.JDesktopPane jDesktopPaneContenedor;
     private javax.swing.JLabel jLabelBtn1;
     private javax.swing.JLabel jLabelBtn2;
     private javax.swing.JLabel jLabelBtn3;
@@ -629,7 +698,12 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelMenu;
     private javax.swing.JLabel jLabelMusica;
-    private javax.swing.JPanel jPanelContenedor;
     private javax.swing.JPanel jPanelMenu;
     // End of variables declaration//GEN-END:variables
+
+    //-Método para la ejecución del hilo-//.
+    @Override public void run() {
+        this.extraInitProcess();
+    }
+    
 }

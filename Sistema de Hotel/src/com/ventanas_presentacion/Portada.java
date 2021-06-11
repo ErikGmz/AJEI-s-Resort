@@ -11,6 +11,7 @@
  *  -Israel Alejandro Mora González.
  *  -José Emmanuel Rodríguez López.
  */
+
 //---Paquete---//.
 package com.ventanas_presentacion;
 
@@ -20,6 +21,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 //---Clase pública---//.
@@ -40,9 +43,10 @@ public class Portada extends javax.swing.JFrame {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-
+     
+        //---Mostrar los datos de los integrantes del equipo---//.
         g.setColor(new Color(Integer.parseInt("242C58", 16)));
-        g.fillOval(this.jPanelPortada.getWidth() - 400, this.jPanelPortada.getHeight() - 400, 600, 600);
+        g.fillOval(this.jPanelPortada.getWidth() - 400, this.jPanelPortada.getHeight() - 440, 600, 610);
 
         g.setColor(Color.WHITE);
         g.setFont(new Font("Times New Roman", Font.BOLD, 36));
@@ -53,25 +57,24 @@ public class Portada extends javax.swing.JFrame {
         g.drawString("Israel Alejandro Mora González", this.jPanelPortada.getWidth() - 328, this.jPanelPortada.getHeight() - 100);
         g.drawString("José Emmanuel Rodríguez López", this.jPanelPortada.getWidth() - 335, this.jPanelPortada.getHeight() - 50);
 
+        //---Mostrar los datos de la universidad, carrera, docente y proyecto---//.
         g.setColor(new Color(Integer.parseInt("242C58", 16)));
-        g.fillOval(this.jPanelPortada.getWidth() - 800, this.jPanelPortada.getHeight() - 400, 350, 350);
+        g.fillOval(this.jPanelPortada.getWidth() - 800, this.jPanelPortada.getHeight() - 400, 350, 410);
 
         g.setColor(Color.WHITE);
         g.setFont(new Font("Times New Roman", Font.BOLD, 20));
-        g.drawString("Carrera: ISC", this.jPanelPortada.getWidth() - 680, this.jPanelPortada.getHeight() - 350);
-        g.drawString("Departamento de Sistemas", this.jPanelPortada.getWidth() - 730, this.jPanelPortada.getHeight() - 300);
-        g.drawString("Electrónicos", this.jPanelPortada.getWidth() - 670, this.jPanelPortada.getHeight() - 270);
-        g.drawString("Materia: Programación", this.jPanelPortada.getWidth() - 720, this.jPanelPortada.getHeight() - 220);
-        g.drawString("Docente: Georgina Salazar Partida", this.jPanelPortada.getWidth() - 770, this.jPanelPortada.getHeight() - 170);
-        g.drawString("Proyecto: Sistema Gestor", this.jPanelPortada.getWidth() - 730, this.jPanelPortada.getHeight() - 120);
-        g.drawString("de Hotel", this.jPanelPortada.getWidth() - 660, this.jPanelPortada.getHeight() - 90);
+        g.drawString("Carrera: ISC", this.jPanelPortada.getWidth() - 680, this.jPanelPortada.getHeight() - 360);
+        g.drawString("Departamento de Sistemas", this.jPanelPortada.getWidth() - 730, this.jPanelPortada.getHeight() - 310);
+        g.drawString("Electrónicos", this.jPanelPortada.getWidth() - 670, this.jPanelPortada.getHeight() - 280);
+        g.drawString("Materia: Programación III", this.jPanelPortada.getWidth() - 720, this.jPanelPortada.getHeight() - 230);
+        g.drawString("Docente: Georgina Salazar Partida", this.jPanelPortada.getWidth() - 770, this.jPanelPortada.getHeight() - 180);
+        g.drawString("Fecha de entrega:", this.jPanelPortada.getWidth() - 700, this.jPanelPortada.getHeight() - 130);
+        g.drawString("16 de junio de 2021", this.jPanelPortada.getWidth() - 707, this.jPanelPortada.getHeight() - 100);
+        g.drawString("Proyecto: Sistema Gestor", this.jPanelPortada.getWidth() - 730, this.jPanelPortada.getHeight() - 50);
+        g.drawString("de Hotel", this.jPanelPortada.getWidth() - 660, this.jPanelPortada.getHeight() - 20);
 
         //Dibujar el logo de la UAA.
-        g.drawImage(this.logoUAA, this.jPanelPortada.getWidth() - 500, this.jPanelPortada.getHeight() - 525, this);
-
-        //Dibujar el logo y texto del Centro de Ciencias Básicas.
-        //g.drawImage(this.logoCBB, 60, 207, this);
-        //g.drawImage(this.textoCBB, 125, 190, this);
+        g.drawImage(this.logoUAA, this.jPanelPortada.getWidth() - 510, this.jPanelPortada.getHeight() - 535, this);
     }
 
     //---Métodos---//.
@@ -171,29 +174,37 @@ public class Portada extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //-Indicar que el cursor se ha posicionado en el menú para iniciar el sistema-//.
     private void jButtonIngresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonIngresarMouseEntered
         this.jButtonIngresar.setBackground(new Color(Integer.parseInt("686868", 16)));
         this.jButtonIngresar.setForeground(Color.WHITE);
     }//GEN-LAST:event_jButtonIngresarMouseEntered
 
+    //-Indicar que el cursor dejó de posicionarse en el menú para iniciar el sistema-//.
     private void jButtonIngresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonIngresarMouseExited
         this.jButtonIngresar.setBackground(Color.WHITE);
         this.jButtonIngresar.setForeground(Color.BLACK);
     }//GEN-LAST:event_jButtonIngresarMouseExited
 
+    //-Iniciar el sistema de administración del hotel-//.
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
         this.dispose();
-        Login inicio = new Login();
-        inicio.setVisible(true);
+        //Cambiar a la pantalla de login.
+        Login login = new Login();
+        Thread t = new Thread(login);
+        t.start();        
     }//GEN-LAST:event_jButtonIngresarActionPerformed
 
+    //-Desplegar el contenido del menú lateral-//.
     private void jLabelDesplegarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelDesplegarMouseClicked
-        if (!this.panelIngresarDesplegado) {
+        //Verificar si el menú desplegable es visible o no.
+        if(!this.panelIngresarDesplegado) {
             this.panelIngresarDesplegado = true;
             Animacion.Animacion.mover_derecha(10, 220, 2, 2, this.jLabelDesplegar);
             Animacion.Animacion.mover_derecha(-210, 0, 2, 2, this.jPanelIngresar);
             this.jLabelDesplegar.setIcon(new ImageIcon(getClass().getResource("/img/portada/left-arrow.png")));
-        } else {
+        } 
+        else {
             this.panelIngresarDesplegado = false;
             Animacion.Animacion.mover_izquierda(220, 10, 2, 2, this.jLabelDesplegar);
             Animacion.Animacion.mover_izquierda(0, -210, 2, 2, this.jPanelIngresar);
@@ -205,7 +216,6 @@ public class Portada extends javax.swing.JFrame {
     private void extraInitProcess() {
         //Centrar el jFrame.
         this.setLocationRelativeTo(this);
-        
         this.panelIngresarDesplegado = false;
 
         //Abrir el archivo que contiene el logo de la UAA.
@@ -215,7 +225,8 @@ public class Portada extends javax.swing.JFrame {
         //Cargar el logo del gallo UAA para el JFrame.
         try {
             super.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/portada/gallouaa.png")));
-        } catch (Exception ex) {
+        } 
+        catch(Exception ex) {
             System.err.println("Error al abrir el ícono.");
             ex.printStackTrace();
         }
@@ -223,7 +234,7 @@ public class Portada extends javax.swing.JFrame {
 
     //-Método principal-//.
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        //Establecer el look and feel de Windows.
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 

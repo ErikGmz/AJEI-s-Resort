@@ -704,6 +704,7 @@ public class Index extends javax.swing.JFrame implements Runnable {
     //-Método para la ejecución del hilo-//.
     @Override public void run() {
         this.extraInitProcess();
+        this.setLocationRelativeTo(this);
     }
     
 }

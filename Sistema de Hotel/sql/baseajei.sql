@@ -4,7 +4,7 @@
 -- ------------------------------------------------------
 -- Server version	5.7.34-log
 
-CREATE DATABASE baseajei;
+CREATE DATABASE IF NOT EXISTS baseajei;
 USE baseajei;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;

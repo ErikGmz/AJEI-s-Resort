@@ -143,6 +143,25 @@ public class CheckIn extends javax.swing.JInternalFrame {
         jTextAreaDatos = new javax.swing.JTextArea();
         jPanelRecibo = new javax.swing.JPanel();
         jButtonNuevo = new javax.swing.JButton();
+        jLabelUbicacion = new javax.swing.JLabel();
+        jLabelLogoPR = new javax.swing.JLabel();
+        jLabelSlogan = new javax.swing.JLabel();
+        jLabelPRNombre1 = new javax.swing.JLabel();
+        jPanelServicios = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextAreaServicios = new javax.swing.JTextArea();
+        jPanelPRDatos = new javax.swing.JPanel();
+        jLabelPRExtra = new javax.swing.JLabel();
+        jLabelPRHuespedes = new javax.swing.JLabel();
+        jLabelPRLimite = new javax.swing.JLabel();
+        jLabelPRTipo = new javax.swing.JLabel();
+        jLabelPRPiso = new javax.swing.JLabel();
+        jLabelPRHabitacion = new javax.swing.JLabel();
+        jLabelPRDias = new javax.swing.JLabel();
+        jLabelPRFechaSalida = new javax.swing.JLabel();
+        jLabelPRFechaIngreso = new javax.swing.JLabel();
+        jLabelPRCiudad = new javax.swing.JLabel();
+        jLabelPRNombre = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
 
@@ -695,7 +714,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
             jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDatosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanelDatosLayout.createSequentialGroup()
                         .addComponent(jPanelServiciosExtra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -713,8 +732,8 @@ public class CheckIn extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelAdicional)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addGap(1064, 1064, 1064))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jPanelDatosLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButtonSalida, jButtonSiguiente});
@@ -1196,7 +1215,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
             jPanelInformacionReservacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInformacionReservacionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1229,29 +1248,193 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
         jPanelRecibo.setBackground(new java.awt.Color(255, 232, 205));
 
+        jButtonNuevo.setBackground(new java.awt.Color(228, 130, 0));
+        jButtonNuevo.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jButtonNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/edit32.png"))); // NOI18N
         jButtonNuevo.setText("Realizar otro registro");
+        jButtonNuevo.setContentAreaFilled(false);
         jButtonNuevo.setFocusPainted(false);
+        jButtonNuevo.setOpaque(true);
+        jButtonNuevo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButtonNuevoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButtonNuevoMouseExited(evt);
+            }
+        });
         jButtonNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNuevoActionPerformed(evt);
             }
         });
 
+        jLabelUbicacion.setFont(new java.awt.Font("Century Schoolbook", 0, 14)); // NOI18N
+        jLabelUbicacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/operaciones/placeholder.png"))); // NOI18N
+        jLabelUbicacion.setText(" Blvrd Riviera AJEI 254, Nuevo Vallarta, Nayarit");
+        jLabelUbicacion.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+
+        jLabelLogoPR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/recibo/logo2.png"))); // NOI18N
+
+        jLabelSlogan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSlogan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login/screen/sloganHotel.png"))); // NOI18N
+
+        jLabelPRNombre1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+
+        jPanelServicios.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(123, 0, 0), 2), "Servicios extra", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14), new java.awt.Color(191, 81, 0))); // NOI18N
+        jPanelServicios.setOpaque(false);
+
+        jTextAreaServicios.setEditable(false);
+        jTextAreaServicios.setColumns(20);
+        jTextAreaServicios.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jTextAreaServicios.setRows(5);
+        jScrollPane3.setViewportView(jTextAreaServicios);
+
+        javax.swing.GroupLayout jPanelServiciosLayout = new javax.swing.GroupLayout(jPanelServicios);
+        jPanelServicios.setLayout(jPanelServiciosLayout);
+        jPanelServiciosLayout.setHorizontalGroup(
+            jPanelServiciosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelServiciosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanelServiciosLayout.setVerticalGroup(
+            jPanelServiciosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelServiciosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanelPRDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(123, 0, 0), 2), "Datos de ingreso", javax.swing.border.TitledBorder.RIGHT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("SansSerif", 1, 14), new java.awt.Color(191, 81, 0))); // NOI18N
+        jPanelPRDatos.setOpaque(false);
+
+        jLabelPRExtra.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelPRExtra.setText("Huéspedes extra:");
+
+        jLabelPRHuespedes.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelPRHuespedes.setText("Cantidad de huéspedes:");
+
+        jLabelPRLimite.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelPRLimite.setText("Límite de huéspedes:");
+
+        jLabelPRTipo.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelPRTipo.setText("Tipo de habitación:");
+
+        jLabelPRPiso.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelPRPiso.setText("Número de piso:");
+
+        jLabelPRHabitacion.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelPRHabitacion.setText("Número de habitación:");
+
+        jLabelPRDias.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelPRDias.setText("Días de hospedaje:");
+
+        jLabelPRFechaSalida.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelPRFechaSalida.setText("Fecha de salida:");
+
+        jLabelPRFechaIngreso.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelPRFechaIngreso.setText("Fecha de ingreso:");
+
+        jLabelPRCiudad.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelPRCiudad.setText("Ciudad de origen:");
+
+        jLabelPRNombre.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabelPRNombre.setText("Nombre del huésped:");
+
+        javax.swing.GroupLayout jPanelPRDatosLayout = new javax.swing.GroupLayout(jPanelPRDatos);
+        jPanelPRDatos.setLayout(jPanelPRDatosLayout);
+        jPanelPRDatosLayout.setHorizontalGroup(
+            jPanelPRDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPRDatosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelPRDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabelPRCiudad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelPRFechaIngreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelPRFechaSalida, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelPRDias, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelPRHabitacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelPRPiso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelPRTipo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelPRLimite, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelPRHuespedes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelPRNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelPRExtra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanelPRDatosLayout.setVerticalGroup(
+            jPanelPRDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPRDatosLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabelPRNombre)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelPRCiudad)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelPRFechaIngreso)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelPRFechaSalida)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelPRDias)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelPRHabitacion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelPRPiso)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelPRTipo)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelPRLimite)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelPRHuespedes)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelPRExtra)
+                .addGap(5, 5, 5))
+        );
+
         javax.swing.GroupLayout jPanelReciboLayout = new javax.swing.GroupLayout(jPanelRecibo);
         jPanelRecibo.setLayout(jPanelReciboLayout);
         jPanelReciboLayout.setHorizontalGroup(
             jPanelReciboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelReciboLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelReciboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelReciboLayout.createSequentialGroup()
+                        .addComponent(jLabelLogoPR, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelSlogan, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelUbicacion))
+                    .addGroup(jPanelReciboLayout.createSequentialGroup()
+                        .addGap(810, 810, 810)
+                        .addComponent(jLabelPRNombre1)))
+                .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelReciboLayout.createSequentialGroup()
-                .addContainerGap(732, Short.MAX_VALUE)
-                .addComponent(jButtonNuevo)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelReciboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelReciboLayout.createSequentialGroup()
+                        .addComponent(jPanelPRDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanelServicios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26))
         );
         jPanelReciboLayout.setVerticalGroup(
             jPanelReciboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelReciboLayout.createSequentialGroup()
-                .addContainerGap(438, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(jPanelReciboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelLogoPR, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                    .addComponent(jLabelSlogan, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jLabelUbicacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelReciboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelServicios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanelPRDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jButtonNuevo)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelPRNombre1)
+                .addGap(44, 44, 44))
         );
 
         jTabbedPaneMenus.addTab("Impresión De Recibo", jPanelRecibo);
@@ -1276,7 +1459,7 @@ public class CheckIn extends javax.swing.JInternalFrame {
                     .addComponent(jLabelTitulo)
                     .addComponent(jLabelCerrar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPaneMenus, javax.swing.GroupLayout.PREFERRED_SIZE, 504, Short.MAX_VALUE))
+                .addComponent(jTabbedPaneMenus, javax.swing.GroupLayout.PREFERRED_SIZE, 521, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1323,7 +1506,6 @@ public class CheckIn extends javax.swing.JInternalFrame {
 
                 if(this.jRadioButtonTres.isSelected()) {
                     this.jRadioButtonDos.setSelected(true);
-                    this.jComboBoxExtra.setEnabled(true);
                 } 
                 else if(!this.jRadioButtonDos.isSelected()) {
                     this.jComboBoxExtra.setEnabled(false);
@@ -1524,6 +1706,9 @@ public class CheckIn extends javax.swing.JInternalFrame {
     //-Permitir la impresión del recibo y registrar los datos-//.
     private void jButtonGenerarReciboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarReciboActionPerformed
         this.jTabbedPaneMenus.setSelectedIndex(3);
+        
+        //Método para imprimir todos los datos del recibo.
+        this.generarRecibo();
 
         //Deshabilitar todas las pestañas, exceptuando la primera.
         this.jTabbedPaneMenus.setEnabledAt(2, false);
@@ -1728,6 +1913,18 @@ public class CheckIn extends javax.swing.JInternalFrame {
         Color color = new Color(Integer.parseInt("E48200", 16));
         this.jButtonGenerarRecibo.setBackground(color);
     }//GEN-LAST:event_jButtonGenerarReciboMouseExited
+
+    //-Indicar que el cursor se ha posicionado en el botón para repetir el registro-//.
+    private void jButtonNuevoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNuevoMouseEntered
+        Color color = new Color(Integer.parseInt("AF5700", 16));
+        this.jButtonNuevo.setBackground(color);
+    }//GEN-LAST:event_jButtonNuevoMouseEntered
+
+    //-Indicar que el cursor dejó de posicionarse en el botón para repetir el registro-//.
+    private void jButtonNuevoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNuevoMouseExited
+        Color color = new Color(Integer.parseInt("E48200", 16));
+        this.jButtonNuevo.setBackground(color);
+    }//GEN-LAST:event_jButtonNuevoMouseExited
 
     //-Configuración adicional de ciertos componentes-//.
     private void extraInitProcess() {
@@ -2302,6 +2499,59 @@ public class CheckIn extends javax.swing.JInternalFrame {
         SimpleDateFormat formato2 = new SimpleDateFormat("yyyy");
         campo.append("Fecha de " + tipoFecha + ": " + formato1.format(fecha) + mes + "de " + formato2.format(fecha) + ".\n");
     }
+    
+    //-Se imprime, en un JLabel, una fecha específica-//.
+    private void imprimirFecha(String tipoFecha, Calendar calendario, Date fecha, JLabel campo) {
+        //Imprimir la fecha de salida.
+        String mes;
+
+        //Definir el mes.
+        switch (calendario.get(Calendar.MONTH)) {
+            case 0:
+                mes = " enero ";
+                break;
+            case 1:
+                mes = " febrero ";
+                break;
+            case 2:
+                mes = " marzo ";
+                break;
+            case 3:
+                mes = " abril ";
+                break;
+            case 4:
+                mes = " mayo ";
+                break;
+            case 5:
+                mes = " junio ";
+                break;
+            case 6:
+                mes = " julio ";
+                break;
+            case 7:
+                mes = " agosto ";
+                break;
+            case 8:
+                mes = " septiembre ";
+                break;
+            case 9:
+                mes = " octubre ";
+                break;
+            case 10:
+                mes = " noviembre ";
+                break;
+            case 11:
+                mes = " diciembre ";
+                break;
+            default:
+                mes = " indefinido ";
+                break;
+        }
+
+        SimpleDateFormat formato1 = new SimpleDateFormat("dd 'de'");
+        SimpleDateFormat formato2 = new SimpleDateFormat("yyyy");
+        campo.setText("Fecha de " + tipoFecha + ": " + formato1.format(fecha) + mes + "de " + formato2.format(fecha));
+    }
 
     //-Todos los datos del nuevo huésped se almacenan en la base de datos-//.
     private void agregarInformacion() {
@@ -2392,6 +2642,96 @@ public class CheckIn extends javax.swing.JInternalFrame {
             return 0;
         }
     }
+    
+    //-Generar el recibo del check-in-//.
+    private void generarRecibo() {
+        //Imprimir el nombre del huésped.
+        this.jLabelPRNombre.setText("Nombre del huésped: " + this.jTextFieldNombre.getText().trim()
+        + " " + this.jTextFieldApellido.getText().trim());
+
+        //Imprimir la ciudad de origen.
+        this.jLabelPRCiudad.setText("Ciudad de origen: " + this.jTextFieldCiudad.getText());
+
+        //Imprimir la fecha de ingreso.
+        Date fecha = this.fechaInicial.getTime();
+        this.imprimirFecha("ingreso", this.fechaInicial, fecha, this.jLabelPRFechaIngreso);
+        
+        //Imprimir la fecha de salida.
+        fecha = this.fechaFinal.getTime();
+        this.imprimirFecha("salida", this.fechaFinal, fecha, this.jLabelPRFechaSalida);
+
+        //Imprimir la cantidad de días de hospedaje.
+        this.jLabelPRDias.setText("Días de hospedaje: " + (Integer) this.jSpinnerDias.getValue());
+
+        //Imprimir el número de la habitación reservada.
+        this.jLabelPRHabitacion.setText("Número de habitación: " + this.habitacionSeleccionada.getText());
+
+        //Imprimir el número de piso.
+        this.jLabelPRPiso.setText("Número de piso: " + this.numeroPiso);
+
+        //Imprimir el tipo de habitación.
+        this.jLabelPRTipo.setText("Tipo de habitación: " + (String) this.jComboBoxHabitacion.getSelectedItem());
+
+        //Imprimir el límite de huéspedes.
+        switch (this.tipoHabitacion) {
+            //Habitación simple.
+            case "S":
+                this.jLabelPRLimite.setText("Límite de huéspedes: 1");
+                break;
+
+            //Habitación doble.
+            case "D":
+                this.jLabelPRLimite.setText("Límite de huéspedes: 2");
+                break;
+
+            //Habitación triple.
+            case "T":
+                this.jLabelPRLimite.setText("Límite de huéspedes: 3");
+                break;
+        }
+
+        //Imprimir la cantidad de huéspedes.
+        this.jLabelPRHuespedes.setText("Cantidad de huéspedes: " + this.cantidadHuespedes);
+
+        //Imprimir la cantidad de huéspedes extra.
+        this.jLabelPRExtra.setText("Huéspedes extra: " + this.cantidadHuespedesExtra);
+        
+        //Imprimir la lista de servicios adicionales.
+        this.jTextAreaServicios.setText("\n"); 
+        if(this.jCheckBoxCuarto.isSelected()) {
+            this.jTextAreaServicios.append("  -  " + this.jCheckBoxCuarto.getText() + ".\n");
+        }
+        if(this.jCheckBoxBar.isSelected()) {
+            this.jTextAreaServicios.append("  -  " + this.jCheckBoxBar.getText() + ".\n");
+        }
+        if(this.jCheckBoxTintoreria.isSelected()) {
+            this.jTextAreaServicios.append("  -  " + this.jCheckBoxTintoreria.getText() + "\n");
+        }
+        if(this.jCheckBoxSPA.isSelected()) {
+            this.jTextAreaServicios.append("  -  " + this.jCheckBoxSPA.getText() + "\n");
+        }
+        if(this.jCheckBoxCuidado.isSelected()) {
+            this.jTextAreaServicios.append("  -  " + this.jCheckBoxCuidado.getText() + "\n");
+        }
+        if(this.jCheckBoxGimnasio.isSelected()) {
+            this.jTextAreaServicios.append("  -  " + this.jCheckBoxGimnasio.getText() + "\n");
+        }
+        if(this.jCheckBoxJuegos.isSelected()) {
+            this.jTextAreaServicios.append("  -  " + this.jCheckBoxJuegos.getText() + "\n");
+        }
+        if(this.jCheckBoxTennis.isSelected()) {
+            this.jTextAreaServicios.append("  -  " + this.jCheckBoxTennis.getText() + "\n");
+        }
+        if(this.jCheckBoxArco.isSelected()) {
+            this.jTextAreaServicios.append("  -  " + this.jCheckBoxArco.getText() + "\n");
+        }
+        if(this.jCheckBoxGolf.isSelected()) {
+            this.jTextAreaServicios.append("  -  " + this.jCheckBoxGolf.getText() + "\n");
+        }
+        if(this.jTextAreaServicios.getText().equals("\n")) {
+            this.jTextAreaServicios.append("  -  Ninguno\n");
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroupHabitaciones;
@@ -2443,19 +2783,34 @@ public class CheckIn extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelHabitacion9;
     private javax.swing.JLabel jLabelImagenHabitacion;
     private javax.swing.JLabel jLabelIngreso;
+    private javax.swing.JLabel jLabelLogoPR;
     private javax.swing.JLabel jLabelNiñera;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelNumeroPiso;
+    private javax.swing.JLabel jLabelPRCiudad;
+    private javax.swing.JLabel jLabelPRDias;
+    private javax.swing.JLabel jLabelPRExtra;
+    private javax.swing.JLabel jLabelPRFechaIngreso;
+    private javax.swing.JLabel jLabelPRFechaSalida;
+    private javax.swing.JLabel jLabelPRHabitacion;
+    private javax.swing.JLabel jLabelPRHuespedes;
+    private javax.swing.JLabel jLabelPRLimite;
+    private javax.swing.JLabel jLabelPRNombre;
+    private javax.swing.JLabel jLabelPRNombre1;
+    private javax.swing.JLabel jLabelPRPiso;
+    private javax.swing.JLabel jLabelPRTipo;
     private javax.swing.JLabel jLabelPersonas;
     private javax.swing.JLabel jLabelPiso;
     private javax.swing.JLabel jLabelPisoPersonasExtra;
     private javax.swing.JLabel jLabelSPA;
     private javax.swing.JLabel jLabelServicioAlCuarto;
+    private javax.swing.JLabel jLabelSlogan;
     private javax.swing.JLabel jLabelTenis;
     private javax.swing.JLabel jLabelTintoreria;
     private javax.swing.JLabel jLabelTipoHabitacion;
     private javax.swing.JLabel jLabelTiroConArco;
     private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JLabel jLabelUbicacion;
     private javax.swing.JLabel jLabelZonaJuegos;
     private javax.swing.JPanel jPanelBase;
     private javax.swing.JPanel jPanelConfirmacion;
@@ -2466,7 +2821,9 @@ public class CheckIn extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanelHabitacion;
     private javax.swing.JPanel jPanelImagenes;
     private javax.swing.JPanel jPanelInformacionReservacion;
+    private javax.swing.JPanel jPanelPRDatos;
     private javax.swing.JPanel jPanelRecibo;
+    private javax.swing.JPanel jPanelServicios;
     private javax.swing.JPanel jPanelServiciosExtra;
     private javax.swing.JPanel jPanelTiempoReservación;
     private javax.swing.JRadioButton jRadioButtonDos;
@@ -2476,10 +2833,12 @@ public class CheckIn extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton jRadioButtonUna;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSpinner jSpinnerDias;
     private javax.swing.JTabbedPane jTabbedPaneMenus;
     private javax.swing.JTextArea jTextAreaAdicional;
     private javax.swing.JTextArea jTextAreaDatos;
+    private javax.swing.JTextArea jTextAreaServicios;
     private javax.swing.JTextField jTextFieldApellido;
     private javax.swing.JTextField jTextFieldCiudad;
     private javax.swing.JTextField jTextFieldNombre;

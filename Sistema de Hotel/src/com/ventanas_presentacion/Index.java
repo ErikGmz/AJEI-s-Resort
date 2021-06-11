@@ -27,6 +27,7 @@ public class Index extends javax.swing.JFrame implements Runnable {
     //---Constructor---//.
     public Index() {
         initComponents();
+        this.setLocationRelativeTo(this);
     }
     
     //---Constructor con argumentos---//.
@@ -34,6 +35,7 @@ public class Index extends javax.swing.JFrame implements Runnable {
         this.musicaIniciada = musicaIniciada;
         this.musicaFondo = musicaFondo;
         initComponents();
+        this.setLocationRelativeTo(this);
     }
 
     //---Métodos---//.
@@ -368,6 +370,11 @@ public class Index extends javax.swing.JFrame implements Runnable {
         );
 
         jDesktopPaneContenedor.setBackground(new java.awt.Color(255, 255, 255));
+        jDesktopPaneContenedor.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentRemoved(java.awt.event.ContainerEvent evt) {
+                jDesktopPaneContenedorComponentRemoved(evt);
+            }
+        });
 
         javax.swing.GroupLayout jDesktopPaneContenedorLayout = new javax.swing.GroupLayout(jDesktopPaneContenedor);
         jDesktopPaneContenedor.setLayout(jDesktopPaneContenedorLayout);
@@ -608,10 +615,17 @@ public class Index extends javax.swing.JFrame implements Runnable {
         this.abrirJFrameEnPanelContenedor(new Consultas());
     }//GEN-LAST:event_jButtonConsultasActionPerformed
 
+    //-Se detecta cualquier eliminación de subventana-//.
+    private void jDesktopPaneContenedorComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jDesktopPaneContenedorComponentRemoved
+        if(this.jDesktopPaneContenedor.getComponentCount() <= 0) {
+            this.abrirJFrameEnPanelContenedor(new Inicio());
+        }
+    }//GEN-LAST:event_jDesktopPaneContenedorComponentRemoved
+
     //-Abrir InternalJFrames dentro del panel contenedor--//.
     private void abrirJFrameEnPanelContenedor(Object jF) {
         //Se borra el menú actualmente cargado en la interfaz.
-        if (this.jDesktopPaneContenedor.getComponentCount() > 1) {
+        if(this.jDesktopPaneContenedor.getComponentCount() > 1) {
             this.jDesktopPaneContenedor.remove(0);
         }
 
@@ -704,7 +718,6 @@ public class Index extends javax.swing.JFrame implements Runnable {
     //-Método para la ejecución del hilo-//.
     @Override public void run() {
         this.extraInitProcess();
-        this.setLocationRelativeTo(this);
     }
     
 }

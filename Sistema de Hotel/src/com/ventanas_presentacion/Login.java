@@ -32,6 +32,7 @@ public class Login extends javax.swing.JFrame implements Runnable {
     //---Constructor---//.
     public Login() {
         initComponents();
+        this.setLocationRelativeTo(this);
     }
     
     //---Constructor con argumentos---//.
@@ -39,6 +40,7 @@ public class Login extends javax.swing.JFrame implements Runnable {
         this.musicaFondo = musicaFondo;
         this.musicaIniciada = musicaIniciada;
         initComponents();
+        this.setLocationRelativeTo(this);
     }
 
     //---Métodos sobreescritos---//.

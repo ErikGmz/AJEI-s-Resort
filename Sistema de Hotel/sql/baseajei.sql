@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-05-2022 a las 20:59:16
+-- Tiempo de generación: 18-05-2022 a las 23:22:29
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -25,7 +25,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `baseajei`
 --
-
 
 -- --------------------------------------------------------
 
@@ -203,7 +202,7 @@ INSERT INTO `usuarios` (`user_id`, `user_name`, `email`, `password`) VALUES
 (2, 'Gabriel Galindo', 'gabogalindo@ajei.com.mx', 'kÔhM³·E£ÇiýIû'),
 (3, 'Israel Mora', 'israel@ajei.com.mx', 'ZL¡Ý€y”*\'vgo‚²’'),
 (4, 'Emmanuel Rodríguez', 'emmanuel@ajei.com.mx', 'Œ¨üÕ×¸ç“ÝŠ=]M'),
-(5, 'Fernando Ramírez', 'fernandormz@ajei.com.mx', 'ó@OBÞ¦­QÞˆqæ¸—');
+(5, 'Fernando Ramírez', 'fernandormz@ajei.com.mx', 'É\"8¿Ñ _ÂFmác©ë!h');
 
 --
 -- Índices para tablas volcadas

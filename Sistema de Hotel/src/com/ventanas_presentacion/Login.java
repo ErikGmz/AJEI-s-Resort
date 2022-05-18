@@ -17,7 +17,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 //---Clase pública---//.
-public class Login extends javax.swing.JFrame implements Runnable {
+public class Login extends javax.swing.JFrame {
 
     //---Atributos adicionales---//.
     private Image logoHotel;
@@ -33,6 +33,7 @@ public class Login extends javax.swing.JFrame implements Runnable {
     public Login() {
         initComponents();
         this.setLocationRelativeTo(this);
+        this.extraInitProcess();
     }
     
     //---Constructor con argumentos---//.
@@ -41,6 +42,7 @@ public class Login extends javax.swing.JFrame implements Runnable {
         this.musicaIniciada = musicaIniciada;
         initComponents();
         this.setLocationRelativeTo(this);
+        this.extraInitProcess();
     }
 
     //---Métodos sobreescritos---//.
@@ -535,9 +537,35 @@ public class Login extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField jTextFieldCorreo;
     // End of variables declaration//GEN-END:variables
 
-    //-Método para la ejecución del hilo-//.
-    @Override public void run() {
-        this.extraInitProcess();
+    //-Método principal-//.
+    public static void main(String args[]) {
+        //Establecer el look and feel de Windows.
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Login().setVisible(true);
+            }
+        });
     }
 
 }

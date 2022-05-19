@@ -17,7 +17,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 //---Clase pública---//.
-public class Login extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame implements Runnable {
 
     //---Atributos adicionales---//.
     private Image logoHotel;
@@ -567,5 +567,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    @Override public void run() {}
 }
